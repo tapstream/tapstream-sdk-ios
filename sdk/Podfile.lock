@@ -1,0 +1,18 @@
+PODS:
+  - OCHamcrest (5.4.0)
+  - OCMock (3.3.1)
+  - Specta (1.0.5)
+
+DEPENDENCIES:
+  - OCHamcrest (~> 5.0)
+  - OCMock
+  - Specta (~> 1.0)
+
+SPEC CHECKSUMS:
+  OCHamcrest: 5c1d441c5a82fb18ac17c2aeb52ec1a99edb971b
+  OCMock: f3f61e6eaa16038c30caa5798c5e49d3307b6f22
+  Specta: ac94d110b865115fe60ff2c6d7281053c6f8e8a2
+
+PODFILE CHECKSUM: ef09ca6b8db7d08c3d6c2ec9b8d58cf222fc567d
+
+COCOAPODS: 1.0.1

@@ -1,0 +1,1 @@
+../../../../../sdk/tapstream-sdk-ios/TSConfig.h
