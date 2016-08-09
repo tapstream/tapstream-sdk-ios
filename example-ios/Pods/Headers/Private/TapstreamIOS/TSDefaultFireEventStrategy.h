@@ -1,1 +1,0 @@
-../../../../../sdk/tapstream-sdk-ios/TSDefaultFireEventStrategy.h

@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.author       = { 'Michael Zsigmond' => 'support@tapstream.com' }
   s.source       = { :git => 'https://github.com/tapstream/tapstream-sdk-ios.git', :tag => 'v3.0.0' }
   s.osx.deployment_target = '10.6'
-  s.source_files = 'sdk/tapstream-sdk-ios'
+  s.source_files = 'tapstream-sdk-ios'
   s.osx.frameworks = 'Foundation', 'AppKit'
 end
 

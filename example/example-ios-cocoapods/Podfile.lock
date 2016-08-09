@@ -1,0 +1,16 @@
+PODS:
+  - TapstreamIOS (3.0.0)
+
+DEPENDENCIES:
+  - TapstreamIOS (from `../..`)
+
+EXTERNAL SOURCES:
+  TapstreamIOS:
+    :path: ../..
+
+SPEC CHECKSUMS:
+  TapstreamIOS: 08a8c2fbfcff34fc3aff907397bb2d6d75deec46
+
+PODFILE CHECKSUM: 662da0547dee91c2f6dff979fd123502d3761ba6
+
+COCOAPODS: 1.0.1

@@ -8,12 +8,12 @@ Pod::Spec.new do |s|
   s.source         = { :git => 'https://github.com/tapstream/tapstream-sdk-ios.git', :tag => 'v3.0.0' }
   s.ios.deployment_target = '7.0'
   s.source_files   = [
-    'sdk/tapstream-sdk-ios',
-    'sdk/tapstream-sdk-ios/word-of-mouth',
-    'sdk/tapstream-sdk-ios/ios-only',
-    'sdk/tapstream-sdk-ios/in-app-landers',
-    'sdk/tapstream-sdk-ios/universal-links']
-  s.resources      = 'sdk/tapstream-sdk-ios/in-app-landers/*.xib', 'sdk/tapstream-sdk-ios/word-of-mouth/*.xib'
+    'tapstream-sdk-ios',
+    'tapstream-sdk-ios/word-of-mouth',
+    'tapstream-sdk-ios/ios-only',
+    'tapstream-sdk-ios/in-app-landers',
+    'tapstream-sdk-ios/universal-links']
+  s.resources      = 'tapstream-sdk-ios/in-app-landers/*.xib', 'tapstream-sdk-ios/word-of-mouth/*.xib'
   s.ios.frameworks = 'Foundation', 'UIKit'
 end
 
