@@ -38,8 +38,6 @@
 		66519FEA1D2B42F30002E7E7 /* TestURLEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 66519FE81D2B42D30002E7E7 /* TestURLEncoder.m */; };
 		666C19C21CE65CA9004806D9 /* TapstreamIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 666C19B71CE65CA9004806D9 /* TapstreamIOS.framework */; };
 		6679DCB81D2344FF00584002 /* TSOfferView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6679DCA51D2344FF00584002 /* TSOfferView.xib */; };
-		66837F411D5A6DE400D01591 /* TSLanderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6614D1B71D48228D001C88AB /* TSLanderView.xib */; };
-		66837F421D5A6DE400D01591 /* TSOfferView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6679DCA51D2344FF00584002 /* TSOfferView.xib */; };
 		66BFCF791D0A30D5004AF5EE /* TestFireEventStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BFCF781D0A30D5004AF5EE /* TestFireEventStrategy.m */; };
 		66C3114D1D36DCD60029ECE9 /* TSApi.h in Headers */ = {isa = PBXBuildFile; fileRef = 6623D26D1D136D3A00B72EA5 /* TSApi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66C3114E1D36DCD60029ECE9 /* TSAppEventSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 6623D26E1D136D3A00B72EA5 /* TSAppEventSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -103,8 +101,6 @@
 		66C53D741D1C9BC0005A3130 /* TestOfferStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C53D731D1C9BC0005A3130 /* TestOfferStrategy.m */; };
 		66C75BFB1D00B153009FF078 /* TestCookieMatchStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 665BE69C1CFFA9E200957C8E /* TestCookieMatchStrategy.m */; };
 		66C842B51D249D5500DA04CD /* TestRequestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C842B41D249D5500DA04CD /* TestRequestData.m */; };
-		66CA52211D39B4970097C86C /* (null) in Resources */ = {isa = PBXBuildFile; };
-		66CA52221D39B4970097C86C /* (null) in Resources */ = {isa = PBXBuildFile; };
 		66D25DC71CEFC469005BC94C /* TestUniversalLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D25DC31CEFC42C005BC94C /* TestUniversalLink.m */; };
 		66DBC9511D06155900759F80 /* TSTestPersistentStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DBC9501D06155900759F80 /* TSTestPersistentStorage.m */; };
 		66DBC9551D061EAB00759F80 /* TestLander.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DBC9541D061EAB00759F80 /* TestLander.m */; };
@@ -773,10 +769,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66CA52211D39B4970097C86C /* (null) in Resources */,
 				6679DCB81D2344FF00584002 /* TSOfferView.xib in Resources */,
 				6614D1C21D48228D001C88AB /* TSLanderView.xib in Resources */,
-				66CA52221D39B4970097C86C /* (null) in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -791,8 +785,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66837F411D5A6DE400D01591 /* TSLanderView.xib in Resources */,
-				66837F421D5A6DE400D01591 /* TSOfferView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
