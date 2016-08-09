@@ -38,6 +38,8 @@
 		66519FEA1D2B42F30002E7E7 /* TestURLEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 66519FE81D2B42D30002E7E7 /* TestURLEncoder.m */; };
 		666C19C21CE65CA9004806D9 /* TapstreamIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 666C19B71CE65CA9004806D9 /* TapstreamIOS.framework */; };
 		6679DCB81D2344FF00584002 /* TSOfferView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6679DCA51D2344FF00584002 /* TSOfferView.xib */; };
+		66837F411D5A6DE400D01591 /* TSLanderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6614D1B71D48228D001C88AB /* TSLanderView.xib */; };
+		66837F421D5A6DE400D01591 /* TSOfferView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6679DCA51D2344FF00584002 /* TSOfferView.xib */; };
 		66BFCF791D0A30D5004AF5EE /* TestFireEventStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BFCF781D0A30D5004AF5EE /* TestFireEventStrategy.m */; };
 		66C3114D1D36DCD60029ECE9 /* TSApi.h in Headers */ = {isa = PBXBuildFile; fileRef = 6623D26D1D136D3A00B72EA5 /* TSApi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66C3114E1D36DCD60029ECE9 /* TSAppEventSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 6623D26E1D136D3A00B72EA5 /* TSAppEventSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -789,6 +791,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66837F411D5A6DE400D01591 /* TSLanderView.xib in Resources */,
+				66837F421D5A6DE400D01591 /* TSOfferView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
