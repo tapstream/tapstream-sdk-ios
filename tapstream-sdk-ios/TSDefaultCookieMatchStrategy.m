@@ -33,13 +33,15 @@
 
 - (BOOL) shouldFireCookieMatch
 {
-	if(self.cookieMatchInProgress){
-		return false;
-	}
+	@synchronized (self) {
+		if(self.cookieMatchInProgress){
+			return false;
+		}
 
-	NSTimeInterval lastCookieMatch = [self getCookieMatchFired];
-	NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
-	return (now - lastCookieMatch) >= SECONDS_PER_DAY;
+		NSTimeInterval lastCookieMatch = [self getCookieMatchFired];
+		NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
+		return (now - lastCookieMatch) >= SECONDS_PER_DAY;
+	}
 }
 
 - (void) startCookieMatch

@@ -5,8 +5,6 @@
 #import <OCHamcrest/OCHamcrest.h>
 #import "TSTimelineApiResponse.h"
 
-
-
 SpecBegin(TimelineApiResponse)
 describe(@"TimelineApiResponse", ^{
 	it(@"Will reject an empty JSON string", ^{

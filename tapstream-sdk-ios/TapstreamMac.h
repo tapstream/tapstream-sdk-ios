@@ -8,7 +8,6 @@
 
 // Protocols
 #import "TSAppEventSource.h"
-#import "TSCookieMatchStrategy.h"
 #import "TSCoreListener.h"
 #import "TSFireEventStrategy.h"
 #import "TSHttpClient.h"
@@ -20,11 +19,8 @@
 #import "TSError.h"
 #import "TSEvent.h"
 #import "TSTimelineApiResponse.h"
-#import "TSOfferApiResponse.h"
-#import "TSRewardApiResponse.h"
 #import "TSRequestData.h"
 #import "TSResponse.h"
-#import "TSUniversalLinkApiResponse.h"
 
 #import "TSLogging.h"
 #import "TSLogLevel.h"

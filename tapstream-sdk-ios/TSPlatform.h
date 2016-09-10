@@ -21,6 +21,7 @@
 - (NSString *)getLocale;
 - (NSString *)getWifiMac;
 - (NSString *)getAppName;
+- (NSString *)getPlatformName;
 - (NSString *)getAppVersion;
 - (NSString *)getPackageName;
 - (NSString *)getComputerGUID;

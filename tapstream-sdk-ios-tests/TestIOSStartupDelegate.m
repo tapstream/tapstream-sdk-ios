@@ -1,0 +1,165 @@
+//  Copyright © 2016 Tapstream. All rights reserved.
+
+#import <Foundation/Foundation.h>
+#import <Specta/Specta.h>
+#import <OCMock/OCMock.h>
+
+#import "TSAppEventSource.h"
+#import "TSIOSFireEventDelegate.h"
+#import "TSIOSStartupDelegate.h"
+#import "TSTestUtils.h"
+#import "TSDefs.h"
+
+
+
+SpecBegin(IOSStartupDelegate)
+
+describe(@"IOSStartupDelegate", ^{
+	__block TSIOSStartupDelegate* startupDelegate;
+	__block TSConfig* config;
+	__block dispatch_queue_t queue;
+	__block id<TSPlatform> platform;
+	__block TSIOSFireEventDelegate* fireEventDelegate;
+	__block id<TSAppEventSource> appEventSource;
+
+
+	beforeEach(^{
+		platform = OCMProtocolMock(@protocol(TSPlatform));
+		appEventSource = OCMProtocolMock(@protocol(TSAppEventSource));
+		queue = dispatch_queue_create("testq", DISPATCH_QUEUE_SERIAL);
+		config = [TSConfig configWithAccountName:@"testAccount" sdkSecret:@"sdkSecret"];
+		OCMStub([platform getAppName]).andReturn(@"testapp");
+		OCMStub([platform getPlatformName]).andReturn(kTSPlatform);
+
+		fireEventDelegate = OCMClassMock([TSIOSFireEventDelegate class]);
+
+		startupDelegate = [TSIOSStartupDelegate iOSStartupDelegateWithConfig:config
+																	   queue:queue
+																	platform:platform
+														   fireEventDelegate:fireEventDelegate
+															  appEventSource:appEventSource];
+	});
+
+
+	it(@"Calls [platform registerFirstRun] on first run", ^{
+		OCMStub([platform isFirstRun]).andReturn(true);
+		[startupDelegate start];
+		block_until_queue_completed(queue);
+		OCMVerify([platform registerFirstRun]);
+	});
+
+	it(@"Does not call registerFirstRun on other runs", ^{
+		OCMStub([platform isFirstRun]).andReturn(false);
+		OCMReject([platform registerFirstRun]);
+
+		[startupDelegate start];
+		block_until_queue_completed(queue);
+	});
+
+	it(@"Does not attempt to cookie match if config.attemptCookieMatch is false", ^{
+		OCMStub([platform isFirstRun]).andReturn(true);
+		config.attemptCookieMatch = false;
+
+		OCMReject([fireEventDelegate fireCookieMatch:[OCMArg any] completion:[OCMArg any]]);
+
+		[startupDelegate start];
+		block_until_queue_completed(queue);
+	});
+
+	it(@"Does attempt to cookie match if config.attemptCookieMatch is true", ^{
+		OCMStub([platform isFirstRun]).andReturn(true);
+		TSResponse* response = [TSResponse responseWithStatus:200 message:@"200 OK" data:nil];
+		OCMStub([fireEventDelegate fireCookieMatch:[OCMArg any] completion:([OCMArg invokeBlockWithArgs:response, nil])]);
+
+
+		config.attemptCookieMatch = true;
+
+		[startupDelegate start];
+		block_until_queue_completed(queue);
+
+		OCMVerify([fireEventDelegate fireCookieMatch:[OCMArg any] completion:[OCMArg any]]);
+	});
+
+	it(@"Fires a first-run event called <appname>-ios-install if first run", ^{
+		OCMStub([platform isFirstRun]).andReturn(true);
+		config.attemptCookieMatch = false;
+
+		BOOL (^checkEventName)(id) = ^BOOL(id arg){
+			NSString* eventName = [NSString stringWithFormat:@"%@-testapp-install", [kTSPlatform lowercaseString]];
+			return [((TSEvent*)arg).name isEqualToString:eventName];
+		};
+
+		[startupDelegate start];
+		block_until_queue_completed(queue);
+
+		OCMVerify([fireEventDelegate fireEvent:([OCMArg checkWithBlock:checkEventName])]);
+	});
+
+	it(@"Fires no install event on startup if not first run", ^{
+		OCMStub([platform isFirstRun]).andReturn(false);
+
+		config.attemptCookieMatch = false;
+		BOOL (^checkEventName)(id) = ^BOOL(id arg){
+			NSString* eventName = [NSString stringWithFormat:@"%@-testapp-install", [kTSPlatform lowercaseString]];
+			return [((TSEvent*)arg).name isEqualToString:eventName];
+		};
+
+		OCMReject([fireEventDelegate fireEvent:([OCMArg checkWithBlock:checkEventName])]);
+
+		[startupDelegate start];
+		block_until_queue_completed(queue);
+	});
+
+	it(@"Does not fire a first-run install event if fireAutomaticInstallEvent is false", ^{
+		OCMStub([platform isFirstRun]).andReturn(true);
+
+		config.attemptCookieMatch = false;
+		config.fireAutomaticInstallEvent = false;
+
+		BOOL (^checkEventName)(id) = ^BOOL(id arg){
+			NSString* eventName = [NSString stringWithFormat:@"%@-testapp-install", [kTSPlatform lowercaseString]];
+			return [((TSEvent*)arg).name isEqualToString:eventName];
+		};
+
+		OCMReject([fireEventDelegate fireEvent:([OCMArg checkWithBlock:checkEventName])]);
+
+		[startupDelegate start];
+		block_until_queue_completed(queue);
+	});
+
+	it(@"Fires an open event on start", ^{
+		OCMStub([platform isFirstRun]).andReturn(false);
+
+		config.attemptCookieMatch = false;
+
+		BOOL (^checkEventName)(id) = ^BOOL(id arg){
+			NSString* eventName = [NSString stringWithFormat:@"%@-testapp-open", [kTSPlatform lowercaseString]];
+			BOOL ok = [((TSEvent*)arg).name isEqualToString:eventName];
+			return ok;
+		};
+
+		[startupDelegate start];
+		block_until_queue_completed(queue);
+
+		OCMVerify([fireEventDelegate fireEvent:([OCMArg checkWithBlock:checkEventName])]);
+	});
+
+	it(@"Does not fire an open event on start if fireAutomaticOpenEvent is false", ^{
+		OCMStub([platform isFirstRun]).andReturn(false);
+		OCMStub([platform getAppName]).andReturn(@"testapp");
+		config.attemptCookieMatch = false;
+		config.fireAutomaticOpenEvent = false;
+
+		BOOL (^checkEventName)(id) = ^BOOL(id arg){
+			NSString* eventName = [NSString stringWithFormat:@"%@-testapp-open", kTSPlatform];
+			return [((TSEvent*)arg).name isEqualToString:eventName];
+		};
+
+		OCMReject([fireEventDelegate fireEvent:([OCMArg checkWithBlock:checkEventName])]);
+
+		[startupDelegate start];
+		block_until_queue_completed(queue);
+
+	});
+});
+SpecEnd

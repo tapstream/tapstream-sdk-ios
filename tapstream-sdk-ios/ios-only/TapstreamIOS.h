@@ -32,6 +32,11 @@
 #import "TSWordOfMouthController.h"
 #import "TSOfferViewController.h"
 
+#import "TSLanderController.h"
+#import "TSSafariViewControllerDelegate.h"
+#import "TSURLBuilder.h"
+#import "TSURLEncoder.h"
+
 #import "TSLogging.h"
 #import "TSLogLevel.h"
 #import "TSConfig.h"

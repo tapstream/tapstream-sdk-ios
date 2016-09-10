@@ -4,7 +4,6 @@
 #import "TSLogging.h"
 #import "TSResponse.h"
 
-#if (TEST_IOS || TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR)
 @implementation TSSafariViewControllerDelegate
 
 + (BOOL)presentSafariViewControllerWithURLAndCompletion:(NSURL*)url completion:(void (^)(TSResponse*))completion
@@ -74,22 +73,3 @@
 }
 
 @end
-
-#else
-// Stub for Mac
-@implementation TSSafariViewControllerDelegate
-+ (BOOL)presentSafariViewControllerWithURLAndCompletion:(NSURL*)url completion:(void (^)(TSResponse*))completion
-{
-	[TSLogging logAtLevel:kTSLoggingError format:@"Tapstream cookie matching should only be used on iOS devices"];
-
-	if (completion != nil){
-		completion([TSResponse
-					responseWithStatus:-1
-					message:@"SafariServices framework not loaded, cookie match impossible"
-					data:nil]);
-	}
-
-	return true;
-}
-@end
-#endif

@@ -3,6 +3,7 @@
 #pragma once
 #import <Foundation/Foundation.h>
 
+#import "TSDefs.h"
 #import "TSApi.h"
 #import "TSConfig.h"
 #import "TSCoreListener.h"

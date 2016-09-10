@@ -11,9 +11,11 @@
 
 #if TEST_IOS || TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
 #import <UIKit/UIKit.h>
+#define platformName @"ios"
 #else
 #import <AppKit/AppKit.h>
 #import <IOKit/IOKitLib.h>
+#define platformName @"mac"
 #endif
 
 // Preferences keys
@@ -233,6 +235,11 @@
 - (NSString *)getAppName
 {
 	return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"];
+}
+
+- (NSString*)getPlatformName
+{
+	return platformName;
 }
 
 - (NSString *)getAppVersion

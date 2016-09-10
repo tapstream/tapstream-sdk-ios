@@ -9,7 +9,8 @@
 
 + (id)controllerWithLander:(TSLander*)lander delegate:(id<TSLanderDelegate>)delegate
 {
-	return [[TSLanderController alloc] initWithNibName:@"TSLanderView" bundle:nil lander:lander delegate:delegate];
+	NSBundle* bund = [NSBundle bundleForClass:TSLanderController.self];
+	return [[TSLanderController alloc] initWithNibName:@"TSLanderView" bundle:bund lander:lander delegate:delegate];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil lander:(TSLander*)lander  delegate:(id<TSLanderDelegate>)delegate
