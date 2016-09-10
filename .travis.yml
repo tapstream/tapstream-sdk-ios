@@ -1,3 +1,3 @@
 language: objective-c
 xcode_workspace: tapstream-sdk-ios.xcworkspace
-xcode_scheme: ["TapstreamIOSTests", "TapstreamMacTests"]
+xcode_scheme: ["TapstreamIOS", "TapstreamMac"]
