@@ -27,3 +27,5 @@ xcuserdata/
 *.dSYM
 
 Carthage/Build
+
+env/

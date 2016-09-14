@@ -1,9 +1,9 @@
-CODE_SIGN_IDENTITY =
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/OCHamcrest-OSX" "$PODS_CONFIGURATION_BUILD_DIR/OCMock-OSX" "$PODS_CONFIGURATION_BUILD_DIR/Specta-OSX"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$(PLATFORM_DIR)/Developer/Library/Frameworks"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/../Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/OCHamcrest-OSX/OCHamcrest.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/OCMock-OSX/OCMock.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Specta-OSX/Specta.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "OCHamcrest" -framework "OCMock" -framework "Specta"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/OCHamcrest" "${PODS_ROOT}/Headers/Public/OCMock" "${PODS_ROOT}/Headers/Public/Specta"
+LIBRARY_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/OCHamcrest-OSX" "$PODS_CONFIGURATION_BUILD_DIR/OCMock-OSX" "$PODS_CONFIGURATION_BUILD_DIR/Specta-OSX"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/OCHamcrest" -isystem "${PODS_ROOT}/Headers/Public/OCMock" -isystem "${PODS_ROOT}/Headers/Public/Specta"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"OCHamcrest-OSX" -l"OCMock-OSX" -l"Specta-OSX" -framework "Foundation" -framework "XCTest"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_ROOT = ${SRCROOT}/Pods

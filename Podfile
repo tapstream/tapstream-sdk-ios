@@ -1,5 +1,4 @@
 project 'tapstream-sdk-ios'
-use_frameworks!
 
 def test_deps
   pod 'OCMock'

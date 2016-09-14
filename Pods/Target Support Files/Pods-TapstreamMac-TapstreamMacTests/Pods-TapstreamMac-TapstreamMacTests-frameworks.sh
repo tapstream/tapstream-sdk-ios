@@ -82,14 +82,3 @@ strip_invalid_archs() {
   fi
 }
 
-
-if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/OCHamcrest-OSX/OCHamcrest.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/OCMock-OSX/OCMock.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Specta-OSX/Specta.framework"
-fi
-if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/OCHamcrest-OSX/OCHamcrest.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/OCMock-OSX/OCMock.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Specta-OSX/Specta.framework"
-fi
