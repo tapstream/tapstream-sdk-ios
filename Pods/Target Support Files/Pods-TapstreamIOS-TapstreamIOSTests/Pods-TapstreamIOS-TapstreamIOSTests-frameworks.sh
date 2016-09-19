@@ -82,3 +82,14 @@ strip_invalid_archs() {
   fi
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/OCHamcrest-iOS/OCHamcrest.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/OCMock-iOS/OCMock.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Specta-iOS/Specta.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/OCHamcrest-iOS/OCHamcrest.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/OCMock-iOS/OCMock.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Specta-iOS/Specta.framework"
+fi

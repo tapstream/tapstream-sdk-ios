@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C8DA274768FBE6C77F0E484 /* Pods_TapstreamIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B7FB38D1028A09F4363C0C /* Pods_TapstreamIOS.framework */; };
 		660498D11D00CEAC003DA374 /* TestLanderStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 660498D01D00CEAC003DA374 /* TestLanderStrategy.m */; };
 		660498E91D020DB5003DA374 /* TestURLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 660498E81D020DB5003DA374 /* TestURLBuilder.m */; };
 		660FD8491D301E5D00A05527 /* TestWordOfMouthController.m in Sources */ = {isa = PBXBuildFile; fileRef = 660FD8481D301E5D00A05527 /* TestWordOfMouthController.m */; };
@@ -183,11 +184,9 @@
 		66FD8E6C1D39A305007405AB /* TestConversionQueryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 66207A991D0B7547001DB3B5 /* TestConversionQueryResponse.m */; };
 		66FD8E6F1D39A305007405AB /* TestRequestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C842B41D249D5500DA04CD /* TestRequestData.m */; };
 		66FD8E701D39A305007405AB /* TestURLEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 66519FE81D2B42D30002E7E7 /* TestURLEncoder.m */; };
-		AD29DA2733FE4504965F5E59 /* libPods-TapstreamIOS-TapstreamIOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFD335FC0A64950FCC9BC0A /* libPods-TapstreamIOS-TapstreamIOSTests.a */; };
-		B3B7336A2888ACACC6D9AE2E /* Pods_TapstreamIOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21624929C69211473463B1C9 /* Pods_TapstreamIOSTests.framework */; };
-		B5543B239E62968E607B8112 /* libPods-TapstreamMac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B234702015F7F96CFD7F20 /* libPods-TapstreamMac.a */; };
-		C52B438BD7A4ED5CEA2A691C /* libPods-TapstreamMac-TapstreamMacTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 073C6E6D72B99B0C3A49DEFD /* libPods-TapstreamMac-TapstreamMacTests.a */; };
-		CC9D2460041D0ACF29C1A111 /* libPods-TapstreamIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B440B2AF8E2EC5DE790E442 /* libPods-TapstreamIOS.a */; };
+		7D3AE1DA7297957CA7334D5A /* Pods_TapstreamMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31C7246B3F23460DA83165D1 /* Pods_TapstreamMac.framework */; };
+		BBD0E514877D65063FF52038 /* Pods_TapstreamMac_TapstreamMacTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9982A1103DB53666518E7A /* Pods_TapstreamMac_TapstreamMacTests.framework */; };
+		C2A57A0281BB4FD1D6E40E9D /* Pods_TapstreamIOS_TapstreamIOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC22201B8313D0643ABAF13A /* Pods_TapstreamIOS_TapstreamIOSTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -208,12 +207,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		073C6E6D72B99B0C3A49DEFD /* libPods-TapstreamMac-TapstreamMacTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TapstreamMac-TapstreamMacTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21624929C69211473463B1C9 /* Pods_TapstreamIOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TapstreamIOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B440B2AF8E2EC5DE790E442 /* libPods-TapstreamIOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TapstreamIOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		31C7246B3F23460DA83165D1 /* Pods_TapstreamMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TapstreamMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4192C75E62D844D3B726AFCA /* Pods-TapstreamMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TapstreamMac.release.xcconfig"; path = "Pods/Target Support Files/Pods-TapstreamMac/Pods-TapstreamMac.release.xcconfig"; sourceTree = "<group>"; };
 		498A1375C8B2471F144D97F5 /* Pods-TapstreamIOS-TapstreamIOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TapstreamIOS-TapstreamIOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TapstreamIOS-TapstreamIOSTests/Pods-TapstreamIOS-TapstreamIOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		4BE83DA95C424AE09B7B950B /* Pods-TapstreamIOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TapstreamIOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TapstreamIOSTests/Pods-TapstreamIOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		5D9982A1103DB53666518E7A /* Pods_TapstreamMac_TapstreamMacTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TapstreamMac_TapstreamMacTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64DD61216C9532A9A7822254 /* Pods-TapstreamIOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TapstreamIOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TapstreamIOSTests/Pods-TapstreamIOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		660498D01D00CEAC003DA374 /* TestLanderStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestLanderStrategy.m; sourceTree = "<group>"; };
 		660498E81D020DB5003DA374 /* TestURLBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestURLBuilder.m; sourceTree = "<group>"; };
@@ -342,13 +341,13 @@
 		66E116391D370FC6004CD428 /* TapstreamMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapstreamMac.h; sourceTree = "<group>"; };
 		66FD8E581D39A2D8007405AB /* TapstreamMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TapstreamMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD87321B0FD8CFC078C03A1 /* Pods-TapstreamMac-TapstreamMacTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TapstreamMac-TapstreamMacTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TapstreamMac-TapstreamMacTests/Pods-TapstreamMac-TapstreamMacTests.release.xcconfig"; sourceTree = "<group>"; };
-		8FFD335FC0A64950FCC9BC0A /* libPods-TapstreamIOS-TapstreamIOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TapstreamIOS-TapstreamIOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6321C68A2CCB9B536C8707E /* Pods-TapstreamIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TapstreamIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-TapstreamIOS/Pods-TapstreamIOS.release.xcconfig"; sourceTree = "<group>"; };
 		C21EDCD5795052DAA0219EEA /* Pods-TapstreamMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TapstreamMac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TapstreamMac/Pods-TapstreamMac.debug.xcconfig"; sourceTree = "<group>"; };
 		C91DBB379BAE7BD35C068BFD /* Pods-TapstreamIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TapstreamIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TapstreamIOS/Pods-TapstreamIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D5635CD2CDB07DA53D55735E /* Pods-TapstreamIOS-TapstreamIOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TapstreamIOS-TapstreamIOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TapstreamIOS-TapstreamIOSTests/Pods-TapstreamIOS-TapstreamIOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D75A10231950B8158CDC9EDB /* Pods-TapstreamMac-TapstreamMacTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TapstreamMac-TapstreamMacTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TapstreamMac-TapstreamMacTests/Pods-TapstreamMac-TapstreamMacTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D8B234702015F7F96CFD7F20 /* libPods-TapstreamMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TapstreamMac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5B7FB38D1028A09F4363C0C /* Pods_TapstreamIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TapstreamIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC22201B8313D0643ABAF13A /* Pods_TapstreamIOS_TapstreamIOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TapstreamIOS_TapstreamIOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -356,7 +355,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC9D2460041D0ACF29C1A111 /* libPods-TapstreamIOS.a in Frameworks */,
+				2C8DA274768FBE6C77F0E484 /* Pods_TapstreamIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,8 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				666C19C21CE65CA9004806D9 /* TapstreamIOS.framework in Frameworks */,
-				B3B7336A2888ACACC6D9AE2E /* Pods_TapstreamIOSTests.framework in Frameworks */,
-				AD29DA2733FE4504965F5E59 /* libPods-TapstreamIOS-TapstreamIOSTests.a in Frameworks */,
+				C2A57A0281BB4FD1D6E40E9D /* Pods_TapstreamIOS_TapstreamIOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,7 +372,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5543B239E62968E607B8112 /* libPods-TapstreamMac.a in Frameworks */,
+				7D3AE1DA7297957CA7334D5A /* Pods_TapstreamMac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,7 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66FD8E5D1D39A2D9007405AB /* TapstreamMac.framework in Frameworks */,
-				C52B438BD7A4ED5CEA2A691C /* libPods-TapstreamMac-TapstreamMacTests.a in Frameworks */,
+				BBD0E514877D65063FF52038 /* Pods_TapstreamMac_TapstreamMacTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,10 +608,10 @@
 			isa = PBXGroup;
 			children = (
 				21624929C69211473463B1C9 /* Pods_TapstreamIOSTests.framework */,
-				2B440B2AF8E2EC5DE790E442 /* libPods-TapstreamIOS.a */,
-				8FFD335FC0A64950FCC9BC0A /* libPods-TapstreamIOS-TapstreamIOSTests.a */,
-				D8B234702015F7F96CFD7F20 /* libPods-TapstreamMac.a */,
-				073C6E6D72B99B0C3A49DEFD /* libPods-TapstreamMac-TapstreamMacTests.a */,
+				F5B7FB38D1028A09F4363C0C /* Pods_TapstreamIOS.framework */,
+				FC22201B8313D0643ABAF13A /* Pods_TapstreamIOS_TapstreamIOSTests.framework */,
+				31C7246B3F23460DA83165D1 /* Pods_TapstreamMac.framework */,
+				5D9982A1103DB53666518E7A /* Pods_TapstreamMac_TapstreamMacTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -814,13 +812,15 @@
 				TargetAttributes = {
 					666C19B61CE65CA9004806D9 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = ZDKMGAVQQS;
+						DevelopmentTeam = D2H2326459;
 						DevelopmentTeamName = "Adam Bard (Personal Team)";
+						ProvisioningStyle = Automatic;
 					};
 					666C19C01CE65CA9004806D9 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = D2H2326459;
 						DevelopmentTeamName = "Adam Bard (Personal Team)";
+						ProvisioningStyle = Automatic;
 					};
 					66E115F41D3701A1004CD428 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -1195,6 +1195,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1215,7 +1216,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1258,7 +1259,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -1273,14 +1274,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C91DBB379BAE7BD35C068BFD /* Pods-TapstreamIOS.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = D2H2326459;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "tapstream-sdk-ios/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tapstream.TapstreamIOS;
@@ -1293,14 +1296,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B6321C68A2CCB9B536C8707E /* Pods-TapstreamIOS.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = D2H2326459;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "tapstream-sdk-ios/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tapstream.TapstreamIOS;
@@ -1313,6 +1318,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D5635CD2CDB07DA53D55735E /* Pods-TapstreamIOS-TapstreamIOSTests.debug.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = D2H2326459;
 				INFOPLIST_FILE = "tapstream-sdk-ios-tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tapstream.tapstream-sdk-ios-tests";
@@ -1324,6 +1331,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 498A1375C8B2471F144D97F5 /* Pods-TapstreamIOS-TapstreamIOSTests.release.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = D2H2326459;
 				INFOPLIST_FILE = "tapstream-sdk-ios-tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tapstream.tapstream-sdk-ios-tests";

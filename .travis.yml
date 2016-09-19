@@ -1,5 +1,5 @@
 language: objective-c
-xcode_workspace: tapstream-sdk-ios.xcworkspace
-xcode_scheme: ["TapstreamIOS", "TapstreamMac"]
 osx_image: xcode7.3
-before_script: sh add-keys.sh
+
+script:
+  - xctool test -workspace tapstream-sdk-ios.xcworkspace -scheme TapstreamIOS -sdk iphonesimulator CODE_SIGNING_REQUIRED=NO
