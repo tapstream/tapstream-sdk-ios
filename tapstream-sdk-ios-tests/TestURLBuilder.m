@@ -60,14 +60,13 @@ describe(@"URLBuilder", ^{
 			TSRequestData* data = [TSRequestData new];
 			[data appendItemsWithPrefix:@"" keysAndValues:
 			 @"my&item", @"my&value",
-			 @"myitem2", @"myvalue2",
 			 nil];
 
 			NSURL* url = [TSURLBuilder urlWithParameters:@"http://myurl.com/mypath"
 									   globalEventParams:nil
 													data:data, nil];
 			assertThat([url absoluteString],
-					   is(@"http://myurl.com/mypath?my%26item=my%26value&myitem2=myvalue2"));
+					   is(@"http://myurl.com/mypath?my%26item=my%26value"));
 		});
 
 		it(@"correctly renders varargs", ^{
@@ -75,11 +74,11 @@ describe(@"URLBuilder", ^{
 									   globalEventParams:nil
 													data:nil,
 						  @"my&key1", @"my&val1",
-						  @"otherkey", @"otherval",
 						  nil];
 
+
 			assertThat([url absoluteString],
-					   is(@"http://myurl.com/mypath?my%26key1=my%26val1&otherkey=otherval"));
+					   is(@"http://myurl.com/mypath?my%26key1=my%26val1"));
 		});
 	});
 
