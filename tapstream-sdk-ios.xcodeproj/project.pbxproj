@@ -1388,6 +1388,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = D2H2326459;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
@@ -1407,6 +1408,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
