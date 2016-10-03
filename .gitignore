@@ -28,4 +28,8 @@ xcuserdata/
 
 Carthage/Build
 
+## Project-specific
 env/
+package/
+*.pyc
+

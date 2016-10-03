@@ -1,13 +1,7 @@
 import os.path
-import plistlib
+import pystache
+from sdk_version import sdk_version
 from fabric.api import lcd, local, task, execute
-
-
-def sdk_version():
-    with open('./tapstream-sdk-ios/Info.plist') as f:
-        pl = plistlib.readPlist(f)
-        return pl['CFBundleShortVersionString']
-
 
 @task
 def test():
@@ -58,3 +52,14 @@ def package():
         for dir in ios_only_files:
             local('%s %s %s' % (cmd, ios_dest, dir))
 
+
+@task
+def generate_podspecs():
+    v = sdk_version()
+    with open('./TapstreamIOS.podspec.tpl') as infile:
+        with open('./TapstreamIOS.podspec', 'w') as outfile:
+            outfile.write(pystache.render(infile.read(), {'version': v}))
+
+    with open('./TapstreamMac.podspec.tpl') as infile:
+        with open('./TapstreamMac.podspec', 'w') as outfile:
+            outfile.write(pystache.render(infile.read(), {'version': v}))
