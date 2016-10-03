@@ -3,9 +3,6 @@
 #import <Foundation/Foundation.h>
 #import "TSDefaultHttpClient.h"
 
-#if TEST_IOS || TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
-#import "TSSafariViewControllerDelegate.h"
-#endif
 
 
 #ifndef kTSDefaultTimeout
@@ -91,15 +88,4 @@
 
 }
 
-- (BOOL)asyncSafariRequest:(NSURL*)url completion:(void(^)(TSResponse*))completion
-{
-#if TEST_IOS || TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
-	return [TSSafariViewControllerDelegate
-			presentSafariViewControllerWithURLAndCompletion:url
-			completion:completion];
-#else
-	[self request:url completion:completion];
-	return false;
-#endif
-}
 @end

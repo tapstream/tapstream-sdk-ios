@@ -56,30 +56,6 @@ describe(@"IOSStartupDelegate", ^{
 		block_until_queue_completed(queue);
 	});
 
-	it(@"Does not attempt to cookie match if config.attemptCookieMatch is false", ^{
-		OCMStub([platform isFirstRun]).andReturn(true);
-		config.attemptCookieMatch = false;
-
-		OCMReject([fireEventDelegate fireCookieMatch:[OCMArg any] completion:[OCMArg any]]);
-
-		[startupDelegate start];
-		block_until_queue_completed(queue);
-	});
-
-	it(@"Does attempt to cookie match if config.attemptCookieMatch is true", ^{
-		OCMStub([platform isFirstRun]).andReturn(true);
-		TSResponse* response = [TSResponse responseWithStatus:200 message:@"200 OK" data:nil];
-		OCMStub([fireEventDelegate fireCookieMatch:[OCMArg any] completion:([OCMArg invokeBlockWithArgs:response, nil])]);
-
-
-		config.attemptCookieMatch = true;
-
-		[startupDelegate start];
-		block_until_queue_completed(queue);
-
-		OCMVerify([fireEventDelegate fireCookieMatch:[OCMArg any] completion:[OCMArg any]]);
-	});
-
 	it(@"Fires a first-run event called <appname>-ios-install if first run", ^{
 		OCMStub([platform isFirstRun]).andReturn(true);
 		config.attemptCookieMatch = false;

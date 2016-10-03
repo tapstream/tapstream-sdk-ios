@@ -7,7 +7,6 @@
 
 // Protocols
 #import "TSAppEventSource.h"
-#import "TSCookieMatchStrategy.h"
 #import "TSCoreListener.h"
 #import "TSFireEventStrategy.h"
 #import "TSHttpClient.h"
@@ -33,7 +32,6 @@
 #import "TSOfferViewController.h"
 
 #import "TSLanderController.h"
-#import "TSSafariViewControllerDelegate.h"
 #import "TSURLBuilder.h"
 #import "TSURLEncoder.h"
 

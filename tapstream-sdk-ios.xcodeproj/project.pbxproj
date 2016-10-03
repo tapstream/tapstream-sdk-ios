@@ -23,10 +23,6 @@
 		6614D1C11D48228D001C88AB /* TSLanderStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 6614D1B61D48228D001C88AB /* TSLanderStrategy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6614D1C21D48228D001C88AB /* TSLanderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6614D1B71D48228D001C88AB /* TSLanderView.xib */; };
 		6614D1CC1D4822A7001C88AB /* TapstreamIOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 6614D1C41D4822A7001C88AB /* TapstreamIOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6614D1CD1D4822A7001C88AB /* TSCookieMatchStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 6614D1C51D4822A7001C88AB /* TSCookieMatchStrategy.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6614D1CE1D4822A7001C88AB /* TSDefaultCookieMatchStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 6614D1C61D4822A7001C88AB /* TSDefaultCookieMatchStrategy.h */; };
-		6614D1CF1D4822A7001C88AB /* TSSafariViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 6614D1C71D4822A7001C88AB /* TSSafariViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6614D1D01D4822A7001C88AB /* TSSafariViewControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6614D1C81D4822A7001C88AB /* TSSafariViewControllerDelegate.m */; };
 		6614D1D11D4822A7001C88AB /* TSUniversalLinkApiResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 6614D1CA1D4822A7001C88AB /* TSUniversalLinkApiResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6614D1D21D4822A7001C88AB /* TSUniversalLinkApiResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 6614D1CB1D4822A7001C88AB /* TSUniversalLinkApiResponse.m */; };
 		661510191D079D9300B298B7 /* TestEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 661510171D079D6F00B298B7 /* TestEvent.m */; };
@@ -78,7 +74,6 @@
 		66C311541D36DCD60029ECE9 /* TSCoreListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 6623D2741D136D3A00B72EA5 /* TSCoreListener.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66C311551D36DCD60029ECE9 /* TSDefaultAppEventSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 6623D2751D136D3A00B72EA5 /* TSDefaultAppEventSource.h */; };
 		66C311561D36DCD60029ECE9 /* TSDefaultAppEventSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6623D2761D136D3A00B72EA5 /* TSDefaultAppEventSource.m */; };
-		66C311581D36DCD60029ECE9 /* TSDefaultCookieMatchStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6623D2781D136D3A00B72EA5 /* TSDefaultCookieMatchStrategy.m */; };
 		66C311591D36DCD60029ECE9 /* TSDefaultCoreListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 6623D2791D136D3A00B72EA5 /* TSDefaultCoreListener.h */; };
 		66C3115A1D36DCD60029ECE9 /* TSDefaultCoreListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 6623D27A1D136D3A00B72EA5 /* TSDefaultCoreListener.m */; };
 		66C3115B1D36DCD60029ECE9 /* TSDefaultFireEventStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 6623D27B1D136D3A00B72EA5 /* TSDefaultFireEventStrategy.h */; };
@@ -95,7 +90,6 @@
 		66C311681D36DCD60029ECE9 /* TSEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6623D2891D136D3A00B72EA5 /* TSEvent.m */; };
 		66C311691D36DCD60029ECE9 /* TSFallable.h in Headers */ = {isa = PBXBuildFile; fileRef = 66C53D5C1D18A0D6005A3130 /* TSFallable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66C3116A1D36DCD60029ECE9 /* TSFireEventStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 6623D28A1D136D3A00B72EA5 /* TSFireEventStrategy.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		66C3116B1D36DCD60029ECE9 /* TSHttpClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 6623D28B1D136D3A00B72EA5 /* TSHttpClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66C3116C1D36DCD60029ECE9 /* TSLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 6623D2951D136D3A00B72EA5 /* TSLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66C3116D1D36DCD60029ECE9 /* TSLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 6623D2961D136D3A00B72EA5 /* TSLogging.m */; };
 		66C3116E1D36DCD60029ECE9 /* TSLogLevel.h in Headers */ = {isa = PBXBuildFile; fileRef = 6623D2971D136D3A00B72EA5 /* TSLogLevel.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -129,7 +123,6 @@
 		66C53D701D1B2776005A3130 /* TSDefaultRewardStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C53D6F1D1B2776005A3130 /* TSDefaultRewardStrategy.m */; };
 		66C53D721D1C958F005A3130 /* TestRewardStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C53D711D1C958F005A3130 /* TestRewardStrategy.m */; };
 		66C53D741D1C9BC0005A3130 /* TestOfferStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C53D731D1C9BC0005A3130 /* TestOfferStrategy.m */; };
-		66C75BFB1D00B153009FF078 /* TestCookieMatchStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 665BE69C1CFFA9E200957C8E /* TestCookieMatchStrategy.m */; };
 		66C842B51D249D5500DA04CD /* TestRequestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C842B41D249D5500DA04CD /* TestRequestData.m */; };
 		66D25DC71CEFC469005BC94C /* TestUniversalLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D25DC31CEFC42C005BC94C /* TestUniversalLink.m */; };
 		66DBC9511D06155900759F80 /* TSTestPersistentStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DBC9501D06155900759F80 /* TSTestPersistentStorage.m */; };
@@ -159,7 +152,6 @@
 		66E116181D3701D2004CD428 /* TSEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6623D2891D136D3A00B72EA5 /* TSEvent.m */; };
 		66E116191D3701D2004CD428 /* TSFallable.h in Headers */ = {isa = PBXBuildFile; fileRef = 66C53D5C1D18A0D6005A3130 /* TSFallable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66E1161A1D3701D2004CD428 /* TSFireEventStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 6623D28A1D136D3A00B72EA5 /* TSFireEventStrategy.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		66E1161B1D3701D2004CD428 /* TSHttpClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 6623D28B1D136D3A00B72EA5 /* TSHttpClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66E116251D3701D2004CD428 /* TSLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 6623D2951D136D3A00B72EA5 /* TSLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66E116261D3701D2004CD428 /* TSLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 6623D2961D136D3A00B72EA5 /* TSLogging.m */; };
 		66E116271D3701D2004CD428 /* TSLogLevel.h in Headers */ = {isa = PBXBuildFile; fileRef = 6623D2971D136D3A00B72EA5 /* TSLogLevel.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -176,6 +168,7 @@
 		66E116361D3701D2004CD428 /* TSURLEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 6623D2A61D136D3A00B72EA5 /* TSURLEncoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66E116371D3701D2004CD428 /* TSURLEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6623D2A71D136D3A00B72EA5 /* TSURLEncoder.m */; };
 		66E1163A1D370FC6004CD428 /* TapstreamMac.h in Headers */ = {isa = PBXBuildFile; fileRef = 66E116391D370FC6004CD428 /* TapstreamMac.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66F2F2251DA2DF0D00C744D6 /* TSHttpClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 66F2F2241DA2DF0D00C744D6 /* TSHttpClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66FD8E5D1D39A2D9007405AB /* TapstreamMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66E115F51D3701A1004CD428 /* TapstreamMac.framework */; };
 		66FD8E641D39A305007405AB /* TestFireEventStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BFCF781D0A30D5004AF5EE /* TestFireEventStrategy.m */; };
 		66FD8E691D39A305007405AB /* TestURLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 660498E81D020DB5003DA374 /* TestURLBuilder.m */; };
@@ -229,10 +222,6 @@
 		6614D1B61D48228D001C88AB /* TSLanderStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLanderStrategy.h; sourceTree = "<group>"; };
 		6614D1B71D48228D001C88AB /* TSLanderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSLanderView.xib; sourceTree = "<group>"; };
 		6614D1C41D4822A7001C88AB /* TapstreamIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapstreamIOS.h; sourceTree = "<group>"; };
-		6614D1C51D4822A7001C88AB /* TSCookieMatchStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCookieMatchStrategy.h; sourceTree = "<group>"; };
-		6614D1C61D4822A7001C88AB /* TSDefaultCookieMatchStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSDefaultCookieMatchStrategy.h; sourceTree = "<group>"; };
-		6614D1C71D4822A7001C88AB /* TSSafariViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSSafariViewControllerDelegate.h; sourceTree = "<group>"; };
-		6614D1C81D4822A7001C88AB /* TSSafariViewControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSSafariViewControllerDelegate.m; sourceTree = "<group>"; };
 		6614D1CA1D4822A7001C88AB /* TSUniversalLinkApiResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSUniversalLinkApiResponse.h; sourceTree = "<group>"; };
 		6614D1CB1D4822A7001C88AB /* TSUniversalLinkApiResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSUniversalLinkApiResponse.m; sourceTree = "<group>"; };
 		661510171D079D6F00B298B7 /* TestEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestEvent.m; sourceTree = "<group>"; };
@@ -257,7 +246,6 @@
 		6623D2741D136D3A00B72EA5 /* TSCoreListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCoreListener.h; sourceTree = "<group>"; };
 		6623D2751D136D3A00B72EA5 /* TSDefaultAppEventSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSDefaultAppEventSource.h; sourceTree = "<group>"; };
 		6623D2761D136D3A00B72EA5 /* TSDefaultAppEventSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSDefaultAppEventSource.m; sourceTree = "<group>"; };
-		6623D2781D136D3A00B72EA5 /* TSDefaultCookieMatchStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TSDefaultCookieMatchStrategy.m; path = ../TSDefaultCookieMatchStrategy.m; sourceTree = "<group>"; };
 		6623D2791D136D3A00B72EA5 /* TSDefaultCoreListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSDefaultCoreListener.h; sourceTree = "<group>"; };
 		6623D27A1D136D3A00B72EA5 /* TSDefaultCoreListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSDefaultCoreListener.m; sourceTree = "<group>"; };
 		6623D27B1D136D3A00B72EA5 /* TSDefaultFireEventStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSDefaultFireEventStrategy.h; sourceTree = "<group>"; };
@@ -273,7 +261,6 @@
 		6623D2881D136D3A00B72EA5 /* TSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSEvent.h; sourceTree = "<group>"; };
 		6623D2891D136D3A00B72EA5 /* TSEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSEvent.m; sourceTree = "<group>"; };
 		6623D28A1D136D3A00B72EA5 /* TSFireEventStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSFireEventStrategy.h; sourceTree = "<group>"; };
-		6623D28B1D136D3A00B72EA5 /* TSHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSHttpClient.h; sourceTree = "<group>"; };
 		6623D2951D136D3A00B72EA5 /* TSLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLogging.h; sourceTree = "<group>"; };
 		6623D2961D136D3A00B72EA5 /* TSLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLogging.m; sourceTree = "<group>"; };
 		6623D2971D136D3A00B72EA5 /* TSLogLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLogLevel.h; sourceTree = "<group>"; };
@@ -291,7 +278,6 @@
 		6623D2A71D136D3A00B72EA5 /* TSURLEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSURLEncoder.m; sourceTree = "<group>"; };
 		6623D2A81D136D3A00B72EA5 /* TSWordOfMouthDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSWordOfMouthDelegate.h; sourceTree = "<group>"; };
 		66519FE81D2B42D30002E7E7 /* TestURLEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestURLEncoder.m; sourceTree = "<group>"; };
-		665BE69C1CFFA9E200957C8E /* TestCookieMatchStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCookieMatchStrategy.m; sourceTree = "<group>"; };
 		666C19B71CE65CA9004806D9 /* TapstreamIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TapstreamIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		666C19BC1CE65CA9004806D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		666C19C11CE65CA9004806D9 /* TapstreamIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TapstreamIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -339,6 +325,7 @@
 		66DBC9541D061EAB00759F80 /* TestLander.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestLander.m; sourceTree = "<group>"; };
 		66E115F51D3701A1004CD428 /* TapstreamMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TapstreamMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66E116391D370FC6004CD428 /* TapstreamMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapstreamMac.h; sourceTree = "<group>"; };
+		66F2F2241DA2DF0D00C744D6 /* TSHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSHttpClient.h; sourceTree = "<group>"; };
 		66FD8E581D39A2D8007405AB /* TapstreamMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TapstreamMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD87321B0FD8CFC078C03A1 /* Pods-TapstreamMac-TapstreamMacTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TapstreamMac-TapstreamMacTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TapstreamMac-TapstreamMacTests/Pods-TapstreamMac-TapstreamMacTests.release.xcconfig"; sourceTree = "<group>"; };
 		B6321C68A2CCB9B536C8707E /* Pods-TapstreamIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TapstreamIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-TapstreamIOS/Pods-TapstreamIOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -410,11 +397,6 @@
 			isa = PBXGroup;
 			children = (
 				6614D1C41D4822A7001C88AB /* TapstreamIOS.h */,
-				6614D1C51D4822A7001C88AB /* TSCookieMatchStrategy.h */,
-				6614D1C61D4822A7001C88AB /* TSDefaultCookieMatchStrategy.h */,
-				6623D2781D136D3A00B72EA5 /* TSDefaultCookieMatchStrategy.m */,
-				6614D1C71D4822A7001C88AB /* TSSafariViewControllerDelegate.h */,
-				6614D1C81D4822A7001C88AB /* TSSafariViewControllerDelegate.m */,
 				66837F461D5BDEDC00D01591 /* TSIOSStartupDelegate.h */,
 				66837F481D5BDF1000D01591 /* TSIOSStartupDelegate.m */,
 				66837F4B1D5BE77300D01591 /* TSIOSFireEventDelegate.h */,
@@ -494,7 +476,7 @@
 				66837F4A1D5BE74000D01591 /* TSFireEventDelegate.h */,
 				662077C51D64D2EE00355F81 /* TSFireEventDelegate.m */,
 				6623D28A1D136D3A00B72EA5 /* TSFireEventStrategy.h */,
-				6623D28B1D136D3A00B72EA5 /* TSHttpClient.h */,
+				66F2F2241DA2DF0D00C744D6 /* TSHttpClient.h */,
 				6623D2951D136D3A00B72EA5 /* TSLogging.h */,
 				6623D2961D136D3A00B72EA5 /* TSLogging.m */,
 				6623D2971D136D3A00B72EA5 /* TSLogLevel.h */,
@@ -572,7 +554,6 @@
 		66FD8E721D39A318007405AB /* ios */ = {
 			isa = PBXGroup;
 			children = (
-				665BE69C1CFFA9E200957C8E /* TestCookieMatchStrategy.m */,
 				662077B61D63ECD100355F81 /* TestIOSStartupDelegate.m */,
 				662077BA1D63F32200355F81 /* TestIOSFireEventDelegate.m */,
 				66DBC9541D061EAB00759F80 /* TestLander.m */,
@@ -641,10 +622,8 @@
 				66C311671D36DCD60029ECE9 /* TSEvent.h in Headers */,
 				66C3114F1D36DCD60029ECE9 /* TSConfig.h in Headers */,
 				66C311511D36DCD60029ECE9 /* TSTimelineApiResponse.h in Headers */,
-				66C3116B1D36DCD60029ECE9 /* TSHttpClient.h in Headers */,
 				6614D1D11D4822A7001C88AB /* TSUniversalLinkApiResponse.h in Headers */,
 				6614D1BC1D48228D001C88AB /* TSLanderController.h in Headers */,
-				6614D1CF1D4822A7001C88AB /* TSSafariViewControllerDelegate.h in Headers */,
 				66C3114E1D36DCD60029ECE9 /* TSAppEventSource.h in Headers */,
 				66837F591D5D040500D01591 /* TSIOSShowLanderDelegate.h in Headers */,
 				66C3116C1D36DCD60029ECE9 /* TSLogging.h in Headers */,
@@ -656,9 +635,9 @@
 				66C3116F1D36DCD60029ECE9 /* TSPersistentStorage.h in Headers */,
 				6614D1CC1D4822A7001C88AB /* TapstreamIOS.h in Headers */,
 				66C3117B1D36DCD60029ECE9 /* TSURLBuilder.h in Headers */,
-				6614D1CD1D4822A7001C88AB /* TSCookieMatchStrategy.h in Headers */,
 				66C3116E1D36DCD60029ECE9 /* TSLogLevel.h in Headers */,
 				66837F561D5C02E300D01591 /* TSDefs.h in Headers */,
+				66F2F2251DA2DF0D00C744D6 /* TSHttpClient.h in Headers */,
 				66C53D6D1D1B268B005A3130 /* TSRewardStrategy.h in Headers */,
 				66C311591D36DCD60029ECE9 /* TSDefaultCoreListener.h in Headers */,
 				66C3115D1D36DCD60029ECE9 /* TSDefaultHttpClient.h in Headers */,
@@ -668,7 +647,6 @@
 				66C311631D36DCD60029ECE9 /* TSDefaultPlatform.h in Headers */,
 				66837F441D5BDE6C00D01591 /* TSStartupDelegate.h in Headers */,
 				66C53D631D18A3A0005A3130 /* TSRewardApiResponse.h in Headers */,
-				6614D1CE1D4822A7001C88AB /* TSDefaultCookieMatchStrategy.h in Headers */,
 				66C3115B1D36DCD60029ECE9 /* TSDefaultFireEventStrategy.h in Headers */,
 				66C53D691D18CDA5005A3130 /* TSDefaultOfferStrategy.h in Headers */,
 				66837F5D1D5D078800D01591 /* TSIOSUniversalLinkDelegate.h in Headers */,
@@ -694,7 +672,6 @@
 				66E1162C1D3701D2004CD428 /* TSResponse.h in Headers */,
 				66E116281D3701D2004CD428 /* TSPersistentStorage.h in Headers */,
 				66E1163A1D370FC6004CD428 /* TapstreamMac.h in Headers */,
-				66E1161B1D3701D2004CD428 /* TSHttpClient.h in Headers */,
 				66E116271D3701D2004CD428 /* TSLogLevel.h in Headers */,
 				66E116291D3701D2004CD428 /* TSPlatform.h in Headers */,
 				66E1161A1D3701D2004CD428 /* TSFireEventStrategy.h in Headers */,
@@ -1047,7 +1024,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6614D1D01D4822A7001C88AB /* TSSafariViewControllerDelegate.m in Sources */,
 				66C311561D36DCD60029ECE9 /* TSDefaultAppEventSource.m in Sources */,
 				66C53D571D189F88005A3130 /* TSOfferViewController.m in Sources */,
 				66837F5B1D5D044500D01591 /* TSIOSShowLanderDelegate.m in Sources */,
@@ -1056,7 +1032,6 @@
 				66C311781D36DCD60029ECE9 /* TSTapstream.m in Sources */,
 				66C3115C1D36DCD60029ECE9 /* TSDefaultFireEventStrategy.m in Sources */,
 				66837F4E1D5BE7A100D01591 /* TSIOSFireEventDelegate.m in Sources */,
-				66C311581D36DCD60029ECE9 /* TSDefaultCookieMatchStrategy.m in Sources */,
 				662077BD1D63F51300355F81 /* TSStartupDelegate.m in Sources */,
 				66C53D551D189F88005A3130 /* TSOffer.m in Sources */,
 				66837F491D5BDF1000D01591 /* TSIOSStartupDelegate.m in Sources */,
@@ -1103,7 +1078,6 @@
 				662077AD1D63E73E00355F81 /* TestShowLanderDelegate.m in Sources */,
 				662077C31D64D10900355F81 /* TestDefaultStartupDelegate.m in Sources */,
 				66DBC9511D06155900759F80 /* TSTestPersistentStorage.m in Sources */,
-				66C75BFB1D00B153009FF078 /* TestCookieMatchStrategy.m in Sources */,
 				66519FEA1D2B42F30002E7E7 /* TestURLEncoder.m in Sources */,
 				66BFCF791D0A30D5004AF5EE /* TestFireEventStrategy.m in Sources */,
 				66DBC9551D061EAB00759F80 /* TestLander.m in Sources */,

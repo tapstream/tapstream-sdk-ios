@@ -57,7 +57,7 @@
 						  NSURL* simulatedClickUrl = [TSURLBuilder makeSimulatedClickURL:url];
 
 
-						  [self.httpClient asyncSafariRequest:simulatedClickUrl
+						  [self.httpClient request:simulatedClickUrl
 												   completion:^(TSResponse* response){
 
 													   if (response.status >= 200 && response.status < 300){

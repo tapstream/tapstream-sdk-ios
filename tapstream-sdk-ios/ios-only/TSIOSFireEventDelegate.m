@@ -10,7 +10,6 @@
 #import "TSIOSFireEventDelegate.h"
 #import "TSURLBuilder.h"
 #import "TSHttpClient.h"
-#import "TSCookieMatchStrategy.h"
 #import "TSLogging.h"
 #import "TSPlatform.h"
 
@@ -35,11 +34,9 @@
 @property(strong, readwrite) NSString* platformName;
 @property(strong, readwrite) id<TSPlatform> platform;
 @property(strong, readwrite) id<TSFireEventStrategy> fireEventStrategy;
-@property(strong, readwrite) id<TSCookieMatchStrategy> cookieMatchStrategy;
 @property(strong, readwrite) id<TSHttpClient> httpClient;
 
 
-@property(strong, readwrite) dispatch_semaphore_t cookieMatchFired;
 @property(strong, readwrite) TSDefaultFireEventDelegate* defaultFireEventDelegate;
 @end
 
@@ -52,7 +49,6 @@
 										 queue:(dispatch_queue_t)queue
 									  platform:(id<TSPlatform>)platform
 							 fireEventStrategy:(id<TSFireEventStrategy>)fireEventStrategy
-						   cookieMatchStrategy:(id<TSCookieMatchStrategy>)cookieMatchStrategy
 									httpClient:(id<TSHttpClient>)httpClient
 									  listener:(id<TSCoreListener>)listener
 {
@@ -69,7 +65,6 @@
 								  queue:queue
 							   platform:platform
 			fireEventStrategy:fireEventStrategy
-					cookieMatchStrategy:cookieMatchStrategy
 							 httpClient:httpClient
 						defaultDelegate:defaultDelegate
 			];
@@ -79,7 +74,6 @@
 						 queue:(dispatch_queue_t)queue
 					  platform:(id<TSPlatform>)platform
 			 fireEventStrategy:(id<TSFireEventStrategy>)fireEventStrategy
-		   cookieMatchStrategy:(id<TSCookieMatchStrategy>)cookieMatchStrategy
 					httpClient:(id<TSHttpClient>)httpClient
 			   defaultDelegate:(TSDefaultFireEventDelegate*)defaultDelegate
 {
@@ -91,51 +85,12 @@
 		self.platformName = [platform getPlatformName];
 		self.platform = platform;
 		self.fireEventStrategy = fireEventStrategy;
-		self.cookieMatchStrategy = cookieMatchStrategy;
 		self.httpClient = httpClient;
 		self.defaultFireEventDelegate = defaultDelegate;
-		self.cookieMatchFired = dispatch_semaphore_create(0);
 	}
 	return self;
 }
 
-- (BOOL)fireCookieMatch:(NSString*)eventName completion:(void(^)(TSResponse*))completion
-{
-	return [self fireCookieMatch:eventName
-					 requestData:[self.defaultFireEventDelegate requestData]
-					  completion:completion];
-}
-
-
-- (BOOL)fireCookieMatch:(NSString*)eventName
-			requestData:(TSRequestData*)requestData
-			 completion:(void(^)(TSResponse*))completion
-{
-	__unsafe_unretained TSIOSFireEventDelegate* me = self;
-
-	[self.cookieMatchStrategy startCookieMatch];
-	NSURL* url = [TSURLBuilder makeCookieMatchURL:self.config
-										eventName:eventName
-											 data:requestData];
-
-	BOOL firingCookieMatch = [self.httpClient asyncSafariRequest:url completion:^(TSResponse* response){
-		if(me != nil)
-		{
-			[me.cookieMatchStrategy registerCookieMatchFired];
-		}
-		if(completion != nil){
-			if (response == nil){
-				completion([TSResponse responseWithStatus:-1 message:@"Request incomplete" data:nil]);
-			}else if(completion != nil){
-				dispatch_async(me.queue, ^{
-					completion(response);
-				});
-			}
-		}
-	}];
-
-	return firingCookieMatch;
-}
 
 - (void)fireEvent:(TSEvent *)e
 {
@@ -184,17 +139,10 @@
 
 	//TSRequestData* data = [self.requestData requestDataByAppendingItemsFromRequestData:e.postData];
 
-	BOOL firingCookieMatch = self.config.attemptCookieMatch && [self.cookieMatchStrategy shouldFireCookieMatch];
-	if(firingCookieMatch)
-	{
-		firingCookieMatch = [self fireCookieMatch:e.name requestData:e.postData completion:completion];
-	}
+	dispatch_async(self.queue, ^{
+		NSURL* url = [TSURLBuilder makeEventURL:me.config eventName:e.encodedName];
+		[me.httpClient request:url data:e.postData method:@"POST" timeout_ms:kTSDefaultTimeout completion:completion];
+	});
 
-	if (!firingCookieMatch){
-		dispatch_async(self.queue, ^{
-			NSURL* url = [TSURLBuilder makeEventURL:me.config eventName:e.encodedName];
-			[me.httpClient request:url data:e.postData method:@"POST" timeout_ms:kTSDefaultTimeout completion:completion];
-		});
-	}
 }
 @end

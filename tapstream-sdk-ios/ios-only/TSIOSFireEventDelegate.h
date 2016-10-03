@@ -6,7 +6,6 @@
 #import "TSPlatform.h"
 #import "TSHttpClient.h"
 #import "TSConfig.h"
-#import "TSCookieMatchStrategy.h"
 #import "TSFireEventStrategy.h"
 #import "TSCoreListener.h"
 #import "TSLogging.h"
@@ -19,10 +18,8 @@
 										 queue:(dispatch_queue_t)queue
 									  platform:(id<TSPlatform>)platform
 							 fireEventStrategy:(id<TSFireEventStrategy>)fireEventStrategy
-						   cookieMatchStrategy:(id<TSCookieMatchStrategy>)cookieMatchStrategy
 									httpClient:(id<TSHttpClient>)httpClient
 									  listener:(id<TSCoreListener>)listener;
-- (BOOL)fireCookieMatch:(NSString*)eventName completion:(void(^)(TSResponse*))completion;
 @end
 
 #endif /* TSIOSFireEventDelegate_h */

@@ -1,7 +1,6 @@
 //  Copyright © 2016 Tapstream. All rights reserved.
 
 #import "TSDefaultPlatform.h"
-#import "TSSafariViewControllerDelegate.h"
 
 #import <sys/types.h>
 #import <sys/sysctl.h>

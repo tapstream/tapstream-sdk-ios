@@ -8,7 +8,6 @@
 
 
 #import "TSDefaultAppEventSource.h"
-#import "TSDefaultCookieMatchStrategy.h"
 #import "TSDefaultCoreListener.h"
 #import "TSDefaultFireEventStrategy.h"
 #import "TSDefaultHttpClient.h"
@@ -117,7 +116,6 @@ static TSTapstream *instance = nil;
 																   platform:platform
 																   httpClient:httpClient];
 #ifdef TS_IOS_ONLY
-		id<TSCookieMatchStrategy> cookieMatchStrategy = [TSDefaultCookieMatchStrategy cookieMatchStrategyWithStorage:storage];
 		id<TSLanderStrategy> landerStrategy = [TSDefaultLanderStrategy landerStrategyWithStorage:storage];
 		id<TSOfferStrategy> offerStrategy = [TSDefaultOfferStrategy offerStrategyWithStorage:storage];
 		id<TSRewardStrategy> rewardStrategy = [TSDefaultRewardStrategy rewardStrategyWithStorage:storage];
@@ -133,7 +131,6 @@ static TSTapstream *instance = nil;
 													 queue:queue
 													 platform:platform
 													 fireEventStrategy:fireEventStrategy
-													 cookieMatchStrategy:cookieMatchStrategy
 													 httpClient:httpClient
 													 listener:listener];
 

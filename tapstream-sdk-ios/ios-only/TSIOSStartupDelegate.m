@@ -78,18 +78,9 @@
 {
 
 	// Fire install event if first run
-	if([self.platform isFirstRun])
+	if([self.platform isFirstRun] && self.config.fireAutomaticInstallEvent)
 	{
-		BOOL firingCookieMatch = self.config.attemptCookieMatch;
-		if(firingCookieMatch) // cookie match replaces initial install and open events
-		{
-			firingCookieMatch = [self fireInstallCookieMatch];
-		}
-
-		if(!firingCookieMatch && self.config.fireAutomaticInstallEvent)
-		{
-			[self.defaultDelegate fireInstallEvent];
-		}
+		[self.defaultDelegate fireInstallEvent];
 	}
 
 
@@ -119,29 +110,6 @@
 											base64Receipt:base64Receipt]];
 		}];
 	}
-}
-
-
-- (BOOL) fireInstallCookieMatch
-{
-	__unsafe_unretained TSIOSStartupDelegate* me = self;
-	dispatch_semaphore_t cookieMatchFired = dispatch_semaphore_create(0);
-
-	BOOL firingCookieMatch = [self.fireEventDelegate fireCookieMatch:[self.defaultDelegate openEventName] completion:^(TSResponse* response){
-		dispatch_semaphore_signal(cookieMatchFired);
-	}];
-
-	if(firingCookieMatch){
-		// Block queue until cookie match fired or for 10 seconds
-		dispatch_barrier_async(self.queue, ^{
-			dispatch_semaphore_wait(cookieMatchFired,
-									dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 10));
-			[me.platform registerFirstRun];
-			[TSLogging logAtLevel:kTSLoggingInfo format:@"Cookie Match Complete"];
-		});
-	}
-	
-	return firingCookieMatch;
 }
 
 

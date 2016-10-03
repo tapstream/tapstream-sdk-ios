@@ -46,7 +46,6 @@ describe(@"IOSFireEventDelegate", ^{
 	__block TSIOSFireEventDelegate* fireEventDelegate;
 	__block id<TSCoreListener> listener;
 	__block id<TSFireEventStrategy> fireEventStrategy;
-	__block id<TSCookieMatchStrategy> cookieMatchStrategy;
 
 
 	beforeEach(^{
@@ -55,7 +54,6 @@ describe(@"IOSFireEventDelegate", ^{
 		queue = dispatch_queue_create("testq", DISPATCH_QUEUE_SERIAL);
 
 		fireEventStrategy = OCMProtocolMock(@protocol(TSFireEventStrategy));
-		cookieMatchStrategy = OCMProtocolMock(@protocol(TSCookieMatchStrategy));
 
 		httpClient = OCMProtocolMock(@protocol(TSHttpClient));
 		config = [TSConfig configWithAccountName:@"testAccount" sdkSecret:@"sdkSecret"];
@@ -68,7 +66,6 @@ describe(@"IOSFireEventDelegate", ^{
 																			 queue:queue
 																		  platform:platform
 																 fireEventStrategy:fireEventStrategy
-															   cookieMatchStrategy:cookieMatchStrategy
 																		httpClient:httpClient
 																		  listener:listener];
 	});
@@ -88,71 +85,7 @@ describe(@"IOSFireEventDelegate", ^{
 		[fireEventDelegate fireEvent:event];
 		OCMVerify([event prepare:[OCMArg any]]);
 	});
-
-	it(@"Will cookie-match if attemptCookieMatch is true and shouldCookieMatch returns true", ^{
-
-		TSEvent* event = [TSEvent eventWithName:@"myevent" oneTimeOnly:false];
-		TSResponse* response = [TSResponse responseWithStatus:200 message:@"OK" data:nil];
-
-		OCMStub([fireEventStrategy shouldFireEvent:[OCMArg any]]).andReturn(true);
-		OCMStub([cookieMatchStrategy shouldFireCookieMatch]).andReturn(true);
-		OCMStub([httpClient asyncSafariRequest:[OCMArg any] completion:([OCMArg invokeBlockWithArgs:response, nil])]).andReturn(true);
-		config.attemptCookieMatch = true;
-
-		OCMReject([httpClient request:[OCMArg any] data:[OCMArg any] method:@"POST" timeout_ms:10000 completion:[OCMArg any]]);
-
-		fireEventBlocking(fireEventDelegate, event);
-
-		OCMVerify([cookieMatchStrategy startCookieMatch]);
-		OCMVerify([cookieMatchStrategy registerCookieMatchFired]);
-		OCMVerify([fireEventStrategy registerFiringEvent:event]);
-		OCMVerify([fireEventStrategy registerResponse:response forEvent:event]);
-		OCMVerify([httpClient asyncSafariRequest:[OCMArg any] completion:[OCMArg any]]);
-	});
-
-	it(@"Will not cookie-match if attemptCookieMatch is false", ^{
-
-		TSEvent* event = [TSEvent eventWithName:@"myevent" oneTimeOnly:false];
-		TSResponse* response = [TSResponse responseWithStatus:200 message:@"OK" data:nil];
-
-		OCMStub([fireEventStrategy shouldFireEvent:[OCMArg any]]).andReturn(true);
-		OCMStub([cookieMatchStrategy shouldFireCookieMatch]).andReturn(true);
-		OCMStub([httpClient request:[OCMArg any] data:[OCMArg any] method:@"POST" timeout_ms:10000 completion:([OCMArg invokeBlockWithArgs:response, nil])]);
-		config.attemptCookieMatch = false;
-
-		OCMReject([httpClient asyncSafariRequest:[OCMArg any] completion:[OCMArg any]]);
-		OCMReject([cookieMatchStrategy startCookieMatch]);
-		OCMReject([cookieMatchStrategy registerCookieMatchFired]);
-
-		fireEventBlocking(fireEventDelegate, event);
-
-		OCMVerify([fireEventStrategy registerFiringEvent:event]);
-		OCMVerify([fireEventStrategy registerResponse:response forEvent:event]);
-		OCMVerify([httpClient request:[OCMArg any] data:[OCMArg any] method:@"POST" timeout_ms:10000 completion:[OCMArg any]]);
-	});
-
-	it(@"Will not cookie-match if shouldFireCookieMatch returns false", ^{
-
-		TSEvent* event = [TSEvent eventWithName:@"myevent" oneTimeOnly:false];
-		TSResponse* response = [TSResponse responseWithStatus:200 message:@"OK" data:nil];
-
-		OCMStub([fireEventStrategy shouldFireEvent:[OCMArg any]]).andReturn(true);
-		OCMStub([cookieMatchStrategy shouldFireCookieMatch]).andReturn(false);
-		OCMStub([httpClient request:[OCMArg any] data:[OCMArg any] method:@"POST" timeout_ms:10000 completion:([OCMArg invokeBlockWithArgs:response, nil])]);
-		config.attemptCookieMatch = true;
-
-		OCMReject([httpClient asyncSafariRequest:[OCMArg any] completion:[OCMArg any]]);
-		OCMReject([cookieMatchStrategy startCookieMatch]);
-		OCMReject([cookieMatchStrategy registerCookieMatchFired]);
-
-		[fireEventDelegate fireEvent:event];
-		block_until_queue_completed(queue);
-
-		OCMVerify([fireEventStrategy registerFiringEvent:event]);
-		OCMVerify([fireEventStrategy registerResponse:response forEvent:event]);
-		OCMVerify([httpClient request:[OCMArg any] data:[OCMArg any] method:@"POST" timeout_ms:10000 completion:[OCMArg any]]);
-	});
-
+	
 	it(@"Will only retry retryable fire event responses", ^{
 		TSEvent* event = [TSEvent eventWithName:@"myevent" oneTimeOnly:false];
 		TSResponse* errorResponse = [TSResponse responseWithStatus:500 message:@"Error" data:nil];
@@ -162,7 +95,6 @@ describe(@"IOSFireEventDelegate", ^{
 		__block int firedCount = 0;
 
 		OCMStub([fireEventStrategy shouldFireEvent:[OCMArg any]]).andReturn(true);
-		OCMStub([cookieMatchStrategy shouldFireCookieMatch]).andReturn(false);
 		OCMStub([httpClient request:[OCMArg any] data:[OCMArg any] method:@"POST" timeout_ms:10000 completion:[OCMArg any]]).andDo(^(NSInvocation *invocation){
 			[invocation retainArguments];
 			void (^completion)(TSResponse*) = nil;
