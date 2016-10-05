@@ -88,7 +88,7 @@
 
 	if(self.config.fireAutomaticOpenEvent)
 	{
-		__unsafe_unretained TSDefaultStartupDelegate* defaultDelegate = self.defaultDelegate;
+		__unsafe_unretained __block TSDefaultStartupDelegate* defaultDelegate = self.defaultDelegate;
 
 		[defaultDelegate fireOpenEvent];
 

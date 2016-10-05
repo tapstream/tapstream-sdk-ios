@@ -22,22 +22,9 @@
 
 #import "TSIOSStartupDelegate.h"
 #import "TSIOSFireEventDelegate.h"
-#import "TSIOSShowLanderDelegate.h"
 #import "TSIOSUniversalLinkDelegate.h"
 
-// iOS: Include WOM and Lander features
-#import "TSLanderDelegate.h"
-#import "TSLanderController.h"
-#import "TSLanderDelegateWrapper.h"
-#import "TSDefaultLanderStrategy.h"
-#import "TSWordOfMouthDelegate.h"
-#import "TSWordOfMouthController.h"
-
-#import "TSDefaultOfferStrategy.h"
-#import "TSDefaultRewardStrategy.h"
-#import "TSOfferStrategy.h"
-#import "TSRewardStrategy.h"
-#import "TSOfferViewController.h"
+#import "TSShowLanderDelegate.h"
 
 #endif
 
@@ -65,8 +52,8 @@ static TSTapstream *instance = nil;
 
 #ifdef TS_IOS_ONLY
 
-@property(nonatomic, strong) id<TSShowLanderDelegate> showLanderDelegate;
-@property(nonatomic, strong) id<TSUniversalLinkDelegate> universalLinkDelegate;
+@property(nonatomic, strong) id showLanderDelegate;
+@property(nonatomic, strong) id universalLinkDelegate;
 @property(nonatomic) id wordOfMouthController;
 
 #endif
@@ -116,15 +103,6 @@ static TSTapstream *instance = nil;
 																   platform:platform
 																   httpClient:httpClient];
 #ifdef TS_IOS_ONLY
-		id<TSLanderStrategy> landerStrategy = [TSDefaultLanderStrategy landerStrategyWithStorage:storage];
-		id<TSOfferStrategy> offerStrategy = [TSDefaultOfferStrategy offerStrategyWithStorage:storage];
-		id<TSRewardStrategy> rewardStrategy = [TSDefaultRewardStrategy rewardStrategyWithStorage:storage];
-		TSWordOfMouthController* womController = [[TSWordOfMouthController alloc]
-												  initWithConfig:config
-												  platform:platform
-												  offerStrategy:offerStrategy
-												  rewardStrategy:rewardStrategy
-												  httpClient:httpClient];
 
 		TSIOSFireEventDelegate* fireEventDelegate = [TSIOSFireEventDelegate
 													 iosFireEventDelegateWithConfig:config
@@ -135,7 +113,6 @@ static TSTapstream *instance = nil;
 													 listener:listener];
 
 
-
 		TSIOSStartupDelegate* startupDelegate = [TSIOSStartupDelegate
 												 iOSStartupDelegateWithConfig:config
 												 queue:queue
@@ -144,18 +121,59 @@ static TSTapstream *instance = nil;
 												 appEventSource:appEventSource];
 
 
+		// Optional components
 
-		TSIOSShowLanderDelegate* showLanderDelegate = [TSIOSShowLanderDelegate
-													   showLanderDelegateWithConfig:config
-													   platform:platform
-													   landerStrategy:landerStrategy
-													   httpClient:httpClient];
+		// In-App Landers
+		id landerStrategy = nil;
+		id landerStrategyCls = NSClassFromString(@"TSDefaultLanderStrategy");
+		id showLanderDelegateCls = NSClassFromString(@"TSIOSShowLanderDelegate");
+		id<TSShowLanderDelegate> showLanderDelegate = nil;
+
+		if(landerStrategyCls != nil && showLanderDelegateCls != nil)
+		{
+			SEL sel = NSSelectorFromString(@"landerStrategyWithStorage:");
+			IMP imp = [landerStrategyCls methodForSelector:sel];
+			landerStrategy = ((id (*)(id, SEL, id<TSPersistentStorage>))imp)(landerStrategyCls, sel, storage);
+
+			sel = NSSelectorFromString(@"showLanderDelegateWithConfig:platform:landerStrategy:httpClient:");
+			imp = [showLanderDelegateCls methodForSelector:sel];
+
+			showLanderDelegate = ((id (*)(id, SEL, TSConfig*, id<TSPlatform>, id, id<TSHttpClient>))imp)(showLanderDelegateCls, sel, config, platform, landerStrategy, httpClient);
+		}
+
+
+		// Word of Mouth
+		id offerStrategy = nil;
+		id offerStrategyCls = NSClassFromString(@"TSDefaultOfferStrategy");
+		id rewardStrategy = nil;
+		id rewardStrategyCls = NSClassFromString(@"TSDefaultRewardStrategy");
+		id womController = nil;
+		id womControllerCls = NSClassFromString(@"TSWordOfMouthController");
+		if(offerStrategyCls != nil && rewardStrategyCls != nil && womControllerCls != nil)
+		{
+			SEL sel = NSSelectorFromString(@"offerStrategyWithStorage:");
+			IMP imp = [offerStrategyCls methodForSelector:sel];
+			offerStrategy = ((id (*)(id, SEL, id<TSPersistentStorage>))imp)(offerStrategyCls, sel, storage);
+
+			sel = NSSelectorFromString(@"rewardStrategyWithStorage:");
+			imp = [rewardStrategyCls methodForSelector:sel];
+			rewardStrategy = ((id (*)(id, SEL, id<TSPersistentStorage>))imp)(rewardStrategyCls, sel, storage);
+
+			id womControllerTmp = [womControllerCls alloc];
+			sel = NSSelectorFromString(@"initWithConfig:platform:offerStrategy:rewardStrategy:httpClient:");
+			imp = [womControllerTmp methodForSelector:sel];
+			womController = ((id (*)(id, SEL, TSConfig*, id<TSPlatform>, id, id, id<TSHttpClient>))imp)(
+				womControllerTmp, sel, config, platform, offerStrategy, rewardStrategy, httpClient
+			);
+
+		}
+
+
+
 
 		TSIOSUniversalLinkDelegate* universalLinkDelegate = [TSIOSUniversalLinkDelegate
 															 universalLinkDelegateWithConfig:config
 															 httpClient:httpClient];
-
-
 
 		instance = [[TSTapstream alloc] initWithFireEventDelegate:fireEventDelegate
 												  startupDelegate:startupDelegate
@@ -203,7 +221,7 @@ static TSTapstream *instance = nil;
 #ifdef TS_IOS_ONLY
 			 showLanderDelegate:(id<TSShowLanderDelegate>)showLanderDelegate
 		  universalLinkDelegate:(id<TSUniversalLinkDelegate>)universalLinkDelegate
-		  wordOfMouthController:(TSWordOfMouthController*)womController
+		  wordOfMouthController:(id)womController
 #endif
 {
 	if((self = [super init]) != nil)
@@ -262,7 +280,7 @@ static TSTapstream *instance = nil;
 	return [[TSTapstream instance] wordOfMouthController];
 }
 
-- (void)showLanderIfExistsWithDelegate:(id<TSLanderDelegate>)delegate
+- (void)showLanderIfExistsWithDelegate:(id)delegate
 {
 	[self.showLanderDelegate showLanderIfExistsWithDelegate:delegate];
 }

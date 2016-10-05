@@ -12,32 +12,25 @@
 #import "TSHttpClient.h"
 #import "TSPersistentStorage.h"
 #import "TSPlatform.h"
-#import "TSLanderStrategy.h"
 #import "TSApi.h"
 
 // Domain Objects
 #import "TSError.h"
 #import "TSEvent.h"
 #import "TSTimelineApiResponse.h"
-#import "TSOfferApiResponse.h"
-#import "TSRewardApiResponse.h"
+
 #import "TSRequestData.h"
 #import "TSResponse.h"
-#import "TSLander.h"
 #import "TSUniversalLinkApiResponse.h"
 
-#import "TSLanderDelegate.h"
-#import "TSWordOfMouthDelegate.h"
-#import "TSWordOfMouthController.h"
-#import "TSOfferViewController.h"
-
-#import "TSLanderController.h"
 #import "TSURLBuilder.h"
 #import "TSURLEncoder.h"
 
 #import "TSLogging.h"
 #import "TSLogLevel.h"
 #import "TSConfig.h"
+
+#import "TSShowLanderDelegate.h"
 
 
 #endif /* Tapstream_h */

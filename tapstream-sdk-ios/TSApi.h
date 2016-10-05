@@ -8,10 +8,6 @@
 
 #if TEST_IOS || TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
 #import "TSUniversalLinkApiResponse.h"
-#import "TSLanderDelegate.h"
-#import "TSWordOfMouthController.h"
-#import "TSRewardApiResponse.h"
-#import "TSOfferApiResponse.h"
 #endif
 
 
@@ -32,10 +28,10 @@
 #if TEST_IOS || TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
 // In-App Landers -- iOS only
 
-- (void)showLanderIfExistsWithDelegate:(id<TSLanderDelegate>)delegate;
+- (void)showLanderIfExistsWithDelegate:(id)delegate;
 
 // Word of mouth controller
-+ (TSWordOfMouthController*)wordOfMouthController;
++ (id)wordOfMouthController;
 
 
 

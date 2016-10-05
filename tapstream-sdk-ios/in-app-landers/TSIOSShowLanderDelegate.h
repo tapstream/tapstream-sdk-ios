@@ -4,11 +4,7 @@
 #define TSIOSShowLanderDelegate_h
 
 #import "TSLanderStrategy.h"
-
-
-@protocol TSShowLanderDelegate
-- (void)showLanderIfExistsWithDelegate:(id<TSLanderDelegate>)delegate;
-@end
+#import "TSShowLanderDelegate.h"
 
 @interface TSIOSShowLanderDelegate : NSObject<TSShowLanderDelegate>
 + (instancetype) showLanderDelegateWithConfig:(TSConfig*)config
