@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name           = 'TapstreamIOS'
   s.version        = '{{version}}'
-  s.summary        = 'Tapstream marketing analytics.'
+  s.summary        = 'BETA Tapstream marketing analytics SDK for iOS.'
   s.homepage       = 'https://tapstream.com/'
   s.license        = 'MIT'
   s.author         = { 'Michael Zsigmond' => 'support@tapstream.com' }
