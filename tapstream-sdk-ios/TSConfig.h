@@ -35,7 +35,6 @@
 	BOOL fireAutomaticInstallEvent;
 	BOOL fireAutomaticOpenEvent;
 	BOOL fireAutomaticIAPEvents;
-	BOOL attemptCookieMatch;
 	
 	// Unset this if you want to disable the collection of taste data
 	BOOL collectTasteData;
@@ -78,7 +77,6 @@
 @property(nonatomic, assign) BOOL fireAutomaticInstallEvent;
 @property(nonatomic, assign) BOOL fireAutomaticOpenEvent;
 @property(nonatomic, assign) BOOL fireAutomaticIAPEvents;
-@property(nonatomic, assign) BOOL attemptCookieMatch;
 
 @property(nonatomic, assign) BOOL collectTasteData;
 
