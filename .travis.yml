@@ -1,6 +1,5 @@
 language: objective-c
 osx_image:
-  - xcode8
   - xcode7.3
 
 env:
