@@ -30,7 +30,5 @@
 #import "TSLogLevel.h"
 #import "TSConfig.h"
 
-#import "TSShowLanderDelegate.h"
-
 
 #endif /* Tapstream_h */

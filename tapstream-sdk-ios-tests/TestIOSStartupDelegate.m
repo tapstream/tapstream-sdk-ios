@@ -58,7 +58,7 @@ describe(@"IOSStartupDelegate", ^{
 
 	it(@"Fires a first-run event called <appname>-ios-install if first run", ^{
 		OCMStub([platform isFirstRun]).andReturn(true);
-		config.attemptCookieMatch = false;
+
 
 		BOOL (^checkEventName)(id) = ^BOOL(id arg){
 			NSString* eventName = [NSString stringWithFormat:@"%@-testapp-install", [kTSPlatform lowercaseString]];
@@ -74,7 +74,7 @@ describe(@"IOSStartupDelegate", ^{
 	it(@"Fires no install event on startup if not first run", ^{
 		OCMStub([platform isFirstRun]).andReturn(false);
 
-		config.attemptCookieMatch = false;
+
 		BOOL (^checkEventName)(id) = ^BOOL(id arg){
 			NSString* eventName = [NSString stringWithFormat:@"%@-testapp-install", [kTSPlatform lowercaseString]];
 			return [((TSEvent*)arg).name isEqualToString:eventName];
@@ -89,7 +89,7 @@ describe(@"IOSStartupDelegate", ^{
 	it(@"Does not fire a first-run install event if fireAutomaticInstallEvent is false", ^{
 		OCMStub([platform isFirstRun]).andReturn(true);
 
-		config.attemptCookieMatch = false;
+
 		config.fireAutomaticInstallEvent = false;
 
 		BOOL (^checkEventName)(id) = ^BOOL(id arg){
@@ -106,7 +106,6 @@ describe(@"IOSStartupDelegate", ^{
 	it(@"Fires an open event on start", ^{
 		OCMStub([platform isFirstRun]).andReturn(false);
 
-		config.attemptCookieMatch = false;
 
 		BOOL (^checkEventName)(id) = ^BOOL(id arg){
 			NSString* eventName = [NSString stringWithFormat:@"%@-testapp-open", [kTSPlatform lowercaseString]];
@@ -123,7 +122,7 @@ describe(@"IOSStartupDelegate", ^{
 	it(@"Does not fire an open event on start if fireAutomaticOpenEvent is false", ^{
 		OCMStub([platform isFirstRun]).andReturn(false);
 		OCMStub([platform getAppName]).andReturn(@"testapp");
-		config.attemptCookieMatch = false;
+		
 		config.fireAutomaticOpenEvent = false;
 
 		BOOL (^checkEventName)(id) = ^BOOL(id arg){

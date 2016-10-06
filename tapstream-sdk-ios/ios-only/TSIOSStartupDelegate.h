@@ -7,7 +7,7 @@
 #import "TSPlatform.h"
 #import "TSHttpClient.h"
 #import "TSConfig.h"
-#import "TSIOSStartupDelegate.h"
+
 #import "TSAppEventSource.h"
 #import "TSIOSFireEventDelegate.h"
 #import "TSStartupDelegate.h"

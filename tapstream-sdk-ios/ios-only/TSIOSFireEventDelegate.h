@@ -10,7 +10,6 @@
 #import "TSCoreListener.h"
 #import "TSLogging.h"
 #import "TSAppEventSource.h"
-#import "TSIOSFireEventDelegate.h"
 #import "TSFireEventDelegate.h"
 
 @interface TSIOSFireEventDelegate : NSObject<TSFireEventDelegate>
