@@ -1,10 +1,16 @@
+import re
 import os.path
 import pystache
 from sdk_version import sdk_version
-from fabric.api import lcd, local, task, execute
+from fabric.api import lcd, local, task, execute, runs_once
+from fabric.operations import prompt
 
 @task
+@runs_once
 def test():
+    """
+    Use xctool to test both SDKs
+    """
     schemes = {
         'TapstreamIOS': [
             'iphonesimulator9.3'
@@ -22,8 +28,28 @@ def test():
 
 
 @task
+@runs_once
+def set_version(new_version):
+    """
+    Update TSDefs.h (via sed) and the project plist files (via agvtool) to a new version number
+    """
+    assert re.match(r"^3\.[0-9]{1,2}\.[0-9]{1,2}$", new_version)
+    old_version = sdk_version()
+    old_version_re = old_version.replace('.', '\\.')
+    local("sed -i '' -e 's/%s/%s/g' tapstream-sdk-ios/TSDefs.h" % (old_version_re, new_version))
+    local("agvtool new-marketing-version %s" % new_version)
+
+
+@task
+@runs_once
 def package():
+    """
+    Depends on: test, generate_podspecs
+
+    Create ios and mac .zip files in the package directory
+    """
     execute(test)
+    execute(generate_podspecs)
     version = sdk_version()
     cmd = 'zip -D'
     ios_dest = os.path.abspath('./package/tapstream-sdk-ios-%s.zip' % version)
@@ -54,7 +80,11 @@ def package():
 
 
 @task
+@runs_once
 def generate_podspecs():
+    """
+    Use the template files to update the templates with current versions
+    """
     v = sdk_version()
     with open('./TapstreamIOS.podspec.tpl') as infile:
         with open('./TapstreamIOS.podspec', 'w') as outfile:
@@ -63,3 +93,36 @@ def generate_podspecs():
     with open('./TapstreamMac.podspec.tpl') as infile:
         with open('./TapstreamMac.podspec', 'w') as outfile:
             outfile.write(pystache.render(infile.read(), {'version': v}))
+
+
+@task
+@runs_once
+def push_pods():
+    """
+    Depends: generate_podspecs, test
+
+    Push the current revision (and version) to cocoapods
+    """
+    execute(generate_podspecs)
+    execute(test)
+
+    local('pod trunk push TapstreamIOS.podspec')
+    local('pod trunk push TapstreamMac.podspec')
+
+
+@task
+@runs_once
+def release(new_version):
+    execute(test)
+    execute(set_version, new_version)
+    execute(package)
+
+    local('open package')
+
+    prompt("""Now, create two releases on Github: v{v}-ios, and v{v}-macos.
+Then, come back and press enter to continue deployment to cocoapods >
+""".format(v=new_version))
+
+    execute(push_pods)
+
+
