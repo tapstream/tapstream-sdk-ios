@@ -1,10 +1,4 @@
-//
-//  TSWordOfMouth.h
-//  tapstream-sdk-ios
-//
-//  Created by Adam Bard on 2016-10-03.
-//  Copyright © 2016 Adam Bard. All rights reserved.
-//
+//  Copyright © 2016 Tapstream. All rights reserved.
 
 #ifndef TSWordOfMouth_h
 #define TSWordOfMouth_h

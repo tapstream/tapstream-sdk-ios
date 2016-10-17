@@ -13,6 +13,54 @@
 	return [[self alloc] initWithStatus:status message:message data:data];
 }
 
++ (TSMaybeError<NSDictionary*>*)parseJSONResponse:(TSResponse*)response
+{
+
+	if([response failed])
+	{
+		return [TSMaybeError withError:[response error]];
+	}
+
+	if(response.data == nil)
+	{
+		return [TSMaybeError withError:[TSError errorWithCode:kTSInvalidResponse
+													  message:@"Api response was nil."]];
+	}
+
+	// Double-check the data for an empty array
+	NSString *jsonString = [[NSString alloc] initWithData:response.data encoding:NSUTF8StringEncoding];
+	NSError *error = nil;
+	NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"^\\s*\\[\\s*\\]\\s*$" options:0 error:&error];
+
+	unsigned long numMatches = [regex numberOfMatchesInString:jsonString options:NSMatchingAnchored range:NSMakeRange(0, [jsonString length])];
+
+	if(error != nil)
+	{
+		return [TSMaybeError withError:error];
+	}
+
+	if(numMatches != 0)
+	{
+		return [TSMaybeError withError:[TSError errorWithCode:kTSInvalidResponse
+														  message:@"Api response was empty."]];
+	}
+
+	NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:response.data
+															 options:kNilOptions
+															   error:&error];
+	if(error != nil)
+	{
+		return [TSMaybeError withError:error];
+	}
+	if(!jsonDict)
+	{
+		return [TSMaybeError withError:[TSError errorWithCode:kTSInvalidResponse
+														  message:@"Api response was empty."]];
+	}
+
+	return [TSMaybeError withObject:jsonDict];
+}
+
 - (instancetype)initWithStatus:(int)statusVal message:(NSString *)messageVal data:(NSData *)dataVal
 {
 	if((self = [super init]) != nil)

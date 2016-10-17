@@ -4,9 +4,11 @@
 #define TSTimelineLookupDelegate_h
 
 #import "TSTimelineApiResponse.h"
+#import "TSTimelineSummaryResponse.h"
 
 @protocol TSTimelineLookupDelegate
 - (void)lookupTimeline:(void(^)(TSTimelineApiResponse*))completion;
+- (void)getTimelineSummary:(void(^)(TSTimelineSummaryResponse*))completion;
 @end
 
 @interface TSDefaultTimelineLookupDelegate : NSObject<TSTimelineLookupDelegate>

@@ -3,6 +3,7 @@
 #pragma once
 #import <Foundation/Foundation.h>
 #import "TSFallable.h"
+#import "TSMaybeError.h"
 
 @interface TSResponse : NSObject<TSFallable> {
 @private
@@ -16,6 +17,7 @@
 @property(nonatomic, retain, readonly) NSData *data;
 
 + (instancetype)responseWithStatus:(int)status message:(NSString *)message data:(NSData *)data;
++ (TSMaybeError<NSDictionary*>*)parseJSONResponse:(TSResponse*)response;
 
 - (bool)retryable;
 - (bool)succeeded;

@@ -177,6 +177,16 @@
 		66E116361D3701D2004CD428 /* TSURLEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 6623D2A61D136D3A00B72EA5 /* TSURLEncoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66E116371D3701D2004CD428 /* TSURLEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6623D2A71D136D3A00B72EA5 /* TSURLEncoder.m */; };
 		66E1163A1D370FC6004CD428 /* TapstreamMac.h in Headers */ = {isa = PBXBuildFile; fileRef = 66E116391D370FC6004CD428 /* TapstreamMac.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66EA910C1DB02A1100D4D8D5 /* TSTimelineSummaryResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 66EA910B1DB02A1100D4D8D5 /* TSTimelineSummaryResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66EA910D1DB02A1100D4D8D5 /* TSTimelineSummaryResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 66EA910B1DB02A1100D4D8D5 /* TSTimelineSummaryResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66EA910F1DB02A9D00D4D8D5 /* TSTimelineSummaryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EA910E1DB02A9D00D4D8D5 /* TSTimelineSummaryResponse.m */; };
+		66EA91101DB02A9D00D4D8D5 /* TSTimelineSummaryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EA910E1DB02A9D00D4D8D5 /* TSTimelineSummaryResponse.m */; };
+		66EA91121DB02DA100D4D8D5 /* TSMaybeError.h in Headers */ = {isa = PBXBuildFile; fileRef = 66EA91111DB02DA100D4D8D5 /* TSMaybeError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66EA91131DB02DA100D4D8D5 /* TSMaybeError.h in Headers */ = {isa = PBXBuildFile; fileRef = 66EA91111DB02DA100D4D8D5 /* TSMaybeError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66EA91151DB02E4600D4D8D5 /* TSMaybeError.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EA91141DB02E4600D4D8D5 /* TSMaybeError.m */; };
+		66EA91161DB02E4600D4D8D5 /* TSMaybeError.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EA91141DB02E4600D4D8D5 /* TSMaybeError.m */; };
+		66EA911A1DB0333B00D4D8D5 /* TestDeeplinkApiResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EA91171DB032F800D4D8D5 /* TestDeeplinkApiResponse.m */; };
+		66EA911B1DB0333C00D4D8D5 /* TestDeeplinkApiResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EA91171DB032F800D4D8D5 /* TestDeeplinkApiResponse.m */; };
 		66F2F2251DA2DF0D00C744D6 /* TSHttpClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 66F2F2241DA2DF0D00C744D6 /* TSHttpClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66FD8E5D1D39A2D9007405AB /* TapstreamMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66E115F51D3701A1004CD428 /* TapstreamMac.framework */; };
 		66FD8E641D39A305007405AB /* TestFireEventStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BFCF781D0A30D5004AF5EE /* TestFireEventStrategy.m */; };
@@ -346,6 +356,11 @@
 		66DBC9541D061EAB00759F80 /* TestLander.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestLander.m; sourceTree = "<group>"; };
 		66E115F51D3701A1004CD428 /* TapstreamMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TapstreamMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66E116391D370FC6004CD428 /* TapstreamMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapstreamMac.h; sourceTree = "<group>"; };
+		66EA910B1DB02A1100D4D8D5 /* TSTimelineSummaryResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTimelineSummaryResponse.h; sourceTree = "<group>"; };
+		66EA910E1DB02A9D00D4D8D5 /* TSTimelineSummaryResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTimelineSummaryResponse.m; sourceTree = "<group>"; };
+		66EA91111DB02DA100D4D8D5 /* TSMaybeError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSMaybeError.h; sourceTree = "<group>"; };
+		66EA91141DB02E4600D4D8D5 /* TSMaybeError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSMaybeError.m; sourceTree = "<group>"; };
+		66EA91171DB032F800D4D8D5 /* TestDeeplinkApiResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDeeplinkApiResponse.m; sourceTree = "<group>"; };
 		66F2F2241DA2DF0D00C744D6 /* TSHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSHttpClient.h; sourceTree = "<group>"; };
 		66FD8E581D39A2D8007405AB /* TapstreamMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TapstreamMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD87321B0FD8CFC078C03A1 /* Pods-TapstreamMac-TapstreamMacTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TapstreamMac-TapstreamMacTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TapstreamMac-TapstreamMacTests/Pods-TapstreamMac-TapstreamMacTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -420,7 +435,14 @@
 		6614D1C31D4822A7001C88AB /* ios-only */ = {
 			isa = PBXGroup;
 			children = (
-				6624C0EA1DA6E05C00FF5AAC /* ios-only */,
+				6624C0EB1DA6E05C00FF5AAC /* TapstreamIOS.h */,
+				6624C0EC1DA6E05C00FF5AAC /* TSIOSFireEventDelegate.h */,
+				6624C0ED1DA6E05C00FF5AAC /* TSIOSFireEventDelegate.m */,
+				6624C0EE1DA6E05C00FF5AAC /* TSIOSStartupDelegate.h */,
+				6624C0EF1DA6E05C00FF5AAC /* TSIOSStartupDelegate.m */,
+				6624C0F01DA6E05C00FF5AAC /* TSIOSUniversalLinkDelegate.h */,
+				6624C0F11DA6E05C00FF5AAC /* TSIOSUniversalLinkDelegate.m */,
+				6624C0F21DA6E05C00FF5AAC /* TSShowLanderDelegate.h */,
 				6624C0F31DA6E05C00FF5AAC /* TSUniversalLinkApiResponse.h */,
 				6624C0F41DA6E05C00FF5AAC /* TSUniversalLinkApiResponse.m */,
 				6614D1C41D4822A7001C88AB /* TapstreamIOS.h */,
@@ -433,21 +455,6 @@
 				6624C0611DA3214500FF5AAC /* TSShowLanderDelegate.h */,
 			);
 			path = "ios-only";
-			sourceTree = "<group>";
-		};
-		6624C0EA1DA6E05C00FF5AAC /* ios-only */ = {
-			isa = PBXGroup;
-			children = (
-				6624C0EB1DA6E05C00FF5AAC /* TapstreamIOS.h */,
-				6624C0EC1DA6E05C00FF5AAC /* TSIOSFireEventDelegate.h */,
-				6624C0ED1DA6E05C00FF5AAC /* TSIOSFireEventDelegate.m */,
-				6624C0EE1DA6E05C00FF5AAC /* TSIOSStartupDelegate.h */,
-				6624C0EF1DA6E05C00FF5AAC /* TSIOSStartupDelegate.m */,
-				6624C0F01DA6E05C00FF5AAC /* TSIOSUniversalLinkDelegate.h */,
-				6624C0F11DA6E05C00FF5AAC /* TSIOSUniversalLinkDelegate.m */,
-				6624C0F21DA6E05C00FF5AAC /* TSShowLanderDelegate.h */,
-			);
-			name = "ios-only";
 			sourceTree = "<group>";
 		};
 		666C19AD1CE65CA9004806D9 = {
@@ -486,6 +493,8 @@
 				6623D2711D136D3A00B72EA5 /* TSTimelineApiResponse.h */,
 				6623D2721D136D3A00B72EA5 /* TSTimelineApiResponse.m */,
 				6623D2741D136D3A00B72EA5 /* TSCoreListener.h */,
+				66EA910B1DB02A1100D4D8D5 /* TSTimelineSummaryResponse.h */,
+				66EA910E1DB02A9D00D4D8D5 /* TSTimelineSummaryResponse.m */,
 				6623D2751D136D3A00B72EA5 /* TSDefaultAppEventSource.h */,
 				6623D2761D136D3A00B72EA5 /* TSDefaultAppEventSource.m */,
 				6623D2791D136D3A00B72EA5 /* TSDefaultCoreListener.h */,
@@ -511,6 +520,8 @@
 				6623D2951D136D3A00B72EA5 /* TSLogging.h */,
 				6623D2961D136D3A00B72EA5 /* TSLogging.m */,
 				6623D2971D136D3A00B72EA5 /* TSLogLevel.h */,
+				66EA91111DB02DA100D4D8D5 /* TSMaybeError.h */,
+				66EA91141DB02E4600D4D8D5 /* TSMaybeError.m */,
 				6623D2981D136D3A00B72EA5 /* TSPersistentStorage.h */,
 				6623D2991D136D3A00B72EA5 /* TSPlatform.h */,
 				6623D29A1D136D3A00B72EA5 /* TSRequestData.h */,
@@ -539,6 +550,7 @@
 				66FD8E721D39A318007405AB /* ios */,
 				666C19C81CE65CA9004806D9 /* Info.plist */,
 				66207A991D0B7547001DB3B5 /* TestConversionQueryResponse.m */,
+				66EA91171DB032F800D4D8D5 /* TestDeeplinkApiResponse.m */,
 				662077BF1D64020100355F81 /* TestDefaultStartupDelegate.m */,
 				661510171D079D6F00B298B7 /* TestEvent.m */,
 				662077C81D64E79200355F81 /* TestFireEventDelegate.m */,
@@ -639,6 +651,7 @@
 			files = (
 				6624C0E31DA58E5000FF5AAC /* TSLanderDelegate.h in Headers */,
 				66837F4C1D5BE77300D01591 /* TSIOSFireEventDelegate.h in Headers */,
+				66EA910C1DB02A1100D4D8D5 /* TSTimelineSummaryResponse.h in Headers */,
 				66C311611D36DCD60029ECE9 /* TSDefaultPersistentStorage.h in Headers */,
 				66837F471D5BDEDC00D01591 /* TSIOSStartupDelegate.h in Headers */,
 				6624C0F81DA6E05C00FF5AAC /* TSIOSStartupDelegate.h in Headers */,
@@ -647,6 +660,7 @@
 				66837F501D5C01AB00D01591 /* TSTimelineLookupDelegate.h in Headers */,
 				66C311711D36DCD60029ECE9 /* TSRequestData.h in Headers */,
 				6624C0FD1DA6E05C00FF5AAC /* TSUniversalLinkApiResponse.h in Headers */,
+				66EA91121DB02DA100D4D8D5 /* TSMaybeError.h in Headers */,
 				6624C0CE1DA3268900FF5AAC /* TSReward.h in Headers */,
 				6624C0D01DA3268900FF5AAC /* TSRewardApiResponse.h in Headers */,
 				66C311541D36DCD60029ECE9 /* TSCoreListener.h in Headers */,
@@ -708,10 +722,12 @@
 				66E115FD1D3701D2004CD428 /* TSApi.h in Headers */,
 				669256E91DA6EEE900946429 /* TSResponse.h in Headers */,
 				66E116191D3701D2004CD428 /* TSFallable.h in Headers */,
+				66EA910D1DB02A1100D4D8D5 /* TSTimelineSummaryResponse.h in Headers */,
 				66E1162A1D3701D2004CD428 /* TSRequestData.h in Headers */,
 				66E116011D3701D2004CD428 /* TSTimelineApiResponse.h in Headers */,
 				66E116171D3701D2004CD428 /* TSEvent.h in Headers */,
 				66E116281D3701D2004CD428 /* TSPersistentStorage.h in Headers */,
+				66EA91131DB02DA100D4D8D5 /* TSMaybeError.h in Headers */,
 				66E1163A1D370FC6004CD428 /* TapstreamMac.h in Headers */,
 				66E116271D3701D2004CD428 /* TSLogLevel.h in Headers */,
 				66E116291D3701D2004CD428 /* TSPlatform.h in Headers */,
@@ -1082,6 +1098,7 @@
 				6624C0DE1DA58E5000FF5AAC /* TSIOSShowLanderDelegate.m in Sources */,
 				66837F491D5BDF1000D01591 /* TSIOSStartupDelegate.m in Sources */,
 				669256E31DA6E71000946429 /* TSIOSUniversalLinkDelegate.m in Sources */,
+				66EA910F1DB02A9D00D4D8D5 /* TSTimelineSummaryResponse.m in Sources */,
 				6624C0E01DA58E5000FF5AAC /* TSLander.m in Sources */,
 				6624C0E21DA58E5000FF5AAC /* TSLanderController.m in Sources */,
 				6624C0E51DA58E5000FF5AAC /* TSLanderDelegateWrapper.m in Sources */,
@@ -1090,6 +1107,7 @@
 				6624C0C91DA3268900FF5AAC /* TSOfferApiResponse.m in Sources */,
 				6624C0CD1DA3268900FF5AAC /* TSOfferViewController.m in Sources */,
 				66C311721D36DCD60029ECE9 /* TSRequestData.m in Sources */,
+				66EA91151DB02E4600D4D8D5 /* TSMaybeError.m in Sources */,
 				66C311741D36DCD60029ECE9 /* TSResponse.m in Sources */,
 				6624C0CF1DA3268900FF5AAC /* TSReward.m in Sources */,
 				6624C0D11DA3268900FF5AAC /* TSRewardApiResponse.m in Sources */,
@@ -1117,6 +1135,7 @@
 				669256E71DA6EA6E00946429 /* TestWordOfMouthController.m in Sources */,
 				660498E91D020DB5003DA374 /* TestURLBuilder.m in Sources */,
 				6624C08A1DA3251500FF5AAC /* TestIOSStartupDelegate.m in Sources */,
+				66EA911A1DB0333B00D4D8D5 /* TestDeeplinkApiResponse.m in Sources */,
 				6624C0A41DA3258F00FF5AAC /* TestOfferStrategy.m in Sources */,
 				6624C0D81DA58E4400FF5AAC /* TestLanderStrategy.m in Sources */,
 				662077C31D64D10900355F81 /* TestDefaultStartupDelegate.m in Sources */,
@@ -1139,12 +1158,14 @@
 			files = (
 				66E116061D3701D2004CD428 /* TSDefaultAppEventSource.m in Sources */,
 				66837F541D5C020500D01591 /* TSTimelineLookupDelegate.m in Sources */,
+				66EA91101DB02A9D00D4D8D5 /* TSTimelineSummaryResponse.m in Sources */,
 				66E1162D1D3701D2004CD428 /* TSResponse.m in Sources */,
 				66E116181D3701D2004CD428 /* TSEvent.m in Sources */,
 				66E1162B1D3701D2004CD428 /* TSRequestData.m in Sources */,
 				66E116161D3701D2004CD428 /* TSError.m in Sources */,
 				66E116261D3701D2004CD428 /* TSLogging.m in Sources */,
 				66E116371D3701D2004CD428 /* TSURLEncoder.m in Sources */,
+				66EA91161DB02E4600D4D8D5 /* TSMaybeError.m in Sources */,
 				66E116001D3701D2004CD428 /* TSConfig.m in Sources */,
 				662077BE1D63F51300355F81 /* TSStartupDelegate.m in Sources */,
 				66E116141D3701D2004CD428 /* TSDefaultPlatform.m in Sources */,
@@ -1172,6 +1193,7 @@
 				66FD8E691D39A305007405AB /* TestURLBuilder.m in Sources */,
 				66FD8E641D39A305007405AB /* TestFireEventStrategy.m in Sources */,
 				662077B91D63ECDA00355F81 /* TSTestUtils.m in Sources */,
+				66EA911B1DB0333C00D4D8D5 /* TestDeeplinkApiResponse.m in Sources */,
 				66FD8E6F1D39A305007405AB /* TestRequestData.m in Sources */,
 				662077B81D63ECD600355F81 /* TestTimelineLookupDelegate.m in Sources */,
 			);

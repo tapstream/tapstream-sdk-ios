@@ -12,6 +12,7 @@
 + (NSURL*) urlWithParameters:(NSString*)baseUrl globalEventParams:(NSDictionary*)params data:(TSRequestData*)data, ... NS_REQUIRES_NIL_TERMINATION;
 + (NSURL*)makeEventURL:(TSConfig*)config eventName:(NSString*)eventName;
 + (NSURL*)makeConversionURL:(TSConfig*)config sessionId:(NSString*)sessionId;
++ (NSURL*)makeTimelineSummaryURL:(TSConfig*)config sessionId:(NSString*)sessionId;
 + (NSURL*)makeLanderURL:(TSConfig*)config sessionId:(NSString*)sessionId;
 + (NSURL*)makeCookieMatchURL:(TSConfig*)config eventName:(NSString*)eventName data:(TSRequestData*)data;
 + (NSURL*)makeDeeplinkQueryURL:(TSConfig*)config forURL:(NSString*)url;

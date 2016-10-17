@@ -58,6 +58,22 @@
 		[self lookupTimeline:[completion copy] tries:3 timeout_ms:kTSDefaultTimeout];
 	});
 }
+- (void)getTimelineSummary:(void(^)(TSTimelineSummaryResponse*))completion
+{
+	NSURL* url = [TSURLBuilder makeTimelineSummaryURL:self.config sessionId:[self.platform getSessionId]];
+	[self.httpClient request:url data:nil method:@"GET" timeout_ms:kTSDefaultTimeout tries:3 completion:^(TSResponse* response){
+		if([response failed] && ![response retryable])
+		{
+			[TSLogging logAtLevel:kTSLoggingError format:@"Tapstream Error: 4XX while getting conversion data"];
+		}
+
+		// Run completion on the main thread
+		dispatch_async(dispatch_get_main_queue(), ^{
+			completion([TSTimelineSummaryResponse timelineSummaryResponseWithResponse:response]);
+		});
+
+	}];
+}
 
 - (void)lookupTimeline:(void(^)(TSTimelineApiResponse *))completion tries:(int)tries timeout_ms:(int)timeout_ms
 {

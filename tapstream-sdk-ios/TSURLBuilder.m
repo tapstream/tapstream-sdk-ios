@@ -10,7 +10,8 @@
 #define kTSHitUrlTemplate @"https://api.tapstream.com/%@/hit/%@.gif"
 #define kTSDeeplinkQueryUrlTemplate @"https://api.tapstream.com/%@/deeplink_query/"
 #define kTSLanderUrlTemplate @"https://reporting.tapstream.com/v1/in_app_landers/display/?secret=%@&event_session=%@"
-#define kTSConversionUrlTemplate @"https://reporting.tapstream.com/v1/timelines/lookup"
+#define kTSConversionUrlTemplate @"https://reporting.tapstream.com/v1/timelines/lookup/"
+#define kTSTimelineSummaryUrlTemplate @"https://reporting.tapstream.com/v1/timelines/summary/"
 #define kTSOfferUrlTemplate @"https://app.tapstream.com/api/v1/word-of-mouth/offers/"
 #define kTSRewardUrlTemplate @"https://app.tapstream.com/api/v1/word-of-mouth/rewards/"
 
@@ -61,6 +62,17 @@
 							  data:nil,
 			@"secret", [config sdkSecret],
 			@"event_session", sessionId,
+			@"blocking", @"true",
+			nil];
+}
++ (NSURL*)makeTimelineSummaryURL:(TSConfig*)config sessionId:(NSString*)sessionId
+{
+	return [self urlWithParameters:kTSTimelineSummaryUrlTemplate
+				 globalEventParams:nil
+							  data:nil,
+			@"secret", [config sdkSecret],
+			@"event_session", sessionId,
+			@"blocking", @"true",
 			nil];
 }
 

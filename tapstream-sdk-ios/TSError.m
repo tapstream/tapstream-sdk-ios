@@ -23,6 +23,10 @@
 
 +(NSString*)messageForError:(NSError*)error
 {
+	NSString* message = [[error userInfo] objectForKey:@"NSDebugDescription"];
+	if(message != nil){
+		return message;
+	}
 	return [[error userInfo] objectForKey:@"message"];
 }
 

@@ -259,6 +259,11 @@ static TSTapstream *instance = nil;
 	[self.timelineLookupDelegate lookupTimeline:completion];
 }
 
+- (void)getTimelineSummary:(void(^)(TSTimelineSummaryResponse*))completion
+{
+	[self.timelineLookupDelegate getTimelineSummary:completion];
+}
+
 
 // IOS-only features
 

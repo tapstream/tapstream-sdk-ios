@@ -13,6 +13,7 @@
 
 #import "TSCoreListener.h"
 #import "TSTimelineApiResponse.h"
+#import "TSTimelineSummaryResponse.h"
 
 @protocol TSApi<NSObject>
 
@@ -23,6 +24,7 @@
 // Onboarding Links
 
 - (void)lookupTimeline:(void(^)(TSTimelineApiResponse*))completion;
+- (void)getTimelineSummary:(void(^)(TSTimelineSummaryResponse*))completion;
 
 
 #if TEST_IOS || TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR

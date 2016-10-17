@@ -13,51 +13,14 @@
 @synthesize error;
 + (instancetype)timelineApiResponseWithResponse:(TSResponse*)response
 {
-
-
-	if([response failed])
+	TSMaybeError<NSDictionary*>* result = [TSResponse parseJSONResponse:response];
+	if([result failed])
 	{
-		return [[self alloc] initWithError:[response error]];
-	}
-	
-	if(response.data == nil)
-	{
-		return [[self alloc] initWithError:[TSError errorWithCode:kTSInvalidResponse
-														  message:@"Timeline api response was nil."]];
+		return [[self alloc] initWithError:[result error]];
 	}
 
-	// Double-check the data for an empty array
-	NSString *jsonString = [[NSString alloc] initWithData:response.data encoding:NSUTF8StringEncoding];
-	NSError *error = nil;
-	NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"^\\s*\\[\\s*\\]\\s*$" options:0 error:&error];
+	NSDictionary* jsonDict = [result get];
 
-	unsigned long numMatches = [regex numberOfMatchesInString:jsonString options:NSMatchingAnchored range:NSMakeRange(0, [jsonString length])];
-	
-	if(error != nil)
-	{
-		return [[self alloc] initWithError:error];
-	}
-
-	if(numMatches != 0)
-	{
-		return [[self alloc] initWithError:[TSError errorWithCode:kTSInvalidResponse
-														  message:@"Timeline api response was empty."]];
-	}
-
-	error = nil;
-	NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:response.data
-															 options:kNilOptions
-															   error:&error];
-	if(error != nil)
-	{
-		return [[self alloc] initWithError:error];
-	}
-
-	if(!jsonDict)
-	{
-		return [[self alloc] initWithError:[TSError errorWithCode:kTSInvalidResponse
-														  message:@"Timeline api response was empty."]];
-	}
 
 	NSArray *hits = [jsonDict objectForKey:@"hits"];
 	NSArray *events = [jsonDict objectForKey:@"events"];
