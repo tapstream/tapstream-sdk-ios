@@ -27,7 +27,7 @@ describe(@"TimelineSummaryResponse", ^{
 
 	it(@"parses the sample response", ^{
 
-		NSString* jsonString = [NSString stringWithFormat:@"{\"deeplinks\": %@,\"hitParams\":%@,\"eventParams\":%@,\"campaigns\":%@,\"latestDeeplink\":\"%@\"}",
+		NSString* jsonString = [NSString stringWithFormat:@"{\"deeplinks\": %@,\"hit_params\":%@,\"event_params\":%@,\"campaigns\":%@,\"latest_deeplink\":\"%@\"}",
 								deeplinks,
 								params,
 								params,

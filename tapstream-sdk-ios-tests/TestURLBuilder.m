@@ -130,6 +130,26 @@ describe(@"URLBuilder", ^{
 					   containsInAnyOrder(
 										  [NSURLQueryItem queryItemWithName:@"secret" value:sdkSecret],
 										  [NSURLQueryItem queryItemWithName:@"event_session" value:sessionId],
+										  [NSURLQueryItem queryItemWithName:@"blocking" value:@"true"],
+										  nil
+										  ));
+		});
+	});
+	describe(@"makeTimelineSummaryUrl", ^{
+		it(@"correctly renders a timeline summary url url", ^{
+			NSString* sessionId = @"my-session-id";
+
+			NSURL* url = [TSURLBuilder makeTimelineSummaryURL:config sessionId:sessionId];
+
+			assertThat([url path], is(@"/v1/timelines/summary"));
+			assertThat([url host], is(@"reporting.tapstream.com"));
+			assertThat([url scheme], is(@"https"));
+
+			assertThat([[NSURLComponents componentsWithString:[url absoluteString]] queryItems],
+					   containsInAnyOrder(
+										  [NSURLQueryItem queryItemWithName:@"secret" value:sdkSecret],
+										  [NSURLQueryItem queryItemWithName:@"event_session" value:sessionId],
+										  [NSURLQueryItem queryItemWithName:@"blocking" value:@"true"],
 										  nil
 										  ));
 		});
