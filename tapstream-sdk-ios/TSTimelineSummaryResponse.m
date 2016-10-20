@@ -7,6 +7,7 @@
 @property(readwrite, strong)NSDictionary<NSString*, NSString*>* hitParams;
 @property(readwrite, strong)NSDictionary<NSString*, NSString*>* eventParams;
 @property(readwrite, strong)NSString* latestDeeplink;
+@property(readwrite) NSUInteger latestDeeplinkTimestamp;
 @property(readwrite, strong)NSArray<NSString*>* deeplinks;
 @property(readwrite, strong)NSArray<NSString*>* campaigns;
 @property(readwrite, strong)NSError* error;
@@ -15,7 +16,7 @@
 
 
 @implementation TSTimelineSummaryResponse
-@synthesize error, latestDeeplink, deeplinks, campaigns, hitParams, eventParams;
+@synthesize error, latestDeeplink, latestDeeplinkTimestamp, deeplinks, campaigns, hitParams, eventParams;
 
 + (instancetype)timelineSummaryResponseWithResponse:(TSResponse*)response
 {
@@ -28,6 +29,7 @@
 	}
 
 	NSString* latestDeeplink = nil;
+	NSUInteger latestDeeplinkTimestamp = 0;
 	NSArray<NSString*>* campaigns;
 	NSArray<NSString*>* deeplinks;
 	NSDictionary<NSString*, NSString*>* hitParams;
@@ -40,8 +42,10 @@
 	deeplinks = [jsonDict objectForKey:@"deeplinks"];
 	campaigns = [jsonDict objectForKey:@"campaigns"];
 	latestDeeplink = [jsonDict objectForKey:@"latest_deeplink"];
+	latestDeeplinkTimestamp = [(NSNumber*)[jsonDict objectForKey:@"latest_deeplink_timestamp"] longValue];
 	
 	return [[self alloc] initWithLatestDeeplink:latestDeeplink
+						latestDeeplinkTimestamp:latestDeeplinkTimestamp
 									  deeplinks:deeplinks
 									  campaigns:campaigns
 									  hitParams:hitParams
@@ -49,6 +53,7 @@
 }
 
 - (instancetype)initWithLatestDeeplink:(NSString*)_latestDeeplink
+			   latestDeeplinkTimestamp:(NSUInteger)_latestDeeplinkTimestamp
 							 deeplinks:(NSArray<NSString*>*)_deeplinks
 							 campaigns:(NSArray<NSString*>*)_campaigns
 							 hitParams:(NSDictionary<NSString*, NSString*>*)_hitParams
@@ -62,6 +67,7 @@
 		deeplinks = _deeplinks;
 		campaigns = _campaigns;
 		latestDeeplink = _latestDeeplink;
+		latestDeeplinkTimestamp = _latestDeeplinkTimestamp;
 		error = nil;
 
 	}
