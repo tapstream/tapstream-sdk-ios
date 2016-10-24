@@ -13,10 +13,10 @@ def test():
     """
     schemes = {
         'TapstreamIOS': [
-            'iphonesimulator9.3'
+            'platform=iOS Simulator,name=iPhone 7,OS=10.0'
         ],
         'TapstreamMac': [
-            'macosx10.11'
+            'platform=OS X,arch=x86_64'
         ]
     }
 
@@ -24,8 +24,13 @@ def test():
     local('pod install')
     for scheme, sdks in schemes.items():
         for sdk in sdks:
-            local('xctool -scheme %s -workspace tapstream-sdk-ios.xcworkspace test -test-sdk %s' % (scheme, sdk))
+            local("xcodebuild test -scheme %s -workspace tapstream-sdk-ios.xcworkspace -destination '%s'" % (scheme, sdk))
 
+
+@task
+@runs_once
+def current_version():
+    print sdk_version()
 
 @task
 @runs_once
