@@ -18,6 +18,7 @@ describe(@"TimelineSummaryResponse", ^{
 	NSString* params = @"{\"testkey\":\"testval\",\"testkey2\":\"testval2\"}";
 	NSString* campaigns = @"[\"testcampaign1\",\"testcampaign2\"]";
 	NSString* deeplinks = @"[\"testapp://someotherpath\",\"testapp://somepath\"]";
+	NSUInteger timestamp = [[NSDate date] timeIntervalSince1970] * 1000;
 
 	it(@"it fails on empty response", ^{
 		TSResponse* resp = responseWithJSONString(@"");
@@ -25,14 +26,27 @@ describe(@"TimelineSummaryResponse", ^{
 		assertThatBool([r failed], isTrue());
 	});
 
+	it(@"it does its best on partial response", ^{
+		TSResponse* resp = responseWithJSONString(@"{\"latest_deeplink\":\"somthing\"}");
+		TSTimelineSummaryResponse* r = [TSTimelineSummaryResponse timelineSummaryResponseWithResponse:resp];
+		assertThatBool([r failed], isFalse());
+		assertThatLong([r latestDeeplinkTimestamp], equalToLong(0));
+		assertThat([r latestDeeplink], is(@"somthing"));
+		assertThat([r deeplinks], nilValue());
+		assertThat([r campaigns], nilValue());
+		assertThat([r hitParams], nilValue());
+		assertThat([r eventParams], nilValue());
+	});
+
 	it(@"parses the sample response", ^{
 
-		NSString* jsonString = [NSString stringWithFormat:@"{\"deeplinks\": %@,\"hit_params\":%@,\"event_params\":%@,\"campaigns\":%@,\"latest_deeplink\":\"%@\"}",
+		NSString* jsonString = [NSString stringWithFormat:@"{\"deeplinks\": %@,\"hit_params\":%@,\"event_params\":%@,\"campaigns\":%@,\"latest_deeplink\":\"%@\",\"latest_deeplink_timestamp\":%lu}",
 								deeplinks,
 								params,
 								params,
 								campaigns,
-								expectedDeeplink
+								expectedDeeplink,
+								(unsigned long)timestamp
 								];
 
 		TSResponse* resp = responseWithJSONString(jsonString);
@@ -51,6 +65,8 @@ describe(@"TimelineSummaryResponse", ^{
 		assertThat([r eventParams], hasEntries(@"testkey", @"testval",
 											   @"testkey2", @"testval2",
 											   nil));
+
+		assertThatLong([r latestDeeplinkTimestamp], equalToLong(timestamp));
 	});
 });
 SpecEnd

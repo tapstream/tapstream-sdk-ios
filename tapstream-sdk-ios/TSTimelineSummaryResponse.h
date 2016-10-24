@@ -10,6 +10,7 @@
 @property(readonly, strong)NSDictionary<NSString*, NSString*>* hitParams;
 @property(readonly, strong)NSDictionary<NSString*, NSString*>* eventParams;
 @property(readonly, strong)NSString* latestDeeplink;
+@property(readonly)NSUInteger latestDeeplinkTimestamp;
 @property(readonly, strong)NSArray<NSString*>* deeplinks;
 @property(readonly, strong)NSArray<NSString*>* campaigns;
 @property(readonly, strong)NSError* error;
