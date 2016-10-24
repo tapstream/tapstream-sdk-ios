@@ -2,7 +2,7 @@ language: objective-c
 osx_image: xcode7.3
 
 env:
-  - SCHEME=TapstreamIOS SDK='platform=iOS Simulator,name=iPhone 7,OS=8.1'
+  - SCHEME=TapstreamIOS SDK='platform=iOS Simulator,name=iPhone 6,OS=8.1'
 
 script:
   - xcodebuild test -workspace tapstream-sdk-ios.xcworkspace -scheme $SCHEME -destination "$SDK" CODE_SIGNING_REQUIRED=NO
