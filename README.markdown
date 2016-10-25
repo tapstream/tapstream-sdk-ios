@@ -1,5 +1,8 @@
-Tapstream iOS SDK v. 3.0.0-beta
+Tapstream iOS SDK v3
 ===
+
+![TapstreamIOS Pod Version](https://img.shields.io/cocoapods/v/TapstreamIOS.svg?style=flat)
+![Travis Test Status](https://img.shields.io/travis/tapstream/tapstream-sdk-ios.svg)
 
 Please see documentation on [Tapstream's website](https://tapstream.com/developer/).
 

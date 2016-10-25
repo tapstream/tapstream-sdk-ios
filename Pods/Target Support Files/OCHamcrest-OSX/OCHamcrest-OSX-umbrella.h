@@ -1,4 +1,6 @@
+#ifdef __OBJC__
 #import <Cocoa/Cocoa.h>
+#endif
 
 #import "OCHamcrest.h"
 #import "HCAssertThat.h"

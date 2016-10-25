@@ -20,6 +20,7 @@
 - (void)fireEvent:(TSEvent *)event;
 - (void)fireEvent:(TSEvent *)event completion:(void(^)(TSResponse*))completion;
 
+- (NSString*)sessionId;
 
 // Onboarding Links
 
