@@ -9,5 +9,5 @@
 	#define kTSPlatform @"Mac"
 #endif
 
-#define kTSVersion @"3.1.1"
+#define kTSVersion @"3.2.0"
 #define kTSDefaultTimeout 10000

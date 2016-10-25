@@ -46,6 +46,7 @@ static TSTapstream *instance = nil;
 
 
 @interface TSTapstream()
+@property(nonatomic, strong) id<TSPlatform> platform;
 @property(nonatomic, strong) id<TSStartupDelegate> startupDelegate;
 @property(nonatomic, strong) id<TSFireEventDelegate> fireEventDelegate;
 @property(nonatomic, strong) id<TSTimelineLookupDelegate> timelineLookupDelegate;
@@ -175,12 +176,13 @@ static TSTapstream *instance = nil;
 															 universalLinkDelegateWithConfig:config
 															 httpClient:httpClient];
 
-		instance = [[TSTapstream alloc] initWithFireEventDelegate:fireEventDelegate
-												  startupDelegate:startupDelegate
-										   timelineLookupDelegate:timelineLookupDelegate
-											   showLanderDelegate:showLanderDelegate
-											universalLinkDelegate:universalLinkDelegate
-											wordOfMouthController:womController];
+		instance = [[TSTapstream alloc] initWithPlatform:platform
+									   fireEventDelegate:fireEventDelegate
+										 startupDelegate:startupDelegate
+								timelineLookupDelegate:timelineLookupDelegate
+									showLanderDelegate:showLanderDelegate
+								   universalLinkDelegate:universalLinkDelegate
+								   wordOfMouthController:womController];
 
 #else
 		TSDefaultFireEventDelegate* fireEventDelegate = [TSDefaultFireEventDelegate
@@ -196,9 +198,10 @@ static TSTapstream *instance = nil;
 													 fireEventDelegate:fireEventDelegate
 													 appEventSource:appEventSource];
 
-		instance = [[TSTapstream alloc] initWithFireEventDelegate:fireEventDelegate
-												  startupDelegate:startupDelegate
-										   timelineLookupDelegate:timelineLookupDelegate];
+		instance = [[TSTapstream alloc] initWithPlatform:platform
+									   fireEventDelegate:fireEventDelegate
+										  startupDelegate:startupDelegate
+								   timelineLookupDelegate:timelineLookupDelegate];
 #endif
 
 		[instance start];
@@ -215,7 +218,8 @@ static TSTapstream *instance = nil;
 }
 
 
-- (id)initWithFireEventDelegate:(id<TSFireEventDelegate>)fireEventDelegate
+- (id)initWithPlatform:(id<TSPlatform>)platform
+		fireEventDelegate:(id<TSFireEventDelegate>)fireEventDelegate
 				startupDelegate:(id<TSStartupDelegate>)startupDelegate
 		 timelineLookupDelegate:(id<TSTimelineLookupDelegate>)timelineLookupDelegate
 #ifdef TS_IOS_ONLY
@@ -226,6 +230,7 @@ static TSTapstream *instance = nil;
 {
 	if((self = [super init]) != nil)
 	{
+		self.platform = platform;
 		self.fireEventDelegate = fireEventDelegate;
 		self.startupDelegate = startupDelegate;
 		self.timelineLookupDelegate = timelineLookupDelegate;
@@ -252,6 +257,11 @@ static TSTapstream *instance = nil;
 - (void)fireEvent:(TSEvent *)e completion:(void(^)(TSResponse*))completion
 {
 	[self.fireEventDelegate fireEvent:e completion:completion];
+}
+
+- (NSString*)sessionId
+{
+	return [self.platform getSessionId];
 }
 
 - (void)lookupTimeline:(void(^)(TSTimelineApiResponse *))completion
