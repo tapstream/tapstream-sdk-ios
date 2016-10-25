@@ -27,7 +27,7 @@
 		09DC471EE2475CF2E41F4B937E7EEE04 /* NSMethodSignature+OCMAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C1F6BE8CD463F00132A7017DECAA273 /* NSMethodSignature+OCMAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		0A84E0BC44ADC7A0429E64C0AD7D33B7 /* OCMReturnValueProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B1756368D0A0FC60C3CB22116C7866C1 /* OCMReturnValueProvider.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0AD7F2FCFFA337BD85F44415D7D059DA /* OCMBlockCaller.h in Headers */ = {isa = PBXBuildFile; fileRef = A462C78605644BC6ED9277FC5DDA7FB8 /* OCMBlockCaller.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		0B0CE6C70DEE485A020329CDF19207D2 /* Pods-TapstreamMac-TapstreamMacTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3012908BD59C6556CE44F16899015753 /* Pods-TapstreamMac-TapstreamMacTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0B0CE6C70DEE485A020329CDF19207D2 /* Pods-TapstreamMac-TapstreamMacTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F0A3FD9C3D78BC016AF586D443BF0D46 /* Pods-TapstreamMac-TapstreamMacTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0B15E8B3A19AAF7BAEC919AAC74E1B7A /* HCLongReturnGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = EC5A2B38B24B0E585811C54A1DCCDDBE /* HCLongReturnGetter.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		0B3479C6CA38AEC32B5B62CA1836B4AD /* HCWrapInMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF6A86F8931FE1BDEC4C2076634E9B1 /* HCWrapInMatcher.m */; };
 		0B6F054BF6BF99DE72D8BE191C19F62B /* SpectaUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 3589C32E663D7E2D3324102BCFC0DF24 /* SpectaUtility.m */; };
@@ -47,7 +47,7 @@
 		14B822807F64434C8146458408337DE4 /* OCMExceptionReturnValueProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA17FA23CBF0DBD5A684965BCAE250D /* OCMExceptionReturnValueProvider.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		14CC98482DB8D3DF4632715FD76ABAB5 /* HCIsNil.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB0D19A756496CD77523236534B3F7D /* HCIsNil.m */; };
 		1603D1C21C763039AD299088C4261831 /* HCOrderingComparison.m in Sources */ = {isa = PBXBuildFile; fileRef = 4654097796CD61D4B2CF2E9530C3DC26 /* HCOrderingComparison.m */; };
-		16F18E6E27FDF6B6F50CD0E534D0C5A3 /* Pods-TapstreamIOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B0CFF178E56741006267D3546E734DAB /* Pods-TapstreamIOS-dummy.m */; };
+		16F18E6E27FDF6B6F50CD0E534D0C5A3 /* Pods-TapstreamIOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D3E5B38E36562AF15A8A36729C20D7 /* Pods-TapstreamIOS-dummy.m */; };
 		1961BC8AA69B06E6823B6A06614CAA0C /* NSValue+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5D53B6947F1EE82F58DC051EABD2F0 /* NSValue+OCMAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1A28AD15EF5378CF98B29399B8D1C0A4 /* HCDoubleReturnGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2C697D906E228B3040339145A6495B /* HCDoubleReturnGetter.m */; };
 		1A2C2B529657372755EB3A3BE7CC463F /* NSObject+OCMAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E075EF55EAFA9873106096E5DCE4DEC0 /* NSObject+OCMAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -189,7 +189,7 @@
 		5C77AC008169F1B7C375635A53549C86 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00DC851852DF0365A575E85B9FCA7B3B /* Foundation.framework */; };
 		5C99C2BD6A4D881A39A4FDC2284218EF /* HCIsEqualToNumber.h in Headers */ = {isa = PBXBuildFile; fileRef = E4346AFD827409090471545BCA624740 /* HCIsEqualToNumber.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5DB0905FD33F1B25072D85DCBFD09F32 /* HCUnsignedShortReturnGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5515F61DBBDC7E027DE895D99794BC35 /* HCUnsignedShortReturnGetter.m */; };
-		5E3A34CAFBA04C1DB8797588791F4ABA /* Pods-TapstreamIOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B5EE7DC401D67BAB95BF6EC187523B2 /* Pods-TapstreamIOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5E3A34CAFBA04C1DB8797588791F4ABA /* Pods-TapstreamIOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8990210E6DD72428AF1E1D204B4F541E /* Pods-TapstreamIOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5E745779B8682AE776531E39498573B2 /* HCDiagnosingMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = FB800131121797F00D12ED79D21B6739 /* HCDiagnosingMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5EB4330B5377FBE8C1620AF676407303 /* HCIsNil.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB0D19A756496CD77523236534B3F7D /* HCIsNil.m */; };
 		5F231ED136096F65504BA6F5F9FB455E /* HCClassMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 26CDD66FA664BF4F20622B1E1D035EE4 /* HCClassMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -205,7 +205,7 @@
 		62E7F83C47946B552B415E252EEC0B78 /* XCTest+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 86C6A385AB885E4F48F1ED956C6CB16E /* XCTest+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		62F361A680B478E2BC674DF9E18DA8DB /* HCIsTypeOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 753B46E0D396FB32EE4FE61B940C155E /* HCIsTypeOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63BE868797B89308145094AEBDBB78B3 /* HCHasCount.h in Headers */ = {isa = PBXBuildFile; fileRef = D360BDCDD97E8B1E5BF5520622C4B336 /* HCHasCount.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		63E31C28ED4A8ECCDC0ACA4B950CA365 /* Pods-TapstreamMac-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 632E87F022921C35FE6D4E39138A786E /* Pods-TapstreamMac-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63E31C28ED4A8ECCDC0ACA4B950CA365 /* Pods-TapstreamMac-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 14322482FAF0449367DD3716F32A33B3 /* Pods-TapstreamMac-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6428A2C4F28AA5377171FF178773F7E2 /* OCMObserverRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 049B784A9E3DA0795DEE3AC5FE43E9F4 /* OCMObserverRecorder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6494CFC758FCD9A2B08182EE8C7E4BE0 /* HCHasProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 20547BF318AEF776514A66F2DCDC4308 /* HCHasProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		64E55CD7E9E3CCD4B65EAEC8A9726041 /* HCIsDictionaryContainingKey.h in Headers */ = {isa = PBXBuildFile; fileRef = A19402A8F369D54FA40927572C84225B /* HCIsDictionaryContainingKey.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -247,7 +247,7 @@
 		7A1BF25CE4455B5EACC8CE9BD9DC3285 /* HCCollect.m in Sources */ = {isa = PBXBuildFile; fileRef = 5595B7D9551475355E2F08CB0B300688 /* HCCollect.m */; };
 		7A3696BC494D54741BDE6206245C5C96 /* HCIsCollectionContainingInRelativeOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 967F85B49E4879AA54CA85FD427E1669 /* HCIsCollectionContainingInRelativeOrder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7ABF3C20492A072B7D9B5BA2586566FE /* SPTCompiledExample.h in Headers */ = {isa = PBXBuildFile; fileRef = ED721B98BA13C99E482DE9A87CB0DC1A /* SPTCompiledExample.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7BE9136FB4C981806982C0D91CCC453F /* Pods-TapstreamIOS-TapstreamIOSTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DF98B83E71A0B39686B5628EB159014C /* Pods-TapstreamIOS-TapstreamIOSTests-dummy.m */; };
+		7BE9136FB4C981806982C0D91CCC453F /* Pods-TapstreamIOS-TapstreamIOSTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C953B71862853A08873C61F4C0CC8D /* Pods-TapstreamIOS-TapstreamIOSTests-dummy.m */; };
 		7BFE53BBD3552AFEB476E176ED194161 /* SPTSharedExampleGroups.m in Sources */ = {isa = PBXBuildFile; fileRef = C48B3890FB5CC61B9471FFF9EAC455A0 /* SPTSharedExampleGroups.m */; };
 		7DF1F3433B7E306AC4951F6D948967D7 /* OCMLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 40498974E0ECDF35A04832DB6D77C9C6 /* OCMLocation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7DF8AE3C69325C84CF0A5EBA819BCA24 /* OCMArgAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F22FBECD17F97E4B4D3A0A33277E48 /* OCMArgAction.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -298,7 +298,7 @@
 		915A09B9E88F1DECEF8B8056BC2494B9 /* HCDescribedAs.h in Headers */ = {isa = PBXBuildFile; fileRef = 07E4092D56ABDD4AC5521E2D5E83B67E /* HCDescribedAs.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9193F38BDF37F78933592246EC28AE25 /* OCPartialMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D84B0025D632A68B91BF11153D8DFCF8 /* OCPartialMockObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9253203DD36546A9DF8AF29735C44C65 /* HCUnsignedLongReturnGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9523D3E2F4188E72FFE5C0016E054571 /* HCUnsignedLongReturnGetter.m */; };
-		92FC276C14F34E28F420D7C1BBD08B73 /* Pods-TapstreamMac-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 079750200A90226714F2172AB14BBBB6 /* Pods-TapstreamMac-dummy.m */; };
+		92FC276C14F34E28F420D7C1BBD08B73 /* Pods-TapstreamMac-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE916811236C67885D6EFEF8933A039 /* Pods-TapstreamMac-dummy.m */; };
 		9336D6219E1EDA7AFF5176D6EBF66ADA /* HCConformsToProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = F895A9CB60A8623D1C9FC9DCC306B173 /* HCConformsToProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		933E21C2207FF714D366B91B31CAE400 /* HCUnsignedLongLongReturnGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = A6786B2E86670452C65AAE8FCA0FD2CA /* HCUnsignedLongLongReturnGetter.m */; };
 		934711D1D0F7065A3EB23ADD506FD081 /* HCAnyOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F94290C79E9525F9E4AF09C39DBFEF6 /* HCAnyOf.m */; };
@@ -352,7 +352,7 @@
 		A9878CFF4300C845E45B14875A5D7616 /* HCIsDictionaryContainingEntries.m in Sources */ = {isa = PBXBuildFile; fileRef = 33ABB24D7B93B43FF0B4DACF2EB44913 /* HCIsDictionaryContainingEntries.m */; };
 		A9A7E32F3E7D68A790CED31EB5666642 /* HCReturnValueGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = C20062EBF942134667B9A69FADD56306 /* HCReturnValueGetter.m */; };
 		A9D3FC4CAD7D596B31E15FC790D1E0E9 /* OCMBlockCaller.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D6C9796DED2CAD268F4F02BA605429 /* OCMBlockCaller.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		AA5A775F91AA75B66BE88F72F607DAA9 /* Pods-TapstreamMac-TapstreamMacTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 17103E5BC1858E9C85422215EC18E9A3 /* Pods-TapstreamMac-TapstreamMacTests-dummy.m */; };
+		AA5A775F91AA75B66BE88F72F607DAA9 /* Pods-TapstreamMac-TapstreamMacTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B8662CD849FEFBA9F7442C1E1EDC1A /* Pods-TapstreamMac-TapstreamMacTests-dummy.m */; };
 		AAE3DB02E984909D8FF1ADDF3A72D142 /* HCIsSame.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD4C0C988DFC138C500708BB9AE06FA /* HCIsSame.m */; };
 		ABAE8D719420DBC94D97EEB5D990E753 /* HCStringDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C1D642431FC82418D7FEE53C2CC321 /* HCStringDescription.m */; };
 		ABE488C92F727FD1F26C342B150D3809 /* HCIsEqual.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F3F92B5D5DCE7832A2E2733227A19DB /* HCIsEqual.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -435,7 +435,7 @@
 		D4CB922A534F62075F35E17411E29114 /* HCIsCollectionContainingInRelativeOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBAA961AE248C4126E99C4CF8E508CB /* HCIsCollectionContainingInRelativeOrder.m */; };
 		D50009174CC2568B1AB3ACF709CF44A3 /* HCIsCollectionContainingInOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F419A9588753101CA3E6C9CB82A1E33 /* HCIsCollectionContainingInOrder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D55ED2A3B105382D112E33D85D104739 /* HCIs.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B75E7B06B4A6B8935BCF2B47A95EDB /* HCIs.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D575CF9EB5F4D4F01C94697076CA0834 /* Pods-TapstreamIOS-TapstreamIOSTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C353FDD961DADE85315A7B05768B8BE /* Pods-TapstreamIOS-TapstreamIOSTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D575CF9EB5F4D4F01C94697076CA0834 /* Pods-TapstreamIOS-TapstreamIOSTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCEA5A4DE0CACB2F0623923A724286B /* Pods-TapstreamIOS-TapstreamIOSTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5D14D11C3CB1EC6B56C53C0119D7709 /* HCTestFailure.h in Headers */ = {isa = PBXBuildFile; fileRef = B45E3722D850ADE6672724D7935D441A /* HCTestFailure.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5E172AA62DB8EDE48A01A68868A6B59 /* HCIsTypeOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 753B46E0D396FB32EE4FE61B940C155E /* HCIsTypeOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5F6AE0963ACEE6E791D3459EA04DD3F /* HCReturnValueGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = F046B25CEADA02D5CB56EBE7AFFF2E1B /* HCReturnValueGetter.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -584,49 +584,46 @@
 /* Begin PBXFileReference section */
 		00B75E7B06B4A6B8935BCF2B47A95EDB /* HCIs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCIs.h; path = Source/Library/Decorator/HCIs.h; sourceTree = "<group>"; };
 		00DC851852DF0365A575E85B9FCA7B3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		010B31F7C2B5CA3534A90BD3856AFD9D /* Pods-TapstreamIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TapstreamIOS.release.xcconfig"; sourceTree = "<group>"; };
+		0239DAFCD3F4C388342830A907FCB4D5 /* Pods-TapstreamMac-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TapstreamMac-resources.sh"; sourceTree = "<group>"; };
 		0368A4BE39FF43D77F958EF7F3199CB8 /* HCIsDictionaryContainingValue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCIsDictionaryContainingValue.h; path = Source/Library/Collection/HCIsDictionaryContainingValue.h; sourceTree = "<group>"; };
 		0383532A7C019B8DE7200B10EA02BC12 /* HCDoubleReturnGetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCDoubleReturnGetter.h; path = Source/Core/Helpers/ReturnValueGetters/HCDoubleReturnGetter.h; sourceTree = "<group>"; };
 		03F8F372A328D61C5A8A1A816EE22095 /* Specta-OSX-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Specta-OSX-prefix.pch"; sourceTree = "<group>"; };
 		049B784A9E3DA0795DEE3AC5FE43E9F4 /* OCMObserverRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMObserverRecorder.m; path = Source/OCMock/OCMObserverRecorder.m; sourceTree = "<group>"; };
 		04E570839DE3E384809C54E9B01C172F /* SPTExample.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTExample.m; path = Specta/Specta/SPTExample.m; sourceTree = "<group>"; };
 		053BD9AEAE29880209F99C7257088CE3 /* HCBoolReturnGetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCBoolReturnGetter.h; path = Source/Core/Helpers/ReturnValueGetters/HCBoolReturnGetter.h; sourceTree = "<group>"; };
-		079750200A90226714F2172AB14BBBB6 /* Pods-TapstreamMac-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TapstreamMac-dummy.m"; sourceTree = "<group>"; };
+		0608729CE12D652136B030BB1DBDD908 /* Pods-TapstreamIOS-TapstreamIOSTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TapstreamIOS-TapstreamIOSTests.modulemap"; sourceTree = "<group>"; };
 		07D5E1D87C55B4FFACF7E206AB00DCC2 /* OCMInvocationMatcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMInvocationMatcher.m; path = Source/OCMock/OCMInvocationMatcher.m; sourceTree = "<group>"; };
 		07E4092D56ABDD4AC5521E2D5E83B67E /* HCDescribedAs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCDescribedAs.h; path = Source/Library/Decorator/HCDescribedAs.h; sourceTree = "<group>"; };
 		07EFD4B2AD1E66A8A92BD09A6D40B533 /* HCTestFailureReporterChain.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCTestFailureReporterChain.m; path = Source/Core/Helpers/TestFailureReporters/HCTestFailureReporterChain.m; sourceTree = "<group>"; };
 		093672FBC68C4BD53A92429179E3B0D0 /* Specta-OSX.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Specta-OSX.xcconfig"; sourceTree = "<group>"; };
 		095B082CDD9BD1C98B932EE76B099A47 /* Specta-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Specta-iOS.xcconfig"; path = "../Specta-iOS/Specta-iOS.xcconfig"; sourceTree = "<group>"; };
-		0996650F0EEE98EE7FDA56DA5ECB971A /* Pods-TapstreamIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TapstreamIOS.debug.xcconfig"; sourceTree = "<group>"; };
-		0A1D516DE5E3CCFC9AB1E18128B5F66B /* Pods-TapstreamIOS-TapstreamIOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TapstreamIOS-TapstreamIOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		0A5D6827CB38C7F4D462F8EAB124D40E /* SPTExampleGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTExampleGroup.h; path = Specta/Specta/SPTExampleGroup.h; sourceTree = "<group>"; };
-		0B50160598B99AA0300E1ACE528AEDCD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A7BA3FFA6FB015C5839380EAF713095 /* Pods-TapstreamMac-TapstreamMacTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TapstreamMac-TapstreamMacTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		0B56133553A7D2115A37B05816D98FCC /* Pods-TapstreamIOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TapstreamIOS-resources.sh"; sourceTree = "<group>"; };
 		0D23D4A4DB29A2F105D2C0F3474E664A /* HCIsCollectionContainingInAnyOrder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCIsCollectionContainingInAnyOrder.m; path = Source/Library/Collection/HCIsCollectionContainingInAnyOrder.m; sourceTree = "<group>"; };
 		0E424A363D3BC48EEF0F1B9A149D0B2D /* OCMConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMConstraint.m; path = Source/OCMock/OCMConstraint.m; sourceTree = "<group>"; };
-		0EB249CEC92D9973655F7AC6AD0B321A /* Pods-TapstreamIOS-TapstreamIOSTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TapstreamIOS-TapstreamIOSTests-resources.sh"; sourceTree = "<group>"; };
 		0F16F1352D43D0984AF476163500550C /* HCReturnTypeHandlerChain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCReturnTypeHandlerChain.h; path = Source/Core/Helpers/ReturnValueGetters/HCReturnTypeHandlerChain.h; sourceTree = "<group>"; };
-		0F3D9DE9DBD33AFC83348D6A221F8B63 /* Pods-TapstreamMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TapstreamMac.debug.xcconfig"; sourceTree = "<group>"; };
 		11AF2EF9D83837E7D66879434CE17063 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1205A3BC383BEEAD1E69550F940368BA /* Pods-TapstreamMac-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TapstreamMac-frameworks.sh"; sourceTree = "<group>"; };
 		12672C043EE281A8AD5FFF01EC1FAE74 /* HCShortReturnGetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCShortReturnGetter.h; path = Source/Core/Helpers/ReturnValueGetters/HCShortReturnGetter.h; sourceTree = "<group>"; };
 		13D6B72F5B446D7E088569320695F1D1 /* OCHamcrest-OSX.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "OCHamcrest-OSX.xcconfig"; sourceTree = "<group>"; };
-		1469203B9361B9E017ACB46FA564BB96 /* Pods-TapstreamMac-TapstreamMacTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TapstreamMac-TapstreamMacTests.modulemap"; sourceTree = "<group>"; };
+		14322482FAF0449367DD3716F32A33B3 /* Pods-TapstreamMac-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TapstreamMac-umbrella.h"; sourceTree = "<group>"; };
 		1486C62915EB7277835E51A6B1D884C7 /* HCStringContainsInOrder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCStringContainsInOrder.m; path = Source/Library/Text/HCStringContainsInOrder.m; sourceTree = "<group>"; };
 		1501DDA5C46CFD5D89F8D6F1ABD0F018 /* OCMock-OSX.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "OCMock-OSX.xcconfig"; sourceTree = "<group>"; };
 		1577AA71D788133F56D58B016AC13B65 /* HCIsTrueFalse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCIsTrueFalse.m; path = Source/Library/Number/HCIsTrueFalse.m; sourceTree = "<group>"; };
 		15F669E19FDF532381987226B02B67E1 /* HCRequireNonNilObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCRequireNonNilObject.h; path = Source/Core/Helpers/HCRequireNonNilObject.h; sourceTree = "<group>"; };
-		162D34DC8FB65B36777C7495DCE02C84 /* Pods-TapstreamMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TapstreamMac.release.xcconfig"; sourceTree = "<group>"; };
+		15FE702B1FF64E6D687FE3885CDBB06C /* Pods-TapstreamMac-TapstreamMacTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TapstreamMac-TapstreamMacTests.release.xcconfig"; sourceTree = "<group>"; };
 		163E4EE6B7A0F64B057A9DF550B44C52 /* HCIsDictionaryContainingEntries.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCIsDictionaryContainingEntries.h; path = Source/Library/Collection/HCIsDictionaryContainingEntries.h; sourceTree = "<group>"; };
-		17103E5BC1858E9C85422215EC18E9A3 /* Pods-TapstreamMac-TapstreamMacTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TapstreamMac-TapstreamMacTests-dummy.m"; sourceTree = "<group>"; };
 		17971C5EC61DB5299F953B4AA60F9038 /* OCMock-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "OCMock-iOS-umbrella.h"; path = "../OCMock-iOS/OCMock-iOS-umbrella.h"; sourceTree = "<group>"; };
-		17C60F82B9C9201081713E4B8F6E9C21 /* Pods-TapstreamIOS-TapstreamIOSTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TapstreamIOS-TapstreamIOSTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		17D87D976640E7BA0A9854F732951C83 /* HCRequireNonNilObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCRequireNonNilObject.m; path = Source/Core/Helpers/HCRequireNonNilObject.m; sourceTree = "<group>"; };
 		18A907097E82F5BA0573472384036962 /* HCAnyOf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCAnyOf.h; path = Source/Library/Logical/HCAnyOf.h; sourceTree = "<group>"; };
-		1A7D95864DDA7238A012496A739A0973 /* Pods-TapstreamMac-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TapstreamMac-resources.sh"; sourceTree = "<group>"; };
 		1B2A401DE5E556D28D89BBEFDDB44093 /* OCMObserverRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMObserverRecorder.h; path = Source/OCMock/OCMObserverRecorder.h; sourceTree = "<group>"; };
+		1B4F2FBA1055CBF894916F57E8CEB53E /* Pods-TapstreamIOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TapstreamIOS-acknowledgements.markdown"; sourceTree = "<group>"; };
 		1E027E83BA0BC8F31DEAC27244104D1A /* SPTExcludeGlobalBeforeAfterEach.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTExcludeGlobalBeforeAfterEach.h; path = Specta/Specta/SPTExcludeGlobalBeforeAfterEach.h; sourceTree = "<group>"; };
 		1E24C82C294F956AFD3D101B0BF54B04 /* Specta.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Specta.h; path = Specta/Specta/Specta.h; sourceTree = "<group>"; };
 		1FBAA961AE248C4126E99C4CF8E508CB /* HCIsCollectionContainingInRelativeOrder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCIsCollectionContainingInRelativeOrder.m; path = Source/Library/Collection/HCIsCollectionContainingInRelativeOrder.m; sourceTree = "<group>"; };
 		1FC6C69B75F88EFC6E52288FF126EC16 /* HCIsCollectionContaining.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCIsCollectionContaining.h; path = Source/Library/Collection/HCIsCollectionContaining.h; sourceTree = "<group>"; };
+		1FCEA5A4DE0CACB2F0623923A724286B /* Pods-TapstreamIOS-TapstreamIOSTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TapstreamIOS-TapstreamIOSTests-umbrella.h"; sourceTree = "<group>"; };
 		20547BF318AEF776514A66F2DCDC4308 /* HCHasProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCHasProperty.h; path = Source/Library/Object/HCHasProperty.h; sourceTree = "<group>"; };
 		205BAC71B8C01BE0C792724E5147EA81 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../OCMock-iOS/Info.plist"; sourceTree = "<group>"; };
 		20DB8C98CB9D44ABA05EAFAEE655A33F /* HCStringStartsWith.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCStringStartsWith.m; path = Source/Library/Text/HCStringStartsWith.m; sourceTree = "<group>"; };
@@ -635,7 +632,6 @@
 		238EC04C0047E0F7AE055A62625C3172 /* HCIsAnything.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCIsAnything.h; path = Source/Library/Logical/HCIsAnything.h; sourceTree = "<group>"; };
 		245D7505793E1AF217D96BCD4B173B70 /* OCMRealObjectForwarder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMRealObjectForwarder.h; path = Source/OCMock/OCMRealObjectForwarder.h; sourceTree = "<group>"; };
 		25A9CC6D2049BC0ED9348CAA0E54FAC1 /* HCIsEqualCompressingWhiteSpace.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCIsEqualCompressingWhiteSpace.h; path = Source/Library/Text/HCIsEqualCompressingWhiteSpace.h; sourceTree = "<group>"; };
-		264FF8651800DFD87C190D47183EAE98 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26CDD66FA664BF4F20622B1E1D035EE4 /* HCClassMatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCClassMatcher.h; path = Source/Library/Object/HCClassMatcher.h; sourceTree = "<group>"; };
 		26E27C3847D5BB056CBA3E51B4B431AF /* OCHamcrest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OCHamcrest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2759A897232CC6951B4CFC03F3C2E9C6 /* OCMBlockArgCaller.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMBlockArgCaller.m; path = Source/OCMock/OCMBlockArgCaller.m; sourceTree = "<group>"; };
@@ -643,16 +639,14 @@
 		28175BD3815EC7399A1D4C6B661BA79A /* Specta-OSX-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Specta-OSX-umbrella.h"; sourceTree = "<group>"; };
 		283F224660CCC1AC88F85FA32D0BA501 /* HCAssertThat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCAssertThat.h; path = Source/Core/HCAssertThat.h; sourceTree = "<group>"; };
 		2848B6E04A8EE30268C09B3C9932DD33 /* HCIsEqualIgnoringCase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCIsEqualIgnoringCase.m; path = Source/Library/Text/HCIsEqualIgnoringCase.m; sourceTree = "<group>"; };
+		2878EF939D8DE4834BF118E6AD1FDE5A /* Pods-TapstreamMac-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TapstreamMac-acknowledgements.markdown"; sourceTree = "<group>"; };
 		29B5E3E2DBE09CB32644C537ECF51787 /* OCMInvocationExpectation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMInvocationExpectation.m; path = Source/OCMock/OCMInvocationExpectation.m; sourceTree = "<group>"; };
 		2ABF1E421F812DEEF062ADB08904960D /* OCMRealObjectForwarder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMRealObjectForwarder.m; path = Source/OCMock/OCMRealObjectForwarder.m; sourceTree = "<group>"; };
 		2AD4C0C988DFC138C500708BB9AE06FA /* HCIsSame.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCIsSame.m; path = Source/Library/Object/HCIsSame.m; sourceTree = "<group>"; };
-		2C353FDD961DADE85315A7B05768B8BE /* Pods-TapstreamIOS-TapstreamIOSTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TapstreamIOS-TapstreamIOSTests-umbrella.h"; sourceTree = "<group>"; };
 		2DCA0E8AE03518A5B9231781D853B2E5 /* OCMock-OSX-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OCMock-OSX-dummy.m"; sourceTree = "<group>"; };
 		2EE01B62B611CB03E6CFA2B272183177 /* HCIsCollectionOnlyContaining.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCIsCollectionOnlyContaining.h; path = Source/Library/Collection/HCIsCollectionOnlyContaining.h; sourceTree = "<group>"; };
 		2FF08DD88D635C34C54514C17BE53A40 /* OCMIndirectReturnValueProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMIndirectReturnValueProvider.m; path = Source/OCMock/OCMIndirectReturnValueProvider.m; sourceTree = "<group>"; };
-		3012908BD59C6556CE44F16899015753 /* Pods-TapstreamMac-TapstreamMacTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TapstreamMac-TapstreamMacTests-umbrella.h"; sourceTree = "<group>"; };
 		30C4DC7D1A7AC2B66E45FA5D7051A2EE /* HCInvocationMatcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCInvocationMatcher.m; path = Source/Core/Helpers/HCInvocationMatcher.m; sourceTree = "<group>"; };
-		325B10DDE21A34B1BA767AC8FAC5DA8F /* Pods-TapstreamMac-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TapstreamMac-acknowledgements.markdown"; sourceTree = "<group>"; };
 		33ABB24D7B93B43FF0B4DACF2EB44913 /* HCIsDictionaryContainingEntries.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCIsDictionaryContainingEntries.m; path = Source/Library/Collection/HCIsDictionaryContainingEntries.m; sourceTree = "<group>"; };
 		34D32D342844B11A8AE2B18720D954D2 /* OCMLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMLocation.h; path = Source/OCMock/OCMLocation.h; sourceTree = "<group>"; };
 		35102F4CDD15255B89FA10FD81D8E94B /* OCHamcrest-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "OCHamcrest-iOS-dummy.m"; path = "../OCHamcrest-iOS/OCHamcrest-iOS-dummy.m"; sourceTree = "<group>"; };
@@ -668,15 +662,15 @@
 		3CFC302E1DA96CC440E34E97D862536A /* HCCharReturnGetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCCharReturnGetter.h; path = Source/Core/Helpers/ReturnValueGetters/HCCharReturnGetter.h; sourceTree = "<group>"; };
 		3D194C62D1703CAA3BCE3CC7DC7A9B74 /* OCMBoxedReturnValueProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMBoxedReturnValueProvider.m; path = Source/OCMock/OCMBoxedReturnValueProvider.m; sourceTree = "<group>"; };
 		3D46B99BEA1C8835C6BECBA81CA10815 /* OCHamcrest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCHamcrest.h; path = Source/OCHamcrest.h; sourceTree = "<group>"; };
-		3E76B77C0B04E55DFF75EBF900C95F84 /* Pods-TapstreamIOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TapstreamIOS.modulemap"; sourceTree = "<group>"; };
 		3F419A9588753101CA3E6C9CB82A1E33 /* HCIsCollectionContainingInOrder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCIsCollectionContainingInOrder.h; path = Source/Library/Collection/HCIsCollectionContainingInOrder.h; sourceTree = "<group>"; };
 		40498974E0ECDF35A04832DB6D77C9C6 /* OCMLocation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMLocation.m; path = Source/OCMock/OCMLocation.m; sourceTree = "<group>"; };
+		406CC3153210AC3735E2677B67197075 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		408A522C1C2D23162CF447F9661BEDA0 /* Specta-OSX-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Specta-OSX-dummy.m"; sourceTree = "<group>"; };
+		418F6E34C81A0B0344AB7903DAD2D4C4 /* Pods-TapstreamIOS-TapstreamIOSTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TapstreamIOS-TapstreamIOSTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		423624C9F4ED43826C2FBCB6F9AB9D80 /* OCMock-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "OCMock-iOS.xcconfig"; path = "../OCMock-iOS/OCMock-iOS.xcconfig"; sourceTree = "<group>"; };
 		4236DB5B8599A8B6BD7DCB291A15D42E /* OCMNotificationPoster.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMNotificationPoster.h; path = Source/OCMock/OCMNotificationPoster.h; sourceTree = "<group>"; };
 		4395C043C50AB40E009BEBE16D1F46CD /* OCMock-OSX-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OCMock-OSX-umbrella.h"; sourceTree = "<group>"; };
 		43B83D3A25C68FB95E731A472AEFB0EF /* OCMReturnValueProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMReturnValueProvider.h; path = Source/OCMock/OCMReturnValueProvider.h; sourceTree = "<group>"; };
-		43FF0642FC67E72FBCBE2A2DFC955B9F /* Pods-TapstreamIOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TapstreamIOS-frameworks.sh"; sourceTree = "<group>"; };
 		45189104FEE7113048B8419B4864AE8B /* HCBaseMatcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCBaseMatcher.m; path = Source/Core/HCBaseMatcher.m; sourceTree = "<group>"; };
 		455BDFB397D6DF06D2EDB1916540E0BC /* OCMBlockArgCaller.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMBlockArgCaller.h; path = Source/OCMock/OCMBlockArgCaller.h; sourceTree = "<group>"; };
 		45DCE9DFDAEECAA41DDC59CBD1DE37E8 /* HCTestFailureReporterChain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCTestFailureReporterChain.h; path = Source/Core/Helpers/TestFailureReporters/HCTestFailureReporterChain.h; sourceTree = "<group>"; };
@@ -687,36 +681,35 @@
 		47D0F68021BC6070773768560F061118 /* SPTCallSite.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTCallSite.m; path = Specta/Specta/SPTCallSite.m; sourceTree = "<group>"; };
 		483530986AB7D3A636912C0E70A92D19 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		48AED55EB2AE81E20324B33E3F44F563 /* HCCharReturnGetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCCharReturnGetter.m; path = Source/Core/Helpers/ReturnValueGetters/HCCharReturnGetter.m; sourceTree = "<group>"; };
+		492B192C5156199BF737B3372B06DC79 /* Pods-TapstreamMac-TapstreamMacTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TapstreamMac-TapstreamMacTests.modulemap"; sourceTree = "<group>"; };
 		497A2849507D8D7A818FBED61BC1103C /* HCIsTypeOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCIsTypeOf.m; path = Source/Library/Object/HCIsTypeOf.m; sourceTree = "<group>"; };
 		4A26E3C9C3B167FBF2D251DE5C1083C5 /* OCPartialMockObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCPartialMockObject.h; path = Source/OCMock/OCPartialMockObject.h; sourceTree = "<group>"; };
 		4AD53E8A91EF63BD1B53D68630525882 /* HCObjectReturnGetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCObjectReturnGetter.h; path = Source/Core/Helpers/ReturnValueGetters/HCObjectReturnGetter.h; sourceTree = "<group>"; };
 		4B94FCE73252742161763F9C0BE0D378 /* Specta-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Specta-iOS-prefix.pch"; path = "../Specta-iOS/Specta-iOS-prefix.pch"; sourceTree = "<group>"; };
 		4BDBE30B67A0D821BF265151452C1A67 /* OCMExpectationRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMExpectationRecorder.m; path = Source/OCMock/OCMExpectationRecorder.m; sourceTree = "<group>"; };
-		4BE5D0B082DF610C4ADCFAF018373713 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C1F6BE8CD463F00132A7017DECAA273 /* NSMethodSignature+OCMAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSMethodSignature+OCMAdditions.h"; path = "Source/OCMock/NSMethodSignature+OCMAdditions.h"; sourceTree = "<group>"; };
 		4C2A88B7E849ABEE93664E7190809CBF /* HCIsNil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCIsNil.h; path = Source/Library/Object/HCIsNil.h; sourceTree = "<group>"; };
 		4F94290C79E9525F9E4AF09C39DBFEF6 /* HCAnyOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCAnyOf.m; path = Source/Library/Logical/HCAnyOf.m; sourceTree = "<group>"; };
 		502F37BF149E3D05AF5B6460C1BD1D40 /* NSValue+OCMAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSValue+OCMAdditions.h"; path = "Source/OCMock/NSValue+OCMAdditions.h"; sourceTree = "<group>"; };
-		512EEA7759CF4F04748D48CC3F71B57E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53187CB55F88F0E6A3354BAF26E57BFD /* Specta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Specta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5337C990AAACEE1929523E08F99BB11D /* HCStringContains.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCStringContains.h; path = Source/Library/Text/HCStringContains.h; sourceTree = "<group>"; };
 		5515F61DBBDC7E027DE895D99794BC35 /* HCUnsignedShortReturnGetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCUnsignedShortReturnGetter.m; path = Source/Core/Helpers/ReturnValueGetters/HCUnsignedShortReturnGetter.m; sourceTree = "<group>"; };
 		555CA908C9B4B9796B3F6FE69C712CFF /* OCMArg.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMArg.m; path = Source/OCMock/OCMArg.m; sourceTree = "<group>"; };
 		5595B7D9551475355E2F08CB0B300688 /* HCCollect.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCCollect.m; path = Source/Core/Helpers/HCCollect.m; sourceTree = "<group>"; };
+		55BEFE770F67F9521F56242C91F5DB97 /* Pods-TapstreamIOS-TapstreamIOSTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TapstreamIOS-TapstreamIOSTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		57DA96FD5E9217AFF42379DE1A95E364 /* Pods-TapstreamMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TapstreamMac.debug.xcconfig"; sourceTree = "<group>"; };
 		5800B30DB4100C1FABD22DCBFC21F525 /* HCIsIn.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCIsIn.h; path = Source/Library/Collection/HCIsIn.h; sourceTree = "<group>"; };
+		580449407A27323098E06D2DCACCBE33 /* Pods-TapstreamMac-TapstreamMacTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TapstreamMac-TapstreamMacTests.debug.xcconfig"; sourceTree = "<group>"; };
 		589AEFC67B388F028576C2CB745F7624 /* OCMock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMock.h; path = Source/OCMock/OCMock.h; sourceTree = "<group>"; };
 		58B138ACF63A877A6CC71B4271C0727E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../Specta-iOS/Info.plist"; sourceTree = "<group>"; };
 		58DADF81BBCC9484ED05A034E434199F /* HCRunloopRunner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCRunloopRunner.h; path = Source/Core/Helpers/HCRunloopRunner.h; sourceTree = "<group>"; };
 		5A12CED7C9F6E42AD233E2DE808CF61D /* OCMConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMConstraint.h; path = Source/OCMock/OCMConstraint.h; sourceTree = "<group>"; };
 		5C72267C65C0582817E94008F1FE5A73 /* NSInvocation+OCHamcrest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSInvocation+OCHamcrest.h"; path = "Source/Core/Helpers/NSInvocation+OCHamcrest.h"; sourceTree = "<group>"; };
 		5D29D9A396A9ED02E3109FDC7751952F /* OCHamcrest-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "OCHamcrest-iOS-prefix.pch"; path = "../OCHamcrest-iOS/OCHamcrest-iOS-prefix.pch"; sourceTree = "<group>"; };
-		5F2C6BF8EF110DCE0B34365D73C6CF7F /* Pods-TapstreamMac-TapstreamMacTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TapstreamMac-TapstreamMacTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		600B8D5660CAA4C36845467046AAB0B2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60305B890AE184475D7C642D4D3D489C /* SpectaUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SpectaUtility.h; path = Specta/Specta/SpectaUtility.h; sourceTree = "<group>"; };
 		6093150ADD71E63388D474D78BB00E3B /* HCConformsToProtocol.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCConformsToProtocol.m; path = Source/Library/Object/HCConformsToProtocol.m; sourceTree = "<group>"; };
 		6216ACF0700AD3FBDAE9A3BD95FA159F /* HCIs.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCIs.m; path = Source/Library/Decorator/HCIs.m; sourceTree = "<group>"; };
-		632E87F022921C35FE6D4E39138A786E /* Pods-TapstreamMac-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TapstreamMac-umbrella.h"; sourceTree = "<group>"; };
-		651B90D7C4361CD4A55E30982AC5C474 /* Pods-TapstreamIOS-TapstreamIOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TapstreamIOS-TapstreamIOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		65C8C643979D010F204BE178F430BA3A /* OCMStubRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMStubRecorder.m; path = Source/OCMock/OCMStubRecorder.m; sourceTree = "<group>"; };
 		671491A2564FBE2C484BC6DCE937E776 /* OCMVerifier.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMVerifier.m; path = Source/OCMock/OCMVerifier.m; sourceTree = "<group>"; };
 		6767D3F6C79A1A6ACCAF04E8A8EB14AF /* OCHamcrest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OCHamcrest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -726,7 +719,6 @@
 		6905CCC9853FEFC092B05875F0124D08 /* HCIsCloseTo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCIsCloseTo.m; path = Source/Library/Number/HCIsCloseTo.m; sourceTree = "<group>"; };
 		6AB495865DAF24F7DD3035D8F5DD3625 /* SPTCompiledExample.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTCompiledExample.m; path = Specta/Specta/SPTCompiledExample.m; sourceTree = "<group>"; };
 		6B1A0EFC70B88F1E4BBE8F3E48DB1EFE /* HCIsNot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCIsNot.h; path = Source/Library/Logical/HCIsNot.h; sourceTree = "<group>"; };
-		6B5EE7DC401D67BAB95BF6EC187523B2 /* Pods-TapstreamIOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TapstreamIOS-umbrella.h"; sourceTree = "<group>"; };
 		6B88ACF0F4AAD704139F5DFFBFDC3813 /* NSObject+OCMAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+OCMAdditions.m"; path = "Source/OCMock/NSObject+OCMAdditions.m"; sourceTree = "<group>"; };
 		6CA4795038E4CD17FFFEFCDF29B0A85E /* HCCollect.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCCollect.h; path = Source/Core/Helpers/HCCollect.h; sourceTree = "<group>"; };
 		6D2FA0DAE201B41B5BADD5E41098EBE4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -737,6 +729,7 @@
 		70A1641499472C5B1E6BACF04B7E51C9 /* HCUnsignedLongReturnGetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCUnsignedLongReturnGetter.h; path = Source/Core/Helpers/ReturnValueGetters/HCUnsignedLongReturnGetter.h; sourceTree = "<group>"; };
 		73827B35CC8F964EB15B3B5FEC184EE9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../OCHamcrest-iOS/Info.plist"; sourceTree = "<group>"; };
 		740CEF2062C86B736B54545BF4172ACD /* SPTTestSuite.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTTestSuite.m; path = Specta/Specta/SPTTestSuite.m; sourceTree = "<group>"; };
+		74EC94A98951287DC794993437D4A6DF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		753B46E0D396FB32EE4FE61B940C155E /* HCIsTypeOf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCIsTypeOf.h; path = Source/Library/Object/HCIsTypeOf.h; sourceTree = "<group>"; };
 		76314D5AF79A3832EA85808DA4953013 /* HCAssertThat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCAssertThat.m; path = Source/Core/HCAssertThat.m; sourceTree = "<group>"; };
 		776C124FA3D311FCB69F71CD8C9B15CE /* Specta-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "Specta-iOS.modulemap"; path = "../Specta-iOS/Specta-iOS.modulemap"; sourceTree = "<group>"; };
@@ -748,8 +741,10 @@
 		7F3F92B5D5DCE7832A2E2733227A19DB /* HCIsEqual.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCIsEqual.h; path = Source/Library/Object/HCIsEqual.h; sourceTree = "<group>"; };
 		7F50639377B1ABDC0E3796F119F4D2E6 /* HCEvery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCEvery.h; path = Source/Library/Collection/HCEvery.h; sourceTree = "<group>"; };
 		7FACD3308F3B5985ACD902145BA3A3AA /* HCUnsignedCharReturnGetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCUnsignedCharReturnGetter.h; path = Source/Core/Helpers/ReturnValueGetters/HCUnsignedCharReturnGetter.h; sourceTree = "<group>"; };
+		8033191CD9D3DB8E3F409BFBD3401933 /* Pods-TapstreamIOS-TapstreamIOSTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TapstreamIOS-TapstreamIOSTests-frameworks.sh"; sourceTree = "<group>"; };
 		80517DA2025471DE8A5E2B43D7782758 /* HCTestFailureReporter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCTestFailureReporter.m; path = Source/Core/Helpers/TestFailureReporters/HCTestFailureReporter.m; sourceTree = "<group>"; };
 		81121D200539B63F750151C1ECBBB39E /* HCStringEndsWith.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCStringEndsWith.h; path = Source/Library/Text/HCStringEndsWith.h; sourceTree = "<group>"; };
+		84703633B7E91D5182F47CA4AFAD0113 /* Pods-TapstreamIOS-TapstreamIOSTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TapstreamIOS-TapstreamIOSTests-resources.sh"; sourceTree = "<group>"; };
 		856FB0CD222AE92627A3EA3CE67AEE14 /* HCLongLongReturnGetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCLongLongReturnGetter.m; path = Source/Core/Helpers/ReturnValueGetters/HCLongLongReturnGetter.m; sourceTree = "<group>"; };
 		85E54D26069CCEEEF8FF23964AD1F369 /* OCMock-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "OCMock-iOS-dummy.m"; path = "../OCMock-iOS/OCMock-iOS-dummy.m"; sourceTree = "<group>"; };
 		86C6A385AB885E4F48F1ED956C6CB16E /* XCTest+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "XCTest+Private.h"; path = "Specta/Specta/XCTest+Private.h"; sourceTree = "<group>"; };
@@ -757,12 +752,13 @@
 		8770C5C7776C1E81CB059501966237A1 /* Pods_TapstreamIOS_TapstreamIOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TapstreamIOS_TapstreamIOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A6808BE1CB660A6D983CF4CEFC63EA /* HCWrapInMatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCWrapInMatcher.h; path = Source/Core/Helpers/HCWrapInMatcher.h; sourceTree = "<group>"; };
 		88C5847C5C16F1554F768F77D6E0E394 /* OCMock-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "OCMock-iOS.modulemap"; path = "../OCMock-iOS/OCMock-iOS.modulemap"; sourceTree = "<group>"; };
-		88FE5203A8AC5D4F0CC5BB2369D003AD /* Pods-TapstreamIOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TapstreamIOS-acknowledgements.plist"; sourceTree = "<group>"; };
 		89363CA6162788EF577A3E1012DFC317 /* OCMStubRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMStubRecorder.h; path = Source/OCMock/OCMStubRecorder.h; sourceTree = "<group>"; };
+		8990210E6DD72428AF1E1D204B4F541E /* Pods-TapstreamIOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TapstreamIOS-umbrella.h"; sourceTree = "<group>"; };
 		8A6682A08F50BF811E13A25B992F1561 /* NSInvocation+OCMAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSInvocation+OCMAdditions.h"; path = "Source/OCMock/NSInvocation+OCMAdditions.h"; sourceTree = "<group>"; };
 		8B00DEED42634C57041F3B5E4961D010 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		8BB546A320B69061CF45050DAC1E31F9 /* Pods-TapstreamMac.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TapstreamMac.modulemap"; sourceTree = "<group>"; };
+		8C48F3B795620523B747D63967D19256 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C69E548430A1EAC668D63BD1991406B /* HCLongReturnGetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCLongReturnGetter.m; path = Source/Core/Helpers/ReturnValueGetters/HCLongReturnGetter.m; sourceTree = "<group>"; };
-		8C6E153E44E6B2DEEDC07383F519F2AF /* Pods-TapstreamIOS-TapstreamIOSTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TapstreamIOS-TapstreamIOSTests.modulemap"; sourceTree = "<group>"; };
 		8D5C2A0934406188F6EE2737FD8C3593 /* HCBoolReturnGetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCBoolReturnGetter.m; path = Source/Core/Helpers/ReturnValueGetters/HCBoolReturnGetter.m; sourceTree = "<group>"; };
 		8E116E223DED4D0457DEDC3B9780AA8F /* OCMRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMRecorder.h; path = Source/OCMock/OCMRecorder.h; sourceTree = "<group>"; };
 		8E645E1D543E3F0B0206C423425CCE33 /* OCMock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OCMock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -772,7 +768,6 @@
 		9111E41A0F68DB5AEB808395B5FBEEF7 /* OCMInvocationMatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMInvocationMatcher.h; path = Source/OCMock/OCMInvocationMatcher.h; sourceTree = "<group>"; };
 		91B69DFF0315EC9698703833474AFBFF /* HCObjectReturnGetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCObjectReturnGetter.m; path = Source/Core/Helpers/ReturnValueGetters/HCObjectReturnGetter.m; sourceTree = "<group>"; };
 		92155644AAF60BB8CF0BAF27D28EBF9B /* OCProtocolMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCProtocolMockObject.m; path = Source/OCMock/OCProtocolMockObject.m; sourceTree = "<group>"; };
-		938D986907969298C4777A3D97D8F4B3 /* Pods-TapstreamIOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TapstreamIOS-resources.sh"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		94949BE82CCC1BA6FB387BABFC5E8498 /* HCIsInstanceOf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCIsInstanceOf.h; path = Source/Library/Object/HCIsInstanceOf.h; sourceTree = "<group>"; };
 		9523D3E2F4188E72FFE5C0016E054571 /* HCUnsignedLongReturnGetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCUnsignedLongReturnGetter.m; path = Source/Core/Helpers/ReturnValueGetters/HCUnsignedLongReturnGetter.m; sourceTree = "<group>"; };
@@ -790,10 +785,8 @@
 		9FE8ED81E1C0A7F47CD5A25BAF59FBBB /* HCIsIn.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCIsIn.m; path = Source/Library/Collection/HCIsIn.m; sourceTree = "<group>"; };
 		A071BA235EAFA131AE7963B031055A6E /* SPTSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTSpec.h; path = Specta/Specta/SPTSpec.h; sourceTree = "<group>"; };
 		A19402A8F369D54FA40927572C84225B /* HCIsDictionaryContainingKey.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCIsDictionaryContainingKey.h; path = Source/Library/Collection/HCIsDictionaryContainingKey.h; sourceTree = "<group>"; };
-		A1A7E341AD253450B289B43CDFDE2B94 /* Pods-TapstreamMac.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TapstreamMac.modulemap"; sourceTree = "<group>"; };
 		A2BD2B4894DB3FD929A4A47952A88F48 /* HCHasCount.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCHasCount.m; path = Source/Library/Collection/HCHasCount.m; sourceTree = "<group>"; };
 		A2D3E7B12BA24BDF09195C6B47FC9762 /* HCTestFailure.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCTestFailure.m; path = Source/Core/Helpers/TestFailureReporters/HCTestFailure.m; sourceTree = "<group>"; };
-		A3B4A9CDB4197E1F17D513C976442D8B /* Pods-TapstreamMac-TapstreamMacTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TapstreamMac-TapstreamMacTests.release.xcconfig"; sourceTree = "<group>"; };
 		A462C78605644BC6ED9277FC5DDA7FB8 /* OCMBlockCaller.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMBlockCaller.h; path = Source/OCMock/OCMBlockCaller.h; sourceTree = "<group>"; };
 		A50A7623638706DD9745D505E40DD820 /* HCFloatReturnGetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCFloatReturnGetter.h; path = Source/Core/Helpers/ReturnValueGetters/HCFloatReturnGetter.h; sourceTree = "<group>"; };
 		A519CF394F16B2C7A0757F6343E34EAE /* OCMockObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMockObject.h; path = Source/OCMock/OCMockObject.h; sourceTree = "<group>"; };
@@ -805,7 +798,6 @@
 		A79B6E7067789827DDBB2A7D2193360A /* HCIsDictionaryContainingKey.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCIsDictionaryContainingKey.m; path = Source/Library/Collection/HCIsDictionaryContainingKey.m; sourceTree = "<group>"; };
 		A7E1EE82CCB40570ABCC77800C3951D7 /* OCHamcrest-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "OCHamcrest-iOS.modulemap"; path = "../OCHamcrest-iOS/OCHamcrest-iOS.modulemap"; sourceTree = "<group>"; };
 		A8A5E58FECDFFB9785878635E80CA375 /* HCIsNot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCIsNot.m; path = Source/Library/Logical/HCIsNot.m; sourceTree = "<group>"; };
-		A966BA69D30A246A946F070178C409E0 /* Pods-TapstreamMac-TapstreamMacTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TapstreamMac-TapstreamMacTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A99B6F08DA7F1148256C946A386BE63B /* HCStringDescription.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCStringDescription.h; path = Source/Core/HCStringDescription.h; sourceTree = "<group>"; };
 		AACB5BB19E894FA8FB29C36BCD474E20 /* OCClassMockObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCClassMockObject.h; path = Source/OCMock/OCClassMockObject.h; sourceTree = "<group>"; };
 		AC7B16A0751488AF369E149BDCAB3FA2 /* Specta-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Specta-iOS-dummy.m"; path = "../Specta-iOS/Specta-iOS-dummy.m"; sourceTree = "<group>"; };
@@ -815,13 +807,11 @@
 		AE9D45C507EF02ED32B49B3C1A797720 /* Specta-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Specta-iOS-umbrella.h"; path = "../Specta-iOS/Specta-iOS-umbrella.h"; sourceTree = "<group>"; };
 		AEB0D19A756496CD77523236534B3F7D /* HCIsNil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCIsNil.m; path = Source/Library/Object/HCIsNil.m; sourceTree = "<group>"; };
 		AF40D1F676F8F168567C114B20B70157 /* OCMock-OSX.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "OCMock-OSX.modulemap"; sourceTree = "<group>"; };
-		B0CFF178E56741006267D3546E734DAB /* Pods-TapstreamIOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TapstreamIOS-dummy.m"; sourceTree = "<group>"; };
 		B1756368D0A0FC60C3CB22116C7866C1 /* OCMReturnValueProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMReturnValueProvider.m; path = Source/OCMock/OCMReturnValueProvider.m; sourceTree = "<group>"; };
 		B176403F6F3F3EAF8646D6BE43DB0288 /* HCIsDictionaryContaining.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCIsDictionaryContaining.h; path = Source/Library/Collection/HCIsDictionaryContaining.h; sourceTree = "<group>"; };
 		B277B50F1763054B1B93E8F4D8045C6C /* OCMPassByRefSetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMPassByRefSetter.h; path = Source/OCMock/OCMPassByRefSetter.h; sourceTree = "<group>"; };
 		B2D315B3550B1491D3D47F11725AFCCD /* HCAllOf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCAllOf.h; path = Source/Library/Logical/HCAllOf.h; sourceTree = "<group>"; };
 		B2F7757494549AE3958584DD96B7ECD9 /* HCIsDictionaryContainingValue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCIsDictionaryContainingValue.m; path = Source/Library/Collection/HCIsDictionaryContainingValue.m; sourceTree = "<group>"; };
-		B311CA8FBAC5382E1CC6A398E214C16A /* Pods-TapstreamMac-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TapstreamMac-acknowledgements.plist"; sourceTree = "<group>"; };
 		B3F962481A8D79EBED0602D48C78976B /* OCMIndirectReturnValueProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMIndirectReturnValueProvider.h; path = Source/OCMock/OCMIndirectReturnValueProvider.h; sourceTree = "<group>"; };
 		B42CC0EDC618172A70B6BDB22829FDA4 /* Specta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Specta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45D5B9DD0C4F5D8735F72C04333F652 /* HCHasProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCHasProperty.m; path = Source/Library/Object/HCHasProperty.m; sourceTree = "<group>"; };
@@ -832,14 +822,16 @@
 		B6944607013F7A06634C0F87D5F7B744 /* HCTestFailureReporter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCTestFailureReporter.h; path = Source/Core/Helpers/TestFailureReporters/HCTestFailureReporter.h; sourceTree = "<group>"; };
 		B6B437FD539D77E98200ED859DEFD96E /* HCIsCloseTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCIsCloseTo.h; path = Source/Library/Number/HCIsCloseTo.h; sourceTree = "<group>"; };
 		B78DE01D19583DEB6DEB71FDFDA9A636 /* HCGenericTestFailureReporter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCGenericTestFailureReporter.h; path = Source/Core/Helpers/TestFailureReporters/HCGenericTestFailureReporter.h; sourceTree = "<group>"; };
+		B979FE5E5FB20E9987E8C900C1668BF4 /* Pods-TapstreamMac-TapstreamMacTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TapstreamMac-TapstreamMacTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B9F22FBECD17F97E4B4D3A0A33277E48 /* OCMArgAction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMArgAction.m; path = Source/OCMock/OCMArgAction.m; sourceTree = "<group>"; };
+		BA702EB28D554A655E56D9F03634DECE /* Pods-TapstreamMac-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TapstreamMac-acknowledgements.plist"; sourceTree = "<group>"; };
 		BB7993D25AA3E581DD6B2387192E1BF5 /* NSNotificationCenter+OCMAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSNotificationCenter+OCMAdditions.m"; path = "Source/OCMock/NSNotificationCenter+OCMAdditions.m"; sourceTree = "<group>"; };
 		BBA17FA23CBF0DBD5A684965BCAE250D /* OCMExceptionReturnValueProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMExceptionReturnValueProvider.m; path = Source/OCMock/OCMExceptionReturnValueProvider.m; sourceTree = "<group>"; };
-		BBA54C96B0FC6B6154D4BBB9DC43FCBD /* Pods-TapstreamIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TapstreamIOS.release.xcconfig"; sourceTree = "<group>"; };
+		BBC9794ACF1B037567FD8AA4B5BC2278 /* Pods-TapstreamMac-TapstreamMacTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TapstreamMac-TapstreamMacTests-resources.sh"; sourceTree = "<group>"; };
 		BD01660F900A7A98432CDF1596DF8C49 /* HCUnsignedIntReturnGetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCUnsignedIntReturnGetter.h; path = Source/Core/Helpers/ReturnValueGetters/HCUnsignedIntReturnGetter.h; sourceTree = "<group>"; };
 		BE65CEBC87C4FAABC9EF19DD7AAC1744 /* OCMExceptionReturnValueProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMExceptionReturnValueProvider.h; path = Source/OCMock/OCMExceptionReturnValueProvider.h; sourceTree = "<group>"; };
+		BEE916811236C67885D6EFEF8933A039 /* Pods-TapstreamMac-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TapstreamMac-dummy.m"; sourceTree = "<group>"; };
 		BF4AAC248F36ECA155E64B3F232DC651 /* HCIsEmptyCollection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCIsEmptyCollection.h; path = Source/Library/Collection/HCIsEmptyCollection.h; sourceTree = "<group>"; };
-		C0C31F3469746C0C37E6171AEF71F356 /* Pods-TapstreamMac-TapstreamMacTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TapstreamMac-TapstreamMacTests-resources.sh"; sourceTree = "<group>"; };
 		C1BE8DEFF712F016E12B77B6244AEABE /* OCHamcrest-OSX-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OCHamcrest-OSX-umbrella.h"; sourceTree = "<group>"; };
 		C20062EBF942134667B9A69FADD56306 /* HCReturnValueGetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCReturnValueGetter.m; path = Source/Core/Helpers/ReturnValueGetters/HCReturnValueGetter.m; sourceTree = "<group>"; };
 		C2CECFDCD5A7137B86FBC6010CC1B810 /* OCObserverMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCObserverMockObject.m; path = Source/OCMock/OCObserverMockObject.m; sourceTree = "<group>"; };
@@ -848,6 +840,7 @@
 		C48B3890FB5CC61B9471FFF9EAC455A0 /* SPTSharedExampleGroups.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTSharedExampleGroups.m; path = Specta/Specta/SPTSharedExampleGroups.m; sourceTree = "<group>"; };
 		C57527BCEA600AFFADEFBED5EE95E66C /* HCDescription.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCDescription.h; path = Source/Core/HCDescription.h; sourceTree = "<group>"; };
 		C6D78C14ECB3E039144027B923E6592C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		C852AAC46608459DB59C67918F26071F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C85315A36AC6573718D2981D89784781 /* NSInvocation+OCMAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSInvocation+OCMAdditions.m"; path = "Source/OCMock/NSInvocation+OCMAdditions.m"; sourceTree = "<group>"; };
 		C88C00591BD85C3574F47B476CD2BB8A /* HCSenTestFailureReporter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCSenTestFailureReporter.m; path = Source/Core/Helpers/TestFailureReporters/HCSenTestFailureReporter.m; sourceTree = "<group>"; };
 		C893596012AA54A0BEA4C72D5FDF044C /* HCDescribedAs.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCDescribedAs.m; path = Source/Library/Decorator/HCDescribedAs.m; sourceTree = "<group>"; };
@@ -861,31 +854,33 @@
 		D1C6CEF9C875787445BAA3E867B5A555 /* NSInvocation+OCHamcrest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSInvocation+OCHamcrest.m"; path = "Source/Core/Helpers/NSInvocation+OCHamcrest.m"; sourceTree = "<group>"; };
 		D34AE0426430A95AFB7BABBF13346D43 /* OCMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMockObject.m; path = Source/OCMock/OCMockObject.m; sourceTree = "<group>"; };
 		D360BDCDD97E8B1E5BF5520622C4B336 /* HCHasCount.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCHasCount.h; path = Source/Library/Collection/HCHasCount.h; sourceTree = "<group>"; };
-		D4BD1364A8335FCAEBD77A929A0DCBFE /* Pods-TapstreamMac-TapstreamMacTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TapstreamMac-TapstreamMacTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D36906E0E2CBA2B1482D65677F5A93B7 /* Pods-TapstreamMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TapstreamMac.release.xcconfig"; sourceTree = "<group>"; };
 		D4E6CB25EB05B7A33748064F716CBF6A /* HCIntReturnGetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCIntReturnGetter.m; path = Source/Core/Helpers/ReturnValueGetters/HCIntReturnGetter.m; sourceTree = "<group>"; };
 		D683243E2D361BA2059E43746378CF4A /* OCClassMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCClassMockObject.m; path = Source/OCMock/OCClassMockObject.m; sourceTree = "<group>"; };
 		D73493FD3F738CFC057134E55BD42D7A /* HCIsEqualIgnoringCase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCIsEqualIgnoringCase.h; path = Source/Library/Text/HCIsEqualIgnoringCase.h; sourceTree = "<group>"; };
 		D84B0025D632A68B91BF11153D8DFCF8 /* OCPartialMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCPartialMockObject.m; path = Source/OCMock/OCPartialMockObject.m; sourceTree = "<group>"; };
 		D857B11BF2A30EB3D0ECF43230126B8D /* HCUnsignedCharReturnGetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCUnsignedCharReturnGetter.m; path = Source/Core/Helpers/ReturnValueGetters/HCUnsignedCharReturnGetter.m; sourceTree = "<group>"; };
 		DB5519DE646138ABBD086005834FB9A8 /* HCFloatReturnGetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCFloatReturnGetter.m; path = Source/Core/Helpers/ReturnValueGetters/HCFloatReturnGetter.m; sourceTree = "<group>"; };
+		DB80F64AECBC74F705E2067D6CB7E23B /* Pods-TapstreamMac-TapstreamMacTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TapstreamMac-TapstreamMacTests-frameworks.sh"; sourceTree = "<group>"; };
 		DBD4A94D37B7317EE151AA15A467614B /* SpectaDSL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SpectaDSL.m; path = Specta/Specta/SpectaDSL.m; sourceTree = "<group>"; };
 		DC001BA36376DA1684D34A8132DF8DE1 /* XCTestCase+Specta.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "XCTestCase+Specta.h"; path = "Specta/Specta/XCTestCase+Specta.h"; sourceTree = "<group>"; };
 		DC3B5D2C48137DD3113D199BC583F357 /* HCBaseMatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCBaseMatcher.h; path = Source/Core/HCBaseMatcher.h; sourceTree = "<group>"; };
 		DC41759A19B83ADAA3643D0C6B71E37A /* HCIsEqual.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCIsEqual.m; path = Source/Library/Object/HCIsEqual.m; sourceTree = "<group>"; };
 		DF00AE4E4ACCEF67D735B989C2C88301 /* OCProtocolMockObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCProtocolMockObject.h; path = Source/OCMock/OCProtocolMockObject.h; sourceTree = "<group>"; };
 		DF93F8EA525484946A7E32AE5671B274 /* Pods_TapstreamMac_TapstreamMacTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TapstreamMac_TapstreamMacTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF98B83E71A0B39686B5628EB159014C /* Pods-TapstreamIOS-TapstreamIOSTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TapstreamIOS-TapstreamIOSTests-dummy.m"; sourceTree = "<group>"; };
+		DFB3F932847250EE57C0AD71EF085475 /* Pods-TapstreamIOS-TapstreamIOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TapstreamIOS-TapstreamIOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		E0479A9175E2C4F750D503CD74BFF132 /* OCMNotificationPoster.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMNotificationPoster.m; path = Source/OCMock/OCMNotificationPoster.m; sourceTree = "<group>"; };
 		E075EF55EAFA9873106096E5DCE4DEC0 /* NSObject+OCMAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+OCMAdditions.h"; path = "Source/OCMock/NSObject+OCMAdditions.h"; sourceTree = "<group>"; };
 		E0B2BC645896263DF659BC4275205607 /* HCRunloopRunner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCRunloopRunner.m; path = Source/Core/Helpers/HCRunloopRunner.m; sourceTree = "<group>"; };
-		E2135CF7653DF7C3E439E3E0FE61E27D /* Pods-TapstreamIOS-TapstreamIOSTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TapstreamIOS-TapstreamIOSTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		E3B94EB4B7C615960C8311CD48748638 /* OCMFunctions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMFunctions.m; path = Source/OCMock/OCMFunctions.m; sourceTree = "<group>"; };
-		E3ED4386A3319AD4253D2C25A0F9C45A /* Pods-TapstreamMac-TapstreamMacTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TapstreamMac-TapstreamMacTests-frameworks.sh"; sourceTree = "<group>"; };
 		E4346AFD827409090471545BCA624740 /* HCIsEqualToNumber.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCIsEqualToNumber.h; path = Source/Library/Number/HCIsEqualToNumber.h; sourceTree = "<group>"; };
+		E5A1264705195DF8F927CF82A83942A4 /* Pods-TapstreamIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TapstreamIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		E60EF448EA5BD8E7D395E314CF845083 /* HCSubstringMatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCSubstringMatcher.h; path = Source/Library/Text/HCSubstringMatcher.h; sourceTree = "<group>"; };
 		E6D6C9796DED2CAD268F4F02BA605429 /* OCMBlockCaller.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMBlockCaller.m; path = Source/OCMock/OCMBlockCaller.m; sourceTree = "<group>"; };
 		E6F2EE7AD85C8A652FDDC35C76C03DCD /* HCThrowsException.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCThrowsException.h; path = Source/Library/Object/HCThrowsException.h; sourceTree = "<group>"; };
+		E7774C14C539B6A6E3076AFFF2635713 /* Pods-TapstreamIOS-TapstreamIOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TapstreamIOS-TapstreamIOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E777944B66539E2E21400B308891CEA3 /* HCIsSame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCIsSame.h; path = Source/Library/Object/HCIsSame.h; sourceTree = "<group>"; };
+		E7D3E5B38E36562AF15A8A36729C20D7 /* Pods-TapstreamIOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TapstreamIOS-dummy.m"; sourceTree = "<group>"; };
 		E8A015ECBECA3D6BE78660F06C6260EC /* OCMock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OCMock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8FAC0A4BE5C3C375EFF12809BDF6CD6 /* HCAllOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCAllOf.m; path = Source/Library/Logical/HCAllOf.m; sourceTree = "<group>"; };
 		E9D3EFD1CB32EBD1D38111D260453A41 /* SpectaTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SpectaTypes.h; path = Specta/Specta/SpectaTypes.h; sourceTree = "<group>"; };
@@ -900,8 +895,11 @@
 		EFF6A86F8931FE1BDEC4C2076634E9B1 /* HCWrapInMatcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCWrapInMatcher.m; path = Source/Core/Helpers/HCWrapInMatcher.m; sourceTree = "<group>"; };
 		F046B25CEADA02D5CB56EBE7AFFF2E1B /* HCReturnValueGetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCReturnValueGetter.h; path = Source/Core/Helpers/ReturnValueGetters/HCReturnValueGetter.h; sourceTree = "<group>"; };
 		F050AECA26B9112E28E5C9408B2DAD91 /* Pods_TapstreamIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TapstreamIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0A3FD9C3D78BC016AF586D443BF0D46 /* Pods-TapstreamMac-TapstreamMacTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TapstreamMac-TapstreamMacTests-umbrella.h"; sourceTree = "<group>"; };
+		F0B8662CD849FEFBA9F7442C1E1EDC1A /* Pods-TapstreamMac-TapstreamMacTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TapstreamMac-TapstreamMacTests-dummy.m"; sourceTree = "<group>"; };
 		F2905B191B52CB6AC647F71C2C628794 /* HCNumberAssert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCNumberAssert.h; path = Source/Library/Number/HCNumberAssert.h; sourceTree = "<group>"; };
 		F2C7BB4E15E9F5224D6543ECDD9AD997 /* HCDiagnosingMatcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCDiagnosingMatcher.m; path = Source/Core/HCDiagnosingMatcher.m; sourceTree = "<group>"; };
+		F2C953B71862853A08873C61F4C0CC8D /* Pods-TapstreamIOS-TapstreamIOSTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TapstreamIOS-TapstreamIOSTests-dummy.m"; sourceTree = "<group>"; };
 		F30F806EAA491DE9A14934A3BE700510 /* HCBaseDescription.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCBaseDescription.m; path = Source/Core/HCBaseDescription.m; sourceTree = "<group>"; };
 		F3306E181F978E499FC198F921F0A56F /* HCXCTestFailureReporter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCXCTestFailureReporter.m; path = Source/Core/Helpers/TestFailureReporters/HCXCTestFailureReporter.m; sourceTree = "<group>"; };
 		F368860F7B1FDED64D5F86C77577ECBE /* SPTTestSuite.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTTestSuite.h; path = Specta/Specta/SPTTestSuite.h; sourceTree = "<group>"; };
@@ -913,11 +911,11 @@
 		F6F8DEFD3E7BDDE9F629EA2746C45452 /* HCSenTestFailureReporter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCSenTestFailureReporter.h; path = Source/Core/Helpers/TestFailureReporters/HCSenTestFailureReporter.h; sourceTree = "<group>"; };
 		F895A9CB60A8623D1C9FC9DCC306B173 /* HCConformsToProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCConformsToProtocol.h; path = Source/Library/Object/HCConformsToProtocol.h; sourceTree = "<group>"; };
 		F8A39EAE22AB445E03AF23DFB31F021A /* Specta-OSX.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Specta-OSX.modulemap"; sourceTree = "<group>"; };
+		F8B0C2DAE70E0BFF859AA1ECB17B0E3A /* Pods-TapstreamIOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TapstreamIOS-acknowledgements.plist"; sourceTree = "<group>"; };
 		F9975D6B73AF8F048A33AACD99828EE8 /* HCLongLongReturnGetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCLongLongReturnGetter.h; path = Source/Core/Helpers/ReturnValueGetters/HCLongLongReturnGetter.h; sourceTree = "<group>"; };
 		F9C1D642431FC82418D7FEE53C2CC321 /* HCStringDescription.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCStringDescription.m; path = Source/Core/HCStringDescription.m; sourceTree = "<group>"; };
-		FA3D6E6DAF667CD14D4F3E3B8580C548 /* Pods-TapstreamIOS-TapstreamIOSTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TapstreamIOS-TapstreamIOSTests-frameworks.sh"; sourceTree = "<group>"; };
+		FAA9E854A8EFE3448EAE1E0670BA7082 /* Pods-TapstreamIOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TapstreamIOS.modulemap"; sourceTree = "<group>"; };
 		FB800131121797F00D12ED79D21B6739 /* HCDiagnosingMatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCDiagnosingMatcher.h; path = Source/Core/HCDiagnosingMatcher.h; sourceTree = "<group>"; };
-		FD45BA3AA199E03855078FB289C9CA9A /* Pods-TapstreamIOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TapstreamIOS-acknowledgements.markdown"; sourceTree = "<group>"; };
 		FE4142BAD8F65FCF9588EA74F63D7FEB /* OCMFunctionsPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMFunctionsPrivate.h; path = Source/OCMock/OCMFunctionsPrivate.h; sourceTree = "<group>"; };
 		FE6698E5320409BEDF9974EE964A253A /* HCIsTrueFalse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCIsTrueFalse.h; path = Source/Library/Number/HCIsTrueFalse.h; sourceTree = "<group>"; };
 		FF9C1C83AB4CEF27D3A756E2DA31BA21 /* SPTGlobalBeforeAfterEach.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTGlobalBeforeAfterEach.h; path = Specta/Specta/SPTGlobalBeforeAfterEach.h; sourceTree = "<group>"; };
@@ -1027,33 +1025,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2EE7D9C0B6ACC77B65C6A336B217A5E8 /* Targets Support Files */ = {
+		1DB93DE09ED2F6A8684FD82D87E7936F /* Pods-TapstreamMac */ = {
 			isa = PBXGroup;
 			children = (
-				32764FF55ED3CB4D4C449BB2777ABE90 /* Pods-TapstreamIOS */,
-				C25A2F813635470967B478A8749C0EDA /* Pods-TapstreamIOS-TapstreamIOSTests */,
-				72A8C737C628647629DB50B87BD1B47D /* Pods-TapstreamMac */,
-				FB6B14B3E48E3F181FF761D3E9F34ABC /* Pods-TapstreamMac-TapstreamMacTests */,
+				8C48F3B795620523B747D63967D19256 /* Info.plist */,
+				8BB546A320B69061CF45050DAC1E31F9 /* Pods-TapstreamMac.modulemap */,
+				2878EF939D8DE4834BF118E6AD1FDE5A /* Pods-TapstreamMac-acknowledgements.markdown */,
+				BA702EB28D554A655E56D9F03634DECE /* Pods-TapstreamMac-acknowledgements.plist */,
+				BEE916811236C67885D6EFEF8933A039 /* Pods-TapstreamMac-dummy.m */,
+				0239DAFCD3F4C388342830A907FCB4D5 /* Pods-TapstreamMac-resources.sh */,
+				14322482FAF0449367DD3716F32A33B3 /* Pods-TapstreamMac-umbrella.h */,
+				57DA96FD5E9217AFF42379DE1A95E364 /* Pods-TapstreamMac.debug.xcconfig */,
+				D36906E0E2CBA2B1482D65677F5A93B7 /* Pods-TapstreamMac.release.xcconfig */,
 			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		32764FF55ED3CB4D4C449BB2777ABE90 /* Pods-TapstreamIOS */ = {
-			isa = PBXGroup;
-			children = (
-				4BE5D0B082DF610C4ADCFAF018373713 /* Info.plist */,
-				3E76B77C0B04E55DFF75EBF900C95F84 /* Pods-TapstreamIOS.modulemap */,
-				FD45BA3AA199E03855078FB289C9CA9A /* Pods-TapstreamIOS-acknowledgements.markdown */,
-				88FE5203A8AC5D4F0CC5BB2369D003AD /* Pods-TapstreamIOS-acknowledgements.plist */,
-				B0CFF178E56741006267D3546E734DAB /* Pods-TapstreamIOS-dummy.m */,
-				43FF0642FC67E72FBCBE2A2DFC955B9F /* Pods-TapstreamIOS-frameworks.sh */,
-				938D986907969298C4777A3D97D8F4B3 /* Pods-TapstreamIOS-resources.sh */,
-				6B5EE7DC401D67BAB95BF6EC187523B2 /* Pods-TapstreamIOS-umbrella.h */,
-				0996650F0EEE98EE7FDA56DA5ECB971A /* Pods-TapstreamIOS.debug.xcconfig */,
-				BBA54C96B0FC6B6154D4BBB9DC43FCBD /* Pods-TapstreamIOS.release.xcconfig */,
-			);
-			name = "Pods-TapstreamIOS";
-			path = "Target Support Files/Pods-TapstreamIOS";
+			name = "Pods-TapstreamMac";
+			path = "Target Support Files/Pods-TapstreamMac";
 			sourceTree = "<group>";
 		};
 		379FAB5BBD3AE8008F59B08B8FABF27B /* Support Files */ = {
@@ -1074,6 +1060,52 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/OCMock-OSX";
+			sourceTree = "<group>";
+		};
+		4E246F3742CE83305AA2B80D2B17C83F /* Pods-TapstreamIOS-TapstreamIOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				C852AAC46608459DB59C67918F26071F /* Info.plist */,
+				0608729CE12D652136B030BB1DBDD908 /* Pods-TapstreamIOS-TapstreamIOSTests.modulemap */,
+				55BEFE770F67F9521F56242C91F5DB97 /* Pods-TapstreamIOS-TapstreamIOSTests-acknowledgements.markdown */,
+				418F6E34C81A0B0344AB7903DAD2D4C4 /* Pods-TapstreamIOS-TapstreamIOSTests-acknowledgements.plist */,
+				F2C953B71862853A08873C61F4C0CC8D /* Pods-TapstreamIOS-TapstreamIOSTests-dummy.m */,
+				8033191CD9D3DB8E3F409BFBD3401933 /* Pods-TapstreamIOS-TapstreamIOSTests-frameworks.sh */,
+				84703633B7E91D5182F47CA4AFAD0113 /* Pods-TapstreamIOS-TapstreamIOSTests-resources.sh */,
+				1FCEA5A4DE0CACB2F0623923A724286B /* Pods-TapstreamIOS-TapstreamIOSTests-umbrella.h */,
+				E7774C14C539B6A6E3076AFFF2635713 /* Pods-TapstreamIOS-TapstreamIOSTests.debug.xcconfig */,
+				DFB3F932847250EE57C0AD71EF085475 /* Pods-TapstreamIOS-TapstreamIOSTests.release.xcconfig */,
+			);
+			name = "Pods-TapstreamIOS-TapstreamIOSTests";
+			path = "Target Support Files/Pods-TapstreamIOS-TapstreamIOSTests";
+			sourceTree = "<group>";
+		};
+		5A9EADBFE00DC435251B638B46877982 /* Pods-TapstreamIOS */ = {
+			isa = PBXGroup;
+			children = (
+				406CC3153210AC3735E2677B67197075 /* Info.plist */,
+				FAA9E854A8EFE3448EAE1E0670BA7082 /* Pods-TapstreamIOS.modulemap */,
+				1B4F2FBA1055CBF894916F57E8CEB53E /* Pods-TapstreamIOS-acknowledgements.markdown */,
+				F8B0C2DAE70E0BFF859AA1ECB17B0E3A /* Pods-TapstreamIOS-acknowledgements.plist */,
+				E7D3E5B38E36562AF15A8A36729C20D7 /* Pods-TapstreamIOS-dummy.m */,
+				0B56133553A7D2115A37B05816D98FCC /* Pods-TapstreamIOS-resources.sh */,
+				8990210E6DD72428AF1E1D204B4F541E /* Pods-TapstreamIOS-umbrella.h */,
+				E5A1264705195DF8F927CF82A83942A4 /* Pods-TapstreamIOS.debug.xcconfig */,
+				010B31F7C2B5CA3534A90BD3856AFD9D /* Pods-TapstreamIOS.release.xcconfig */,
+			);
+			name = "Pods-TapstreamIOS";
+			path = "Target Support Files/Pods-TapstreamIOS";
+			sourceTree = "<group>";
+		};
+		627423F05647865E85A5F4D213A7BCDA /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5A9EADBFE00DC435251B638B46877982 /* Pods-TapstreamIOS */,
+				4E246F3742CE83305AA2B80D2B17C83F /* Pods-TapstreamIOS-TapstreamIOSTests */,
+				1DB93DE09ED2F6A8684FD82D87E7936F /* Pods-TapstreamMac */,
+				F4A72508726813192408F7F0CBEA0DDD /* Pods-TapstreamMac-TapstreamMacTests */,
+			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		6484930E17FCD03EDA15FBEBB530E669 /* OCHamcrest */ = {
@@ -1347,24 +1379,6 @@
 			path = OCMock;
 			sourceTree = "<group>";
 		};
-		72A8C737C628647629DB50B87BD1B47D /* Pods-TapstreamMac */ = {
-			isa = PBXGroup;
-			children = (
-				512EEA7759CF4F04748D48CC3F71B57E /* Info.plist */,
-				A1A7E341AD253450B289B43CDFDE2B94 /* Pods-TapstreamMac.modulemap */,
-				325B10DDE21A34B1BA767AC8FAC5DA8F /* Pods-TapstreamMac-acknowledgements.markdown */,
-				B311CA8FBAC5382E1CC6A398E214C16A /* Pods-TapstreamMac-acknowledgements.plist */,
-				079750200A90226714F2172AB14BBBB6 /* Pods-TapstreamMac-dummy.m */,
-				1205A3BC383BEEAD1E69550F940368BA /* Pods-TapstreamMac-frameworks.sh */,
-				1A7D95864DDA7238A012496A739A0973 /* Pods-TapstreamMac-resources.sh */,
-				632E87F022921C35FE6D4E39138A786E /* Pods-TapstreamMac-umbrella.h */,
-				0F3D9DE9DBD33AFC83348D6A221F8B63 /* Pods-TapstreamMac.debug.xcconfig */,
-				162D34DC8FB65B36777C7495DCE02C84 /* Pods-TapstreamMac.release.xcconfig */,
-			);
-			name = "Pods-TapstreamMac";
-			path = "Target Support Files/Pods-TapstreamMac";
-			sourceTree = "<group>";
-		};
 		7CE7486E1BE330F7FAD77334B14D8319 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -1392,7 +1406,7 @@
 				DE13583AB8F794BBEAF85E3A80DA349C /* Frameworks */,
 				F5BD47FDCDACB5FB6599EDE06BB769E4 /* Pods */,
 				02E9B93B567227C6E31424606C627DF9 /* Products */,
-				2EE7D9C0B6ACC77B65C6A336B217A5E8 /* Targets Support Files */,
+				627423F05647865E85A5F4D213A7BCDA /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1413,24 +1427,6 @@
 				483530986AB7D3A636912C0E70A92D19 /* XCTest.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		C25A2F813635470967B478A8749C0EDA /* Pods-TapstreamIOS-TapstreamIOSTests */ = {
-			isa = PBXGroup;
-			children = (
-				0B50160598B99AA0300E1ACE528AEDCD /* Info.plist */,
-				8C6E153E44E6B2DEEDC07383F519F2AF /* Pods-TapstreamIOS-TapstreamIOSTests.modulemap */,
-				17C60F82B9C9201081713E4B8F6E9C21 /* Pods-TapstreamIOS-TapstreamIOSTests-acknowledgements.markdown */,
-				E2135CF7653DF7C3E439E3E0FE61E27D /* Pods-TapstreamIOS-TapstreamIOSTests-acknowledgements.plist */,
-				DF98B83E71A0B39686B5628EB159014C /* Pods-TapstreamIOS-TapstreamIOSTests-dummy.m */,
-				FA3D6E6DAF667CD14D4F3E3B8580C548 /* Pods-TapstreamIOS-TapstreamIOSTests-frameworks.sh */,
-				0EB249CEC92D9973655F7AC6AD0B321A /* Pods-TapstreamIOS-TapstreamIOSTests-resources.sh */,
-				2C353FDD961DADE85315A7B05768B8BE /* Pods-TapstreamIOS-TapstreamIOSTests-umbrella.h */,
-				651B90D7C4361CD4A55E30982AC5C474 /* Pods-TapstreamIOS-TapstreamIOSTests.debug.xcconfig */,
-				0A1D516DE5E3CCFC9AB1E18128B5F66B /* Pods-TapstreamIOS-TapstreamIOSTests.release.xcconfig */,
-			);
-			name = "Pods-TapstreamIOS-TapstreamIOSTests";
-			path = "Target Support Files/Pods-TapstreamIOS-TapstreamIOSTests";
 			sourceTree = "<group>";
 		};
 		DE13583AB8F794BBEAF85E3A80DA349C /* Frameworks */ = {
@@ -1462,6 +1458,24 @@
 			path = "../Target Support Files/Specta-OSX";
 			sourceTree = "<group>";
 		};
+		F4A72508726813192408F7F0CBEA0DDD /* Pods-TapstreamMac-TapstreamMacTests */ = {
+			isa = PBXGroup;
+			children = (
+				74EC94A98951287DC794993437D4A6DF /* Info.plist */,
+				492B192C5156199BF737B3372B06DC79 /* Pods-TapstreamMac-TapstreamMacTests.modulemap */,
+				B979FE5E5FB20E9987E8C900C1668BF4 /* Pods-TapstreamMac-TapstreamMacTests-acknowledgements.markdown */,
+				0A7BA3FFA6FB015C5839380EAF713095 /* Pods-TapstreamMac-TapstreamMacTests-acknowledgements.plist */,
+				F0B8662CD849FEFBA9F7442C1E1EDC1A /* Pods-TapstreamMac-TapstreamMacTests-dummy.m */,
+				DB80F64AECBC74F705E2067D6CB7E23B /* Pods-TapstreamMac-TapstreamMacTests-frameworks.sh */,
+				BBC9794ACF1B037567FD8AA4B5BC2278 /* Pods-TapstreamMac-TapstreamMacTests-resources.sh */,
+				F0A3FD9C3D78BC016AF586D443BF0D46 /* Pods-TapstreamMac-TapstreamMacTests-umbrella.h */,
+				580449407A27323098E06D2DCACCBE33 /* Pods-TapstreamMac-TapstreamMacTests.debug.xcconfig */,
+				15FE702B1FF64E6D687FE3885CDBB06C /* Pods-TapstreamMac-TapstreamMacTests.release.xcconfig */,
+			);
+			name = "Pods-TapstreamMac-TapstreamMacTests";
+			path = "Target Support Files/Pods-TapstreamMac-TapstreamMacTests";
+			sourceTree = "<group>";
+		};
 		F5BD47FDCDACB5FB6599EDE06BB769E4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1470,24 +1484,6 @@
 				6F95C3315D68B013DA960F73CC97BF9D /* Specta */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		FB6B14B3E48E3F181FF761D3E9F34ABC /* Pods-TapstreamMac-TapstreamMacTests */ = {
-			isa = PBXGroup;
-			children = (
-				264FF8651800DFD87C190D47183EAE98 /* Info.plist */,
-				1469203B9361B9E017ACB46FA564BB96 /* Pods-TapstreamMac-TapstreamMacTests.modulemap */,
-				A966BA69D30A246A946F070178C409E0 /* Pods-TapstreamMac-TapstreamMacTests-acknowledgements.markdown */,
-				5F2C6BF8EF110DCE0B34365D73C6CF7F /* Pods-TapstreamMac-TapstreamMacTests-acknowledgements.plist */,
-				17103E5BC1858E9C85422215EC18E9A3 /* Pods-TapstreamMac-TapstreamMacTests-dummy.m */,
-				E3ED4386A3319AD4253D2C25A0F9C45A /* Pods-TapstreamMac-TapstreamMacTests-frameworks.sh */,
-				C0C31F3469746C0C37E6171AEF71F356 /* Pods-TapstreamMac-TapstreamMacTests-resources.sh */,
-				3012908BD59C6556CE44F16899015753 /* Pods-TapstreamMac-TapstreamMacTests-umbrella.h */,
-				D4BD1364A8335FCAEBD77A929A0DCBFE /* Pods-TapstreamMac-TapstreamMacTests.debug.xcconfig */,
-				A3B4A9CDB4197E1F17D513C976442D8B /* Pods-TapstreamMac-TapstreamMacTests.release.xcconfig */,
-			);
-			name = "Pods-TapstreamMac-TapstreamMacTests";
-			path = "Target Support Files/Pods-TapstreamMac-TapstreamMacTests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2404,124 +2400,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1314B19EE003B3B472900D44956A2B21 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 093672FBC68C4BD53A92429179E3B0D0 /* Specta-OSX.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Specta-OSX/Specta-OSX-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Specta-OSX/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				MODULEMAP_FILE = "Target Support Files/Specta-OSX/Specta-OSX.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Specta;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		1D16943FEA5D4B72778A83AD7661E958 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 423624C9F4ED43826C2FBCB6F9AB9D80 /* OCMock-iOS.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/OCMock-iOS/OCMock-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/OCMock-iOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/OCMock-iOS/OCMock-iOS.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = OCMock;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		2282A7B55BD068B1D9CC63B6CFC53011 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 423624C9F4ED43826C2FBCB6F9AB9D80 /* OCMock-iOS.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/OCMock-iOS/OCMock-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/OCMock-iOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/OCMock-iOS/OCMock-iOS.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = OCMock;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		273A78F21529BE92EFFD616E2E8382D0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 095B082CDD9BD1C98B932EE76B099A47 /* Specta-iOS.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Specta-iOS/Specta-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Specta-iOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Specta-iOS/Specta-iOS.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Specta;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		3B983A81B2B7D420225BAF50FA9B3543 /* Release */ = {
+		0071AFC1FBFA2C7DD677FA639448CA4E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -2539,233 +2418,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		5427090730FDA116B615B6A0F9E46DA1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CAEE98A58F53E781C8A845BC977A52D8 /* OCHamcrest-iOS.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/OCHamcrest-iOS/OCHamcrest-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/OCHamcrest-iOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/OCHamcrest-iOS/OCHamcrest-iOS.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = OCHamcrest;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		60C2D29730E4FEE7BC47435EA53FF58E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13D6B72F5B446D7E088569320695F1D1 /* OCHamcrest-OSX.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/OCHamcrest-OSX/OCHamcrest-OSX-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/OCHamcrest-OSX/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				MODULEMAP_FILE = "Target Support Files/OCHamcrest-OSX/OCHamcrest-OSX.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = OCHamcrest;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		709A03B14024DA9C581551604B542EA5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0F3D9DE9DBD33AFC83348D6A221F8B63 /* Pods-TapstreamMac.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-TapstreamMac/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				MODULEMAP_FILE = "Target Support Files/Pods-TapstreamMac/Pods-TapstreamMac.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_TapstreamMac;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		7EB105B718704D8CFC898D6BAA9902F8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 095B082CDD9BD1C98B932EE76B099A47 /* Specta-iOS.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Specta-iOS/Specta-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Specta-iOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Specta-iOS/Specta-iOS.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Specta;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		94DCD539E4127AE2B42223CB6D8AA928 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A1D516DE5E3CCFC9AB1E18128B5F66B /* Pods-TapstreamIOS-TapstreamIOSTests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-TapstreamIOS-TapstreamIOSTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TapstreamIOS-TapstreamIOSTests/Pods-TapstreamIOS-TapstreamIOSTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_TapstreamIOS_TapstreamIOSTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		9DEA5432B51216D04EA0265FAA4EE691 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0996650F0EEE98EE7FDA56DA5ECB971A /* Pods-TapstreamIOS.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-TapstreamIOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TapstreamIOS/Pods-TapstreamIOS.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_TapstreamIOS;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		A23C6E83922FB8EC42839D76C0C1B2F1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2786,16 +2439,118 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		A7CD118F0DF5AE68082B04A978330612 /* Release */ = {
+		01AECD27195E78263D6E3D3C8DD16FB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 423624C9F4ED43826C2FBCB6F9AB9D80 /* OCMock-iOS.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/OCMock-iOS/OCMock-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/OCMock-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/OCMock-iOS/OCMock-iOS.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = OCMock;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1439F1A3D1BA4A08EF4FC51F94F9237D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1501DDA5C46CFD5D89F8D6F1ABD0F018 /* OCMock-OSX.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/OCMock-OSX/OCMock-OSX-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/OCMock-OSX/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MODULEMAP_FILE = "Target Support Files/OCMock-OSX/OCMock-OSX.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = OCMock;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		156BF241C82593B780EE653772BB0708 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5A1264705195DF8F927CF82A83942A4 /* Pods-TapstreamIOS.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TapstreamIOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TapstreamIOS/Pods-TapstreamIOS.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TapstreamIOS;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		166AFA055EF3E6166AD826A533FE5DAE /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CAEE98A58F53E781C8A845BC977A52D8 /* OCHamcrest-iOS.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
@@ -2820,12 +2575,13 @@
 			};
 			name = Release;
 		};
-		AE82C90740168209D80934D2EE901E65 /* Debug */ = {
+		19E937D7DAC4018946F3D38781C36E4D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13D6B72F5B446D7E088569320695F1D1 /* OCHamcrest-OSX.xcconfig */;
+			baseConfigurationReference = CAEE98A58F53E781C8A845BC977A52D8 /* OCHamcrest-iOS.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
@@ -2833,28 +2589,62 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/OCHamcrest-OSX/OCHamcrest-OSX-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/OCHamcrest-OSX/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/OCHamcrest-iOS/OCHamcrest-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/OCHamcrest-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				MODULEMAP_FILE = "Target Support Files/OCHamcrest-OSX/OCHamcrest-OSX.modulemap";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/OCHamcrest-iOS/OCHamcrest-iOS.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = OCHamcrest;
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		D8011A8DF3387764E9F2DAF7A7AD94F2 /* Debug */ = {
+		61ABB5169D9BBE9CFF91509458579D21 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4BD1364A8335FCAEBD77A929A0DCBFE /* Pods-TapstreamMac-TapstreamMacTests.debug.xcconfig */;
+			baseConfigurationReference = 095B082CDD9BD1C98B932EE76B099A47 /* Specta-iOS.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Specta-iOS/Specta-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Specta-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Specta-iOS/Specta-iOS.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Specta;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6288D5257ADDEEF495FA0A7534C3F1E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 580449407A27323098E06D2DCACCBE33 /* Pods-TapstreamMac-TapstreamMacTests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -2884,11 +2674,14 @@
 			};
 			name = Debug;
 		};
-		DD25FEF5C172DCADF3ABA90A67284AD0 /* Release */ = {
+		91120FFC70FCC9E74E5636D655CAFF53 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1501DDA5C46CFD5D89F8D6F1ABD0F018 /* OCMock-OSX.xcconfig */;
+			baseConfigurationReference = 093672FBC68C4BD53A92429179E3B0D0 /* Specta-OSX.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -2899,14 +2692,14 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_VERSION = A;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/OCMock-OSX/OCMock-OSX-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/OCMock-OSX/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Specta-OSX/Specta-OSX-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Specta-OSX/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				MODULEMAP_FILE = "Target Support Files/OCMock-OSX/OCMock-OSX.modulemap";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MODULEMAP_FILE = "Target Support Files/Specta-OSX/Specta-OSX.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = OCMock;
+				PRODUCT_NAME = Specta;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2914,13 +2707,15 @@
 			};
 			name = Release;
 		};
-		DE9FA3D9D081FED5154A03ABBDEB49CC /* Debug */ = {
+		95B5D1C6102E27EE322E02687484133F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 651B90D7C4361CD4A55E30982AC5C474 /* Pods-TapstreamIOS-TapstreamIOSTests.debug.xcconfig */;
+			baseConfigurationReference = DFB3F932847250EE57C0AD71EF085475 /* Pods-TapstreamIOS-TapstreamIOSTests.release.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -2933,7 +2728,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-TapstreamIOS-TapstreamIOSTests/Pods-TapstreamIOS-TapstreamIOSTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -2945,48 +2740,15 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
-		};
-		E0BA2050A54EE4085CFC047C3AB7D8E9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3B4A9CDB4197E1F17D513C976442D8B /* Pods-TapstreamMac-TapstreamMacTests.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-TapstreamMac-TapstreamMacTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				MODULEMAP_FILE = "Target Support Files/Pods-TapstreamMac-TapstreamMacTests/Pods-TapstreamMac-TapstreamMacTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_TapstreamMac_TapstreamMacTests;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
 			name = Release;
 		};
-		E30957C14A5E98C0C3BF6FA66BC63BB9 /* Debug */ = {
+		9C38218D32507DBEB1BD716F65113236 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1501DDA5C46CFD5D89F8D6F1ABD0F018 /* OCMock-OSX.xcconfig */;
+			baseConfigurationReference = 423624C9F4ED43826C2FBCB6F9AB9D80 /* OCMock-iOS.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
@@ -2994,61 +2756,72 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/OCMock-OSX/OCMock-OSX-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/OCMock-OSX/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/OCMock-iOS/OCMock-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/OCMock-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				MODULEMAP_FILE = "Target Support Files/OCMock-OSX/OCMock-OSX.modulemap";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/OCMock-iOS/OCMock-iOS.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = OCMock;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		E62781738A0877E294DA21AB75019BCF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BBA54C96B0FC6B6154D4BBB9DC43FCBD /* Pods-TapstreamIOS.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-TapstreamIOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TapstreamIOS/Pods-TapstreamIOS.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_TapstreamIOS;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
+			name = Debug;
+		};
+		A0D0462B6AFED4658060606FCBBEAA26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
 			name = Release;
 		};
-		E9A11F03C60F81D23AB65DEC8BD9E255 /* Debug */ = {
+		A7EC02B47104FEACAAE531B4D83DAF8B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 093672FBC68C4BD53A92429179E3B0D0 /* Specta-OSX.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -3074,11 +2847,47 @@
 			};
 			name = Debug;
 		};
-		F2766E0437622F693F28F7E889600911 /* Release */ = {
+		A885E2473546A1565F0761119950CE4D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 162D34DC8FB65B36777C7495DCE02C84 /* Pods-TapstreamMac.release.xcconfig */;
+			baseConfigurationReference = 13D6B72F5B446D7E088569320695F1D1 /* OCHamcrest-OSX.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/OCHamcrest-OSX/OCHamcrest-OSX-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/OCHamcrest-OSX/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MODULEMAP_FILE = "Target Support Files/OCHamcrest-OSX/OCHamcrest-OSX.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = OCHamcrest;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AFA67A2E82C4F1D09EB31C7693F10E72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D36906E0E2CBA2B1482D65677F5A93B7 /* Pods-TapstreamMac.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -3108,14 +2917,255 @@
 			};
 			name = Release;
 		};
+		B314B0104F25C56E397AFE8EE528EBA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 095B082CDD9BD1C98B932EE76B099A47 /* Specta-iOS.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Specta-iOS/Specta-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Specta-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Specta-iOS/Specta-iOS.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Specta;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C102E096979E514E92764613DF1C3F49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13D6B72F5B446D7E088569320695F1D1 /* OCHamcrest-OSX.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/OCHamcrest-OSX/OCHamcrest-OSX-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/OCHamcrest-OSX/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MODULEMAP_FILE = "Target Support Files/OCHamcrest-OSX/OCHamcrest-OSX.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = OCHamcrest;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DF74E93201FCF2380E91EE7E90DAFE9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7774C14C539B6A6E3076AFFF2635713 /* Pods-TapstreamIOS-TapstreamIOSTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TapstreamIOS-TapstreamIOSTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TapstreamIOS-TapstreamIOSTests/Pods-TapstreamIOS-TapstreamIOSTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TapstreamIOS_TapstreamIOSTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E6F9AE1B8F7CBCDE38D4B1F8D4105001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1501DDA5C46CFD5D89F8D6F1ABD0F018 /* OCMock-OSX.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/OCMock-OSX/OCMock-OSX-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/OCMock-OSX/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MODULEMAP_FILE = "Target Support Files/OCMock-OSX/OCMock-OSX.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = OCMock;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EAB2712FD8C5C094A6BA9144463FD12C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15FE702B1FF64E6D687FE3885CDBB06C /* Pods-TapstreamMac-TapstreamMacTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TapstreamMac-TapstreamMacTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MODULEMAP_FILE = "Target Support Files/Pods-TapstreamMac-TapstreamMacTests/Pods-TapstreamMac-TapstreamMacTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TapstreamMac_TapstreamMacTests;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EF6124CAE2154035FB99B00E4589C131 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 010B31F7C2B5CA3534A90BD3856AFD9D /* Pods-TapstreamIOS.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TapstreamIOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TapstreamIOS/Pods-TapstreamIOS.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TapstreamIOS;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F294CBFE55F6B1C655C3047F41DC0016 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57DA96FD5E9217AFF42379DE1A95E364 /* Pods-TapstreamMac.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TapstreamMac/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MODULEMAP_FILE = "Target Support Files/Pods-TapstreamMac/Pods-TapstreamMac.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TapstreamMac;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		06CE5671ADD64CF7E69F6083A6AF8C75 /* Build configuration list for PBXNativeTarget "Pods-TapstreamIOS-TapstreamIOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DE9FA3D9D081FED5154A03ABBDEB49CC /* Debug */,
-				94DCD539E4127AE2B42223CB6D8AA928 /* Release */,
+				DF74E93201FCF2380E91EE7E90DAFE9B /* Debug */,
+				95B5D1C6102E27EE322E02687484133F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3123,8 +3173,8 @@
 		215A95F7E8239C91B6B8674352C45220 /* Build configuration list for PBXNativeTarget "Specta-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				273A78F21529BE92EFFD616E2E8382D0 /* Debug */,
-				7EB105B718704D8CFC898D6BAA9902F8 /* Release */,
+				61ABB5169D9BBE9CFF91509458579D21 /* Debug */,
+				B314B0104F25C56E397AFE8EE528EBA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3132,8 +3182,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A23C6E83922FB8EC42839D76C0C1B2F1 /* Debug */,
-				3B983A81B2B7D420225BAF50FA9B3543 /* Release */,
+				0071AFC1FBFA2C7DD677FA639448CA4E /* Debug */,
+				A0D0462B6AFED4658060606FCBBEAA26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3141,8 +3191,8 @@
 		326A9B43187B12AE845BDA4BE9DE3B7F /* Build configuration list for PBXNativeTarget "Specta-OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E9A11F03C60F81D23AB65DEC8BD9E255 /* Debug */,
-				1314B19EE003B3B472900D44956A2B21 /* Release */,
+				A7EC02B47104FEACAAE531B4D83DAF8B /* Debug */,
+				91120FFC70FCC9E74E5636D655CAFF53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3150,8 +3200,8 @@
 		401D9FE08AF6A4444F8FDC26BDD1B8E0 /* Build configuration list for PBXNativeTarget "OCHamcrest-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5427090730FDA116B615B6A0F9E46DA1 /* Debug */,
-				A7CD118F0DF5AE68082B04A978330612 /* Release */,
+				19E937D7DAC4018946F3D38781C36E4D /* Debug */,
+				166AFA055EF3E6166AD826A533FE5DAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3159,8 +3209,8 @@
 		7CB4072AD52F93EB987C0B642258B394 /* Build configuration list for PBXNativeTarget "OCMock-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1D16943FEA5D4B72778A83AD7661E958 /* Debug */,
-				2282A7B55BD068B1D9CC63B6CFC53011 /* Release */,
+				9C38218D32507DBEB1BD716F65113236 /* Debug */,
+				01AECD27195E78263D6E3D3C8DD16FB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3168,8 +3218,8 @@
 		804BF21EB67E1B730C7A6BCFB001EFAB /* Build configuration list for PBXNativeTarget "OCHamcrest-OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AE82C90740168209D80934D2EE901E65 /* Debug */,
-				60C2D29730E4FEE7BC47435EA53FF58E /* Release */,
+				A885E2473546A1565F0761119950CE4D /* Debug */,
+				C102E096979E514E92764613DF1C3F49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3177,8 +3227,8 @@
 		8D29AADC2E9BD00F12445EF20D47AABD /* Build configuration list for PBXNativeTarget "OCMock-OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E30957C14A5E98C0C3BF6FA66BC63BB9 /* Debug */,
-				DD25FEF5C172DCADF3ABA90A67284AD0 /* Release */,
+				1439F1A3D1BA4A08EF4FC51F94F9237D /* Debug */,
+				E6F9AE1B8F7CBCDE38D4B1F8D4105001 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3186,8 +3236,8 @@
 		995BA3B3475C2AC1EF56E42BF6430539 /* Build configuration list for PBXNativeTarget "Pods-TapstreamMac-TapstreamMacTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D8011A8DF3387764E9F2DAF7A7AD94F2 /* Debug */,
-				E0BA2050A54EE4085CFC047C3AB7D8E9 /* Release */,
+				6288D5257ADDEEF495FA0A7534C3F1E0 /* Debug */,
+				EAB2712FD8C5C094A6BA9144463FD12C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3195,8 +3245,8 @@
 		9BC2D9D34225C56FDE5768854706297F /* Build configuration list for PBXNativeTarget "Pods-TapstreamIOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9DEA5432B51216D04EA0265FAA4EE691 /* Debug */,
-				E62781738A0877E294DA21AB75019BCF /* Release */,
+				156BF241C82593B780EE653772BB0708 /* Debug */,
+				EF6124CAE2154035FB99B00E4589C131 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3204,8 +3254,8 @@
 		C35F72ABFA20EC309ACC73B269DC10C7 /* Build configuration list for PBXNativeTarget "Pods-TapstreamMac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				709A03B14024DA9C581551604B542EA5 /* Debug */,
-				F2766E0437622F693F28F7E889600911 /* Release */,
+				F294CBFE55F6B1C655C3047F41DC0016 /* Debug */,
+				AFA67A2E82C4F1D09EB31C7693F10E72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
