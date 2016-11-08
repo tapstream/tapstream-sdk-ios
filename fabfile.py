@@ -73,7 +73,8 @@ def package():
                     '*.m']
 
     ios_only_files = ['**/*.h',
-                      '**/*.m']
+                      '**/*.m',
+                      '**/*.xib']
 
     with lcd('tapstream-sdk-ios'):
         for dir in common_files:

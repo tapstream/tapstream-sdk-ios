@@ -18,11 +18,8 @@ describe(@"URLBuilder", ^{
 	__block NSString* sdkSecret = @"mysdksecret1234567890";
 
 	beforeEach(^{
-		config = OCMClassMock([TSConfig class]);
-
-		OCMStub([config globalEventParams]).andReturn(params);
-		OCMStub([config accountName]).andReturn(accountName);
-		OCMStub([config sdkSecret]).andReturn(sdkSecret);
+		config = [TSConfig configWithAccountName:accountName sdkSecret:sdkSecret];
+		config.globalEventParams = [params mutableCopy];
 	});
 
 
@@ -174,6 +171,25 @@ describe(@"URLBuilder", ^{
 			NSURL* url = [TSURLBuilder makeRewardListURL:config sessionId:@"my&session"];
 			assertThat([url absoluteString],
 					   is(@"https://app.tapstream.com/api/v1/word-of-mouth/rewards/?event_session=my%26session&secret=mysdksecret1234567890"));
+
+		});
+	});
+
+	describe(@"simulatedClickURL", ^{
+		it(@"correctly renders a simulated click url", ^{
+
+			NSURL* baseURL = [NSURL URLWithString:@"https://www.myapp.com/somepage"];
+			NSURL* url = [TSURLBuilder makeSimulatedClickURLWithBaseURL:baseURL
+																   idfa:@"my-idfa"
+															  sessionId:@"my-session-id"];
+			assertThat([[NSURLComponents componentsWithString:[url absoluteString]] queryItems],
+					   containsInAnyOrder(
+										  [NSURLQueryItem queryItemWithName:@"__tsul" value:@"my-session-id"],
+										  [NSURLQueryItem queryItemWithName:@"__tshardware-ios-idfa" value:@"my-idfa"],
+										  [NSURLQueryItem queryItemWithName:@"__tsredirect" value:@"0"],
+										  nil
+										  ));
+
 
 		});
 	});

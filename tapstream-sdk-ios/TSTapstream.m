@@ -174,6 +174,7 @@ static TSTapstream *instance = nil;
 
 		TSIOSUniversalLinkDelegate* universalLinkDelegate = [TSIOSUniversalLinkDelegate
 															 universalLinkDelegateWithConfig:config
+															 platform:platform
 															 httpClient:httpClient];
 
 		instance = [[TSTapstream alloc] initWithPlatform:platform

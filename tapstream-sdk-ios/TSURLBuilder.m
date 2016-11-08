@@ -105,13 +105,14 @@
 			nil];
 }
 
-+ (NSURL*)makeSimulatedClickURL:(NSURL*)baseURL
++ (NSURL*)makeSimulatedClickURLWithBaseURL:(NSURL*)baseURL idfa:(NSString*)idfa sessionId:(NSString*)sessionId
 {
 	return [self urlWithParameters:[baseURL absoluteString]
 				 globalEventParams:nil
 							  data:nil,
 			@"__tsredirect", @"0",
-			@"__tsul", @"1",
+			@"__tshardware-ios-idfa", idfa,
+			@"__tsul", sessionId,
 			nil];
 }
 

@@ -6,10 +6,12 @@
 #import "TSHttpClient.h"
 #import "TSURLBuilder.h"
 #import "TSLogging.h"
+#import "TSPlatform.h"
 #import "TSIOSUniversalLinkDelegate.h"
 
 @interface TSIOSUniversalLinkDelegate()
 @property(strong, readwrite) TSConfig* config;
+@property(strong, readwrite) id<TSPlatform> platform;
 @property(strong, readwrite) id<TSHttpClient> httpClient;
 @end
 
@@ -17,12 +19,14 @@
 @implementation TSIOSUniversalLinkDelegate
 
 + (instancetype) universalLinkDelegateWithConfig:(TSConfig*)config
+										platform:(id<TSPlatform>)platform
 									  httpClient:(id<TSHttpClient>)httpClient
 {
-	return [[self alloc] initWithConfig:config httpClient:httpClient];
+	return [[self alloc] initWithConfig:config platform:platform httpClient:httpClient];
 }
 
 - (instancetype) initWithConfig:(TSConfig*)config
+					   platform:(id<TSPlatform>)platform
 					 httpClient:(id<TSHttpClient>)httpClient
 {
 	if((self = [self init]) != nil)
@@ -54,7 +58,9 @@
 
 					  // Fire simulated click if Tapstream recognizes the link
 					  if (ul.status != kTSULUnknown){
-						  NSURL* simulatedClickUrl = [TSURLBuilder makeSimulatedClickURL:url];
+						  NSURL* simulatedClickUrl = [TSURLBuilder makeSimulatedClickURLWithBaseURL:url
+																							   idfa:self.config.idfa
+																						  sessionId:[self.platform getSessionId]];
 
 
 						  [self.httpClient request:simulatedClickUrl

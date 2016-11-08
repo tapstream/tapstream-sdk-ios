@@ -30,17 +30,25 @@ SpecBegin(UniversalLinkDelegate)
 describe(@"UniversalLinkDelegate", ^{
 	__block TSConfig* config;
 	__block id<TSHttpClient> httpClient;
+	__block id<TSPlatform> platform;
 	__block TSIOSUniversalLinkDelegate* universalLinkDelegate;
 	__block NSUserActivity* activity;
+	__block NSString* sessionId;
 
 	beforeEach(^{
 
+		sessionId = [[NSUUID UUID] UUIDString];
 		config = [TSConfig configWithAccountName:@"testAccount" sdkSecret:@"sdkSecret"];
 		httpClient = OCMProtocolMock(@protocol(TSHttpClient));
+		platform = OCMProtocolMock(@protocol(TSPlatform));
 		activity = OCMClassMock([NSUserActivity class]);
 		OCMStub([activity activityType]).andReturn(NSUserActivityTypeBrowsingWeb);
+		OCMStub([platform getSessionId]).andReturn(sessionId);
 
-		universalLinkDelegate = [TSIOSUniversalLinkDelegate universalLinkDelegateWithConfig:config httpClient:httpClient];
+		universalLinkDelegate = [TSIOSUniversalLinkDelegate
+								 universalLinkDelegateWithConfig:config
+								 platform:platform
+								 httpClient:httpClient];
 	});
 
 	it(@"Returns a kTSStatusUnknown for non-browsing NSUserActivity", ^{

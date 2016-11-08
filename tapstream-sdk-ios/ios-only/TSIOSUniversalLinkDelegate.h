@@ -10,6 +10,7 @@
 
 @interface TSIOSUniversalLinkDelegate : NSObject<TSUniversalLinkDelegate>
 + (instancetype) universalLinkDelegateWithConfig:(TSConfig*)config
+										platform:(id<TSPlatform>)platform
 									  httpClient:(id<TSHttpClient>)httpClient;
 @end
 

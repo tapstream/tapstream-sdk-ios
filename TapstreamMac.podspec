@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   s.name         = 'TapstreamMac'
-  s.version      = '3.2.0'
+  s.version      = '3.2.1'
   s.summary      = 'BETA Tapstream marketing analytics SDK for macOS.'
   s.homepage     = 'https://tapstream.com/'
   s.license      = 'MIT'
   s.author       = { 'Michael Zsigmond' => 'support@tapstream.com' }
-  s.source       = { :git => 'https://github.com/tapstream/tapstream-sdk-ios.git', :tag => 'v3.2.0-macos' }
+  s.source       = { :git => 'https://github.com/tapstream/tapstream-sdk-ios.git', :tag => 'v3.2.1-macos' }
   s.osx.deployment_target = '10.6'
   s.source_files = 'tapstream-sdk-ios'
   s.osx.frameworks = 'Foundation', 'AppKit'
