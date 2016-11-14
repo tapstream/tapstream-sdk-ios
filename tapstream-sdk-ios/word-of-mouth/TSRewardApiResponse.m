@@ -15,9 +15,11 @@
 @synthesize error;
 + (instancetype)rewardApiResponseWithResponse:(TSResponse*)response strategy:(id<TSRewardStrategy>)strategy
 {
+	NSMutableArray<TSReward*>* rewards = [NSMutableArray arrayWithCapacity:32];
+
 	if([response failed])
 	{
-		return [[self alloc] initWithResponse:response rewards:nil error:[response error]];
+		return [[self alloc] initWithResponse:response rewards:rewards error:[response error]];
 	}
 
 
@@ -25,17 +27,15 @@
 	NSArray *json = [NSJSONSerialization JSONObjectWithData:response.data options:0 error:&error];
 	if(error != nil)
 	{
-		return [[self alloc] initWithResponse:response rewards:nil error:error];
+		return [[self alloc] initWithResponse:response rewards:rewards error:error];
 	}
 
 	if(!json) {
 		error = [TSError errorWithCode:kTSInvalidResponse message:@"Invalid JSON returned by reward endpoint"];
-		return [[self alloc] initWithResponse:response rewards:nil error:error];
+		return [[self alloc] initWithResponse:response rewards:rewards error:error];
 	}
 
-	NSMutableArray<TSReward*>* rewards = [NSMutableArray arrayWithCapacity:32];
-
-
+	// Populate rewards
 	[json enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
 		TSReward* reward = [TSReward rewardWithDescription:(NSDictionary *)obj];
 		if([strategy eligible:reward]){

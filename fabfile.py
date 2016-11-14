@@ -49,12 +49,10 @@ def set_version(new_version):
 @runs_once
 def package():
     """
-    Depends on: test, generate_podspecs
+    Depends on: test
 
     Create ios and mac .zip files in the package directory
     """
-    execute(test)
-    execute(generate_podspecs)
     version = sdk_version()
     cmd = 'zip -D'
     ios_dest = os.path.abspath('./package/tapstream-sdk-ios-%s.zip' % version)
@@ -105,12 +103,11 @@ def generate_podspecs():
 @runs_once
 def push_pods():
     """
-    Depends: generate_podspecs, test
+    Depends: generate_podspecs
 
     Push the current revision (and version) to cocoapods
     """
     execute(generate_podspecs)
-    execute(test)
 
     local('pod trunk push TapstreamIOS.podspec')
     local('pod trunk push TapstreamMac.podspec')
