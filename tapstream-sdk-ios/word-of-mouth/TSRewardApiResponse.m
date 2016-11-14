@@ -59,5 +59,5 @@
 	return self;
 }
 
-- (bool)failed { return [self error] == nil; }
+- (bool)failed { return [self error] != nil; }
 @end
