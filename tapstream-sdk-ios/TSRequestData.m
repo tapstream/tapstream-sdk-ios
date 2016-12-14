@@ -31,31 +31,34 @@
 	return [items count];
 }
 
-- (void)appendItemWithPrefix:(NSString *)prefix key:(NSString *)key value:(NSString *)value
+- (void) appendItem:(NSString*)value forKey:(NSString*)key
 {
-	if(items == nil)
-	{
-		items = [NSMutableDictionary dictionary];
+	if(![TSURLEncoder checkValueLength:value]){
+		return;
 	}
 
+	if(value != nil && key != nil) {
+		@synchronized(items){
+			if(items == nil)
+			{
+				items = [NSMutableDictionary dictionary];
+			}
+			[items setObject:value forKey:key];
+		}
+	} else {
+		[TSLogging logAtLevel:kTSLoggingWarn format:@"Nil key or value passed to appendItemWithPrefix: %@=%@", key, value];
+	}
+	
+}
+
+- (void)appendItemWithPrefix:(NSString *)prefix key:(NSString *)key value:(NSString *)value
+{
 	if(![TSURLEncoder checkKeyLength:key]){
 		return;
 	}
 
 	NSString* k = [prefix stringByAppendingString:key];
-
-	if(![TSURLEncoder checkValueLength:value]){
-		return;
-	}
-	if(value != nil && key != nil)
-	{
-		[items setObject:value forKey:k];
-	}
-	else
-	{
-		[TSLogging logAtLevel:kTSLoggingWarn format:@"Nil key or value passed to appendItemWithPrefix: %@=%@", k, value];
-	}
-
+	[self appendItem:value forKey:k];
 }
 
 - (void)appendItemsWithPrefix:(NSString*)prefix keysAndValues:(NSString*)key, ... NS_REQUIRES_NIL_TERMINATION
@@ -76,9 +79,12 @@
 }
 - (void) appendItemsFromRequestData:(TSRequestData*)other
 {
-	for(NSString* key in [[other items] keyEnumerator])
-	{
-		[items setObject:[[other items] objectForKey:key] forKey:key];
+	@synchronized([other items]){
+		for(NSString* key in [[other items] keyEnumerator])
+		{
+			NSString* val = [[other items] objectForKey:key];
+			[self appendItemWithPrefix:@"" key:key value:val];
+		}
 	}
 }
 
@@ -87,7 +93,12 @@
 
 	NSMutableString* outStr = [NSMutableString string];
 	bool first = true;
-	for(NSString* key in [items keyEnumerator])
+
+	NSArray* keys;
+	@synchronized(items){
+		 keys = [items allKeys];
+	}
+	for(NSString* key in keys)
 	{
 		if(!first)
 		{
