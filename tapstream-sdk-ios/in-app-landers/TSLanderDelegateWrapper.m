@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "TSLanderDelegate.h"
 #import "TSPlatform.h"
+#import "TSLogging.h"
 
 @implementation TSLanderDelegateWrapper
 - initWithStrategyAndDelegateAndWindow:(id<TSLanderStrategy>)strategy delegate:(id<TSLanderDelegate>)delegate window:(UIWindow*)window
@@ -34,6 +35,12 @@
 - (void)submittedLander
 {
 	[self.delegate submittedLander];
+	[self.window removeFromSuperview];
+	self.window = nil;
+}
+- (void)didFailLoadWithError:(NSError*)error
+{
+	[TSLogging logAtLevel:kTSLoggingError format:@"An error occurred while loading lander (%@).", error];
 	[self.window removeFromSuperview];
 	self.window = nil;
 }

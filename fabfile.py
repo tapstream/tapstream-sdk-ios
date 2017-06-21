@@ -13,7 +13,7 @@ def test():
     """
     schemes = {
         'TapstreamIOS': [
-            'platform=iOS Simulator,name=iPhone 7,OS=10.0'
+            'platform=iOS Simulator,name=iPhone 7,OS=10.3.1',
         ],
         'TapstreamMac': [
             'platform=OS X,arch=x86_64'
@@ -82,6 +82,8 @@ def package():
         for dir in ios_only_files:
             local('%s %s %s' % (cmd, ios_dest, dir))
 
+    local('open package')
+
 
 @task
 @runs_once
@@ -120,7 +122,6 @@ def release(new_version):
     execute(set_version, new_version)
     execute(package)
 
-    local('open package')
 
     prompt("""Now, create two releases on Github: v{v}-ios, and v{v}-macos.
 Then, come back and press enter to continue deployment to cocoapods >

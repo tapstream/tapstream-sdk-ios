@@ -18,6 +18,7 @@
 - initWithStrategyAndDelegateAndWindow:(id<TSLanderStrategy>)strategy
 							  delegate:(id<TSLanderDelegate>)delegate
 								window:(UIWindow*)window;
+- (void)didFailLoadWithError:(NSError*)error;
 @end
 #else
 @interface TSLanderDelegateWrapper : NSObject<TSLanderDelegate>

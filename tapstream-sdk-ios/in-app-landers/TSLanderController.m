@@ -1,19 +1,18 @@
 //  Copyright © 2016 Tapstream. All rights reserved.
 
 #import <Foundation/Foundation.h>
-#import "TSLander.h"
 #import "TSLanderController.h"
 
 #if TEST_IOS || TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
 @implementation TSLanderController
 
-+ (id)controllerWithLander:(TSLander*)lander delegate:(id<TSLanderDelegate>)delegate
++ (id)controllerWithLander:(TSLander*)lander delegate:(TSLanderDelegateWrapper*)delegate
 {
 	NSBundle* bund = [NSBundle bundleForClass:TSLanderController.self];
 	return [[TSLanderController alloc] initWithNibName:@"TSLanderView" bundle:bund lander:lander delegate:delegate];
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil lander:(TSLander*)lander  delegate:(id<TSLanderDelegate>)delegate
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil lander:(TSLander*)lander  delegate:(TSLanderDelegateWrapper*)delegate
 {
 	if(self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
 		((UIWebView *)self.view).delegate = self;
@@ -41,6 +40,7 @@
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
 	[self close];
+	[self.delegate didFailLoadWithError:error];
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType

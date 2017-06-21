@@ -6,13 +6,14 @@
 #if TEST_IOS || TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
 
 #import "TSLanderDelegate.h"
+#import "TSLanderDelegateWrapper.h"
 #import "TSLander.h"
 #import <UIKit/UIKit.h>
 
 @interface TSLanderController : UIViewController<UIWebViewDelegate>
-@property(nonatomic, strong) id<TSLanderDelegate> delegate;
+@property(nonatomic, strong) TSLanderDelegateWrapper* delegate;
 
-+ (id)controllerWithLander:(TSLander*)lander delegate:(id<TSLanderDelegate>)delegate;
++ (id)controllerWithLander:(TSLander*)lander delegate:(TSLanderDelegateWrapper*)delegate;
 @end
 
 #else

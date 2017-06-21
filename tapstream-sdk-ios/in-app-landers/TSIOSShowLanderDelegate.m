@@ -98,10 +98,19 @@
 		 }
 
 		 TSLander* lander = [TSLander landerWithDescription:json];
-		 if(!lander || ![self.landerStrategy shouldShowLander:lander])
-		 {
+		 if(!lander){
+
 			 return;
 		 }
+
+		 if(![self.landerStrategy shouldShowLander:lander])
+		 {
+			 [TSLogging logAtLevel:kTSLoggingInfo
+							format:@"Not showing lander(id=%d): Lander has already been shown.", [lander ident]];
+			 return;
+		 }
+		 [TSLogging logAtLevel:kTSLoggingInfo
+						format:@"Showing lander(id=%d)", [lander ident]];
 
 		 [self showLander:lander withDelegate:delegate];
 	 }];
