@@ -38,6 +38,16 @@ describe(@"TimelineSummaryResponse", ^{
 		assertThat([r eventParams], nilValue());
 	});
 
+	it(@"no longer stores NSNull values", ^{
+		TSResponse* resp = responseWithJSONString(@"{\"latest_deeplink\": null, \"deeplinks\": null, \"campaigns\": null, \"hit_params\": null, \"event_params\": null}");
+		TSTimelineSummaryResponse* r = [TSTimelineSummaryResponse timelineSummaryResponseWithResponse:resp];
+		assertThat([r latestDeeplink], nilValue());
+		assertThat([r deeplinks], nilValue());
+		assertThat([r campaigns], nilValue());
+		assertThat([r hitParams], nilValue());
+		assertThat([r eventParams], nilValue());
+	});
+
 	it(@"parses the sample response", ^{
 
 		NSString* jsonString = [NSString stringWithFormat:@"{\"deeplinks\": %@,\"hit_params\":%@,\"event_params\":%@,\"campaigns\":%@,\"latest_deeplink\":\"%@\",\"latest_deeplink_timestamp\":%lu}",

@@ -37,11 +37,21 @@
 
 	NSDictionary* jsonDict = [result get];
 
-	hitParams = [jsonDict objectForKey:@"hit_params"];
-	eventParams = [jsonDict objectForKey:@"event_params"];
-	deeplinks = [jsonDict objectForKey:@"deeplinks"];
-	campaigns = [jsonDict objectForKey:@"campaigns"];
-	latestDeeplink = [jsonDict objectForKey:@"latest_deeplink"];
+	id maybeHitParams = [jsonDict objectForKey:@"hit_params"];
+	hitParams = maybeHitParams == [NSNull null] ? nil : (NSDictionary<NSString*, NSString*>*) maybeHitParams;
+
+	id maybeEventParams = [jsonDict objectForKey:@"event_params"];
+	eventParams = maybeEventParams == [NSNull null] ? nil : (NSDictionary<NSString*, NSString*>*) maybeEventParams;
+
+	id maybeDeeplinks = [jsonDict objectForKey:@"deeplinks"];
+	deeplinks = maybeDeeplinks == [NSNull null] ? nil : (NSArray<NSString*>*) maybeDeeplinks;
+
+	id maybeCampaigns = [jsonDict objectForKey:@"campaigns"];
+	campaigns = maybeCampaigns == [NSNull null] ? nil : (NSArray<NSString*>*) maybeCampaigns;
+
+	id maybeLatestDeeplink = [jsonDict objectForKey:@"latest_deeplink"];
+	latestDeeplink = (maybeLatestDeeplink == [NSNull null]) ? nil : (NSString*) maybeLatestDeeplink;
+
 	latestDeeplinkTimestamp = [(NSNumber*)[jsonDict objectForKey:@"latest_deeplink_timestamp"] longValue];
 	
 	return [[self alloc] initWithLatestDeeplink:latestDeeplink
