@@ -9,8 +9,9 @@
 #import "TSLanderDelegateWrapper.h"
 #import "TSLander.h"
 #import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
 
-@interface TSLanderController : UIViewController<UIWebViewDelegate>
+@interface TSLanderController : UIViewController<WKNavigationDelegate>
 @property(nonatomic, strong) TSLanderDelegateWrapper* delegate;
 
 + (id)controllerWithLander:(TSLander*)lander delegate:(TSLanderDelegateWrapper*)delegate;

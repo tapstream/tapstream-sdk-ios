@@ -95,9 +95,9 @@ static void TSLoadStoreKitClasses()
 
 #if TEST_IOS || TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
 		self.foregroundedEventObserver = [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationWillEnterForegroundNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
-			if(onOpen != nil)
+            if(self->onOpen != nil)
 			{
-				onOpen();
+                self->onOpen();
 			}
 		}];
 #endif

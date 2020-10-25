@@ -15,21 +15,24 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil lander:(TSLander*)lander  delegate:(TSLanderDelegateWrapper*)delegate
 {
 	if(self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-		((UIWebView *)self.view).delegate = self;
-		self.delegate = delegate;
-		if(lander.url != nil){
-			[((UIWebView *)self.view) loadRequest:[NSURLRequest requestWithURL:lander.url]];
-		}else{
-			[((UIWebView *)self.view) loadHTMLString:lander.html baseURL:nil];
-		}
-		[self.delegate showedLander:lander];
+        self.delegate = delegate;
+        
+        ((WKWebView *)self.view).navigationDelegate = self;
+        
+        if(lander.url != nil){
+            [((WKWebView *)self.view) loadRequest:[NSURLRequest requestWithURL:lander.url]];
+        }else{
+            [((WKWebView *)self.view) loadHTMLString:lander.html baseURL:nil];
+        }
+
+        [self.delegate showedLander:lander];
 	}
 	return self;
 }
 
 - (void)close
 {
-	[((UIWebView *) self.view) loadHTMLString:@"" baseURL:nil];
+	[((WKWebView *) self.view) loadHTMLString:@"" baseURL:nil];
 	[UIView transitionWithView:self.view.superview
 					  duration:0.3
 					   options:UIViewAnimationOptionTransitionCrossDissolve
@@ -37,34 +40,27 @@
 					completion:NULL];
 }
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error
 {
-	[self close];
-	[self.delegate didFailLoadWithError:error];
+    [self close];
+    [self.delegate didFailLoadWithError:error];
 }
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler
 {
-	NSString *url = [[request URL] absoluteString];
-	if([url hasSuffix:@"close"]) {
-		[self close];
-        [self.delegate dismissedLander];
-		return NO;
+    if (navigationAction.navigationType == WKNavigationTypeLinkActivated) {
+        NSString *url = [navigationAction.request.URL absoluteString];
+        if([url hasSuffix:@"close"]) {
+            [self close];
+            [self.delegate dismissedLander];
+            decisionHandler(WKNavigationActionPolicyCancel);
+            return;
+        }
+    }
 
-	}
-	return YES;
+    decisionHandler(WKNavigationActionPolicyAllow);
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
-	NSURLRequest* req = [webView request];
-	NSURL* url = [req URL];
-	NSString* s = [url absoluteString];
-	if(![s isEqualToString:@"about:blank"]){
-		[self close];
-        [self.delegate submittedLander];
-	}
-}
 
 @end
 #else

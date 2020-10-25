@@ -58,6 +58,13 @@
 
 - (void)showOffer:(TSOffer *)offer parentViewController:(UIViewController *)parentViewController;
 {
+    Class wkWebView = NSClassFromString(@"WKWebView");
+    if(!wkWebView){
+        [TSLogging logAtLevel:kTSLoggingWarn format:@"WKWebView class not found. Not showing WoM popup. Is the WebKit Framework enabled?"];
+        return;
+    }
+    
+    
     if(offer && parentViewController) {
         self.offerViewController = [TSOfferViewController controllerWithOffer:offer delegate:self];
         self.offerViewController.view.frame = parentViewController.view.bounds;
@@ -211,35 +218,9 @@
 				strongC.completionWithItemsHandler = nil;
 
 			}];
-		}else{
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-			[c setCompletionHandler:^(NSString* activityType, BOOL completed){
-
-				__strong typeof(weakC) strongC = weakC;
-
-				if (completed) {
-					NSString* cleanedType = activityType;
-
-					if([activityType isEqualToString:UIActivityTypeMail]){
-						cleanedType = @"email";
-					}else if([activityType isEqualToString:UIActivityTypeMessage]){
-						cleanedType = @"messaging";
-					}else if([activityType isEqualToString:UIActivityTypePostToFacebook]){
-						cleanedType = @"facebook";
-					}else if([activityType isEqualToString:UIActivityTypePostToTwitter]){
-						cleanedType = @"twitter";
-					}
-
-					[self completedShare:offer.ident socialMedium:cleanedType];
-				}
-				strongC.completionHandler = nil;
-				
-			}];
-#pragma clang diagnostic pop			
 		}
-
-		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+        
+		if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone)
 		{
 			[parent presentViewController:c animated:YES completion:nil];
 		}
@@ -248,14 +229,6 @@
 			c.popoverPresentationController.sourceRect = CGRectMake(parent.view.frame.size.width/2, parent.view.frame.size.height, 0, 0);
 			c.popoverPresentationController.sourceView = parent.view;
 			[parent presentViewController:c animated:YES completion:nil];
-		}
-		else
-		{
-			UIPopoverController *popup = [[UIPopoverController alloc] initWithContentViewController:c];
-			[popup presentPopoverFromRect:CGRectMake(parent.view.frame.size.width/2, parent.view.frame.size.height, 0, 0)
-								   inView:parent.view
-				 permittedArrowDirections:UIPopoverArrowDirectionDown
-								 animated:YES];
 		}
     }
 

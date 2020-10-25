@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name           = 'TapstreamIOS'
-  s.version        = '3.2.6'
+  s.version        = '3.2.7'
   s.summary        = 'BETA Tapstream marketing analytics SDK for iOS.'
   s.homepage       = 'https://tapstream.com/'
   s.license        = 'MIT'
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.source         = { :git => 'https://github.com/tapstream/tapstream-sdk-ios.git', :tag => 'v3.2.6-ios' }
 
   s.ios.deployment_target = '7.0'
-  s.ios.frameworks = 'Foundation', 'UIKit'
+  s.ios.frameworks = 'Foundation', 'UIKit', 'WebKit'
 
   s.subspec 'Core' do |core|
     core.source_files = ['tapstream-sdk-ios', 'tapstream-sdk-ios/ios-only']

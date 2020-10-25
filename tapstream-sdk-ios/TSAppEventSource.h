@@ -3,7 +3,7 @@
 #pragma once
 #import <Foundation/Foundation.h>
 
-typedef void(^TSOpenHandler)();
+typedef void(^TSOpenHandler)(void);
 
 // Args: transactionId, productId, quantity, priceCents, currencyCode, base64Receipt
 typedef void(^TSTransactionHandler)(NSString *, NSString *, int, int, NSString *, NSString *);

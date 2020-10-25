@@ -18,8 +18,8 @@
         self.offer = offerVal;
 
         self.delegate = delegateVal;
-        ((UIWebView *)self.view).delegate = self;
-        [((UIWebView *)self.view) loadHTMLString:self.offer.markup baseURL:[NSURL URLWithString:@""]];
+        ((WKWebView *)self.view).navigationDelegate = self;
+        [((WKWebView *)self.view) loadHTMLString:self.offer.markup baseURL:[NSURL URLWithString:@""]];
     }
     return self;
 }
@@ -29,16 +29,11 @@
 {
     [super viewDidLoad];
 
-    ((UIWebView *)self.view).scrollView.scrollEnabled = NO;
-    ((UIWebView *)self.view).scrollView.opaque = NO;
-    ((UIWebView *)self.view).scrollView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.8];
+    ((WKWebView *)self.view).scrollView.scrollEnabled = NO;
+    ((WKWebView *)self.view).scrollView.opaque = NO;
+    ((WKWebView *)self.view).scrollView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.8];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 - (void)close
 {
@@ -49,44 +44,26 @@
                     completion:NULL];
 }
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler
 {
+       if (navigationAction.navigationType == WKNavigationTypeLinkActivated) {
+           NSString *url = [navigationAction.request.URL absoluteString];
+           NSLog(@"link clicked %@", url);
+           if([url isEqualToString:@"close"]) {
+               [self close];
+               [self.delegate dismissedOffer:NO];
+               decisionHandler(WKNavigationActionPolicyCancel);
+               return;
+           } else if([url isEqualToString:@"accept"]) {
+               [self close];
+               [self.delegate dismissedOffer:YES];
+               decisionHandler(WKNavigationActionPolicyCancel);
+               return;
+           }
+       }
+    
+        decisionHandler(WKNavigationActionPolicyAllow);
+
 }
-
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
-{
-    NSString *url = [[request URL] absoluteString];
-    if([url isEqualToString:@"file:///close"]) {
-        [self close];
-        [self.delegate dismissedOffer:NO];
-        return NO;
-        
-    } else if([url isEqualToString:@"file:///accept"]) {
-        [self close];
-        [self.delegate dismissedOffer:YES];
-        return NO;
-    }
-    return YES;
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
-}
-
-- (void)webViewDidStartLoad:(UIWebView *)webView
-{
-}
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
