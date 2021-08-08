@@ -11,8 +11,6 @@
 #import "TSTimelineLookupDelegate.h"
 
 
-#define kTSDefaultTimeout 10000
-
 @interface TSDefaultTimelineLookupDelegate()
 @property(strong, readwrite) TSConfig* config;
 @property(readwrite) dispatch_queue_t queue;

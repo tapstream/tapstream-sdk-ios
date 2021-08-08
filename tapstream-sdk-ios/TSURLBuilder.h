@@ -14,7 +14,6 @@
 + (NSURL*)makeConversionURL:(TSConfig*)config sessionId:(NSString*)sessionId;
 + (NSURL*)makeTimelineSummaryURL:(TSConfig*)config sessionId:(NSString*)sessionId;
 + (NSURL*)makeLanderURL:(TSConfig*)config sessionId:(NSString*)sessionId;
-+ (NSURL*)makeCookieMatchURL:(TSConfig*)config eventName:(NSString*)eventName data:(TSRequestData*)data;
 + (NSURL*)makeDeeplinkQueryURL:(TSConfig*)config forURL:(NSString*)url;
 + (NSURL*)makeSimulatedClickURLWithBaseURL:(NSURL*)baseURL idfa:(NSString*)idfa sessionId:(NSString*)sessionId;
 + (NSURL*)makeOfferURL:(TSConfig*)config bundle:(NSString*)bundle insertionPoint:(NSString*)insertionPoint;

@@ -1,6 +1,0 @@
-framework module Specta {
-  umbrella header "Specta-OSX-umbrella.h"
-
-  export *
-  module * { export * }
-}

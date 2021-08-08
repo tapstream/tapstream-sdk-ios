@@ -48,7 +48,6 @@
 {
        if (navigationAction.navigationType == WKNavigationTypeLinkActivated) {
            NSString *url = [navigationAction.request.URL absoluteString];
-           NSLog(@"link clicked %@", url);
            if([url isEqualToString:@"close"]) {
                [self close];
                [self.delegate dismissedOffer:NO];
@@ -61,7 +60,7 @@
                return;
            }
        }
-    
+
         decisionHandler(WKNavigationActionPolicyAllow);
 
 }

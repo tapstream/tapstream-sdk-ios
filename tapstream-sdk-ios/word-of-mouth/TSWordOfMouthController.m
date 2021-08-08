@@ -21,11 +21,7 @@
 
 
 @interface TSWordOfMouthController()
-/*
-@property(strong, nonatomic) NSString *secret;
-@property(strong, nonatomic) NSString *bundle;
-@property(strong, nonatomic) NSString *uuid;
-*/
+
 @property(strong, nonatomic) TSConfig* config;
 @property(strong, nonatomic) TSOfferViewController *offerViewController;
 @property(nonatomic, strong) id<TSOfferStrategy> offerStrategy;

@@ -5,8 +5,6 @@
 
 #import "TSLogging.h"
 #import "TSURLBuilder.h"
-
-
 #import "TSDefaultAppEventSource.h"
 #import "TSDefaultCoreListener.h"
 #import "TSDefaultFireEventStrategy.h"
@@ -14,25 +12,11 @@
 #import "TSDefaultPersistentStorage.h"
 #import "TSDefaultPlatform.h"
 #import "TSDefs.h"
-
 #import "TSTimelineLookupDelegate.h"
-
-
-#ifdef TS_IOS_ONLY
-
 #import "TSIOSStartupDelegate.h"
 #import "TSIOSFireEventDelegate.h"
 #import "TSIOSUniversalLinkDelegate.h"
-
 #import "TSShowLanderDelegate.h"
-
-#endif
-
-#ifdef TS_MAC_ONLY
-// Mac
-#import "TSStartupDelegate.h"
-#endif
-
 
 
 static TSTapstream *instance = nil;
@@ -50,14 +34,9 @@ static TSTapstream *instance = nil;
 @property(nonatomic, strong) id<TSStartupDelegate> startupDelegate;
 @property(nonatomic, strong) id<TSFireEventDelegate> fireEventDelegate;
 @property(nonatomic, strong) id<TSTimelineLookupDelegate> timelineLookupDelegate;
-
-#ifdef TS_IOS_ONLY
-
 @property(nonatomic, strong) id showLanderDelegate;
 @property(nonatomic, strong) id universalLinkDelegate;
 @property(nonatomic) id wordOfMouthController;
-
-#endif
 @end
 
 
@@ -82,12 +61,10 @@ static TSTapstream *instance = nil;
 		id<TSPersistentStorage> storage = [TSDefaultPersistentStorage persistentStorageWithDomain:@"__tapstream"];
 		id<TSPlatform> platform = [TSDefaultPlatform platformWithStorage:storage];
 
-#ifdef TS_IOS_ONLY
 		// Collect the IDFA, if the Advertising Framework is available
 		if(!config.idfa && config.autoCollectIdfa){
 			config.idfa = [platform getIdfa];
 		}
-#endif
 
 		dispatch_queue_t queue = dispatch_queue_create("Tapstream Internal Queue", DISPATCH_QUEUE_CONCURRENT);
 
@@ -103,7 +80,6 @@ static TSTapstream *instance = nil;
 																   queue:queue
 																   platform:platform
 																   httpClient:httpClient];
-#ifdef TS_IOS_ONLY
 
 		TSIOSFireEventDelegate* fireEventDelegate = [TSIOSFireEventDelegate
 													 iosFireEventDelegateWithConfig:config
@@ -185,26 +161,6 @@ static TSTapstream *instance = nil;
 								   universalLinkDelegate:universalLinkDelegate
 								   wordOfMouthController:womController];
 
-#else
-		TSDefaultFireEventDelegate* fireEventDelegate = [TSDefaultFireEventDelegate
-														 defaultFireEventDelegateWithConfig:config
-														 queue:queue
-														 platform:platform
-														 fireEventStrategy:fireEventStrategy
-														 httpClient:httpClient
-														 listener:listener];
-		TSDefaultStartupDelegate* startupDelegate = [TSDefaultStartupDelegate
-													 defaultStartupDelegateWithConfig:config
-													 platform:platform
-													 fireEventDelegate:fireEventDelegate
-													 appEventSource:appEventSource];
-
-		instance = [[TSTapstream alloc] initWithPlatform:platform
-									   fireEventDelegate:fireEventDelegate
-										  startupDelegate:startupDelegate
-								   timelineLookupDelegate:timelineLookupDelegate];
-#endif
-
 		[instance start];
 	}
 }
@@ -223,11 +179,9 @@ static TSTapstream *instance = nil;
 		fireEventDelegate:(id<TSFireEventDelegate>)fireEventDelegate
 				startupDelegate:(id<TSStartupDelegate>)startupDelegate
 		 timelineLookupDelegate:(id<TSTimelineLookupDelegate>)timelineLookupDelegate
-#ifdef TS_IOS_ONLY
 			 showLanderDelegate:(id<TSShowLanderDelegate>)showLanderDelegate
 		  universalLinkDelegate:(id<TSUniversalLinkDelegate>)universalLinkDelegate
 		  wordOfMouthController:(id)womController
-#endif
 {
 	if((self = [super init]) != nil)
 	{
@@ -235,11 +189,9 @@ static TSTapstream *instance = nil;
 		self.fireEventDelegate = fireEventDelegate;
 		self.startupDelegate = startupDelegate;
 		self.timelineLookupDelegate = timelineLookupDelegate;
-#ifdef TS_IOS_ONLY
 		self.showLanderDelegate = showLanderDelegate;
 		self.universalLinkDelegate = universalLinkDelegate;
 		self.wordOfMouthController = womController;
-#endif
 	}
 	return self;
 }
@@ -275,21 +227,10 @@ static TSTapstream *instance = nil;
 	[self.timelineLookupDelegate getTimelineSummary:completion];
 }
 
-
-// IOS-only features
-
-#ifdef TS_IOS_ONLY
-#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
-/* Universal link handling -- iOS 8+ only */
-
 - (void)handleUniversalLink:(NSUserActivity*)userActivity completion:(void(^)(TSUniversalLinkApiResponse*))completion
 {
 	[self.universalLinkDelegate handleUniversalLink:userActivity completion:completion];
 }
-
-#endif
-#endif
 
 + (id)wordOfMouthController
 {
@@ -300,8 +241,5 @@ static TSTapstream *instance = nil;
 {
 	[self.showLanderDelegate showLanderIfExistsWithDelegate:delegate];
 }
-#endif
-
-
 
 @end

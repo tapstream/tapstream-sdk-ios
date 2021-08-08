@@ -25,8 +25,6 @@
 	NSArray *hits = [jsonDict objectForKey:@"hits"];
 	NSArray *events = [jsonDict objectForKey:@"events"];
 
-	NSLog(@"Hits: %@", hits);
-	NSLog(@"Events: %@", events);
 	return [[self alloc] initWithHits:hits events:events error:nil];
 }
 

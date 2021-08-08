@@ -171,30 +171,17 @@ fireEventStrategy:(id<TSFireEventStrategy>)fireEventStrategy
 	[requestData appendItemsWithPrefix:@"" keysAndValues:
 	 @"secret", config.sdkSecret,
 	 @"sdkversion", kTSVersion,
-	 @"hardware", config.hardware,
-	 @"hardware-odin1", config.odin1,
 
-	 #ifdef TS_IOS_ONLY
-	 @"hardware-open-udid", config.openUdid,
-	 @"hardware-ios-udid", config.udid,
 	 @"hardware-ios-idfa", config.idfa,
-	 @"hardware-ios-secure-udid", config.secureUdid,
-	 #else
-	 @"hardware-mac-serial-number", config.serialNumber,
-	 #endif
-
+     
 	 @"uuid", [platform getSessionId],
 	 @"platform", [platform getPlatformName],
-	 @"vendor", [platform getManufacturer],
 	 @"model", [platform getModel],
 	 @"os", [platform getOs],
 	 @"os-build", [platform getOsBuild],
-	 @"resolution", [platform getResolution],
-	 @"locale", [platform getLocale],
 	 @"app-name", [platform getAppName],
 	 @"app-version", [platform getAppVersion],
 	 @"package-name", [platform getPackageName],
-	 @"gmtoffset", [NSString stringWithFormat:@"%ld", (long)[[NSTimeZone systemTimeZone] secondsFromGMT]],
 
 	 // Fields necessary for receipt validation
 	 @"receipt-guid", [platform getComputerGUID],

@@ -3,8 +3,6 @@
 #import <Foundation/Foundation.h>
 #import "TSDefaultHttpClient.h"
 
-
-
 #ifndef kTSDefaultTimeout
 #define kTSDefaultTimeout 10000
 #endif

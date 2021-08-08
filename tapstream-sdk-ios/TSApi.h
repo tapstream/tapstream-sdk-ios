@@ -4,13 +4,7 @@
 #import "TSConfig.h"
 #import "TSEvent.h"
 #import "TSResponse.h"
-
-
-#if TEST_IOS || TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
 #import "TSUniversalLinkApiResponse.h"
-#endif
-
-
 #import "TSCoreListener.h"
 #import "TSTimelineApiResponse.h"
 #import "TSTimelineSummaryResponse.h"
@@ -27,24 +21,13 @@
 - (void)lookupTimeline:(void(^)(TSTimelineApiResponse*))completion;
 - (void)getTimelineSummary:(void(^)(TSTimelineSummaryResponse*))completion;
 
-
-#if TEST_IOS || TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
 // In-App Landers -- iOS only
-
 - (void)showLanderIfExistsWithDelegate:(id)delegate;
 
 // Word of mouth controller
 + (id)wordOfMouthController;
 
-
-
-#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
-
 // UL support
 - (void)handleUniversalLink:(NSUserActivity*)userActivity completion:(void(^)(TSUniversalLinkApiResponse*))completion;
 
-#endif // #ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
-#endif // __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
-#endif // TEST_IOS || TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
 @end

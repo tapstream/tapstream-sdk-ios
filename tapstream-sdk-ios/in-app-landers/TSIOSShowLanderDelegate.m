@@ -59,7 +59,7 @@
         [TSLogging logAtLevel:kTSLoggingWarn format:@"WKWebView class not found. Not showing lander. Is the WebKit Framework enabled?"];
         return;
     }
-    
+
 	// Must run display code on main queue
 	dispatch_async(dispatch_get_main_queue(), ^{
 		UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
