@@ -45,10 +45,8 @@
 			}
 			[items setObject:value forKey:key];
 		}
-	} else {
-		[TSLogging logAtLevel:kTSLoggingWarn format:@"Nil key or value passed to appendItemWithPrefix: %@=%@", key, value];
 	}
-	
+
 }
 
 - (void)appendItemWithPrefix:(NSString *)prefix key:(NSString *)key value:(NSString *)value
