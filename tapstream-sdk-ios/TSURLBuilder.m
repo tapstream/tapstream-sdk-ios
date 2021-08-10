@@ -6,7 +6,6 @@
 
 
 #define kTSEventUrlTemplate @"https://api.tapstream.com/%@/event/%@/"
-#define kTSCookieMatchUrlTemplate @"https://api.taps.io/%@/event/%@/"
 #define kTSHitUrlTemplate @"https://api.tapstream.com/%@/hit/%@.gif"
 #define kTSDeeplinkQueryUrlTemplate @"https://api.tapstream.com/%@/deeplink_query/"
 #define kTSLanderUrlTemplate @"https://reporting.tapstream.com/v1/in_app_landers/display/?secret=%@&event_session=%@"
@@ -81,19 +80,6 @@
 	return [[NSURL alloc] initWithString:[NSString stringWithFormat:kTSLanderUrlTemplate,
 										  [TSURLEncoder encodeStringForQuery:config.sdkSecret],
 										  sessionId]];
-}
-
-+ (NSURL*)makeCookieMatchURL:(TSConfig*)config eventName:(NSString*)eventName data:(TSRequestData*)data
-{
-
-	NSString* baseUrl = [NSString stringWithFormat:kTSCookieMatchUrlTemplate,
-						 config.accountName,
-						 [TSURLEncoder encodeStringForPath:eventName]];
-	return [self urlWithParameters:baseUrl
-				 globalEventParams:config.globalEventParams
-							  data:data,
-			@"cookiematch", @"true",
-			nil];
 }
 
 + (NSURL*)makeDeeplinkQueryURL:(TSConfig*)config forURL:(NSString*)url

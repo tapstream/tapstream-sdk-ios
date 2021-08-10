@@ -1,14 +1,14 @@
 Pod::Spec.new do |s|
   s.name           = 'TapstreamIOS'
   s.version        = '{{version}}'
-  s.summary        = 'BETA Tapstream marketing analytics SDK for iOS.'
+  s.summary        = 'Tapstream marketing analytics SDK for iOS.'
   s.homepage       = 'https://tapstream.com/'
   s.license        = 'MIT'
-  s.author         = { 'Michael Zsigmond' => 'support@tapstream.com' }
+  s.author         = { 'Tapstream' => 'support@tapstream.com' }
   s.source         = { :git => 'https://github.com/tapstream/tapstream-sdk-ios.git', :tag => 'v{{version}}-ios' }
 
-  s.ios.deployment_target = '7.0'
-  s.ios.frameworks = 'Foundation', 'UIKit'
+  s.ios.deployment_target = '11.0'
+  s.ios.frameworks = 'Foundation', 'UIKit', 'WebKit'
 
   s.subspec 'Core' do |core|
     core.source_files = ['tapstream-sdk-ios', 'tapstream-sdk-ios/ios-only']
@@ -24,5 +24,3 @@ Pod::Spec.new do |s|
     wom.resources    = 'tapstream-sdk-ios/word-of-mouth/*.xib'
   end
 end
-
-

@@ -6,4 +6,4 @@ def sdk_version():
         return pl['CFBundleShortVersionString']
 
 if __name__ == "__main__":
-    print sdk_version()
+    print(sdk_version())

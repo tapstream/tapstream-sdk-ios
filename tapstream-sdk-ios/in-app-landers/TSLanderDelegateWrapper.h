@@ -5,8 +5,6 @@
 
 #import "TSLanderDelegate.h"
 
-#if TEST_IOS || TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
-
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "TSLanderStrategy.h"
@@ -20,8 +18,5 @@
 								window:(UIWindow*)window;
 - (void)didFailLoadWithError:(NSError*)error;
 @end
-#else
-@interface TSLanderDelegateWrapper : NSObject<TSLanderDelegate>
-@end
-#endif
+
 #endif /* TSLanderDelegateWrapper_h */

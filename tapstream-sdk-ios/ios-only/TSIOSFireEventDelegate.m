@@ -14,8 +14,6 @@
 #import "TSPlatform.h"
 
 #define kTSDefaultTimeout 10000
-#define kTSVersion @"3.0.0"
-
 
 @interface TSEvent(hidden)
 - (void)prepare:(NSDictionary *)globalEventParams;
@@ -136,8 +134,6 @@
 - (void)sendEventRequest:(TSEvent*)e completion:(void(^)(TSResponse*))completion{
 	__unsafe_unretained TSIOSFireEventDelegate* me = self;
 	[e.postData appendItemsFromRequestData:[self.defaultFireEventDelegate requestData]];
-
-	//TSRequestData* data = [self.requestData requestDataByAppendingItemsFromRequestData:e.postData];
 
 	dispatch_async(self.queue, ^{
 		NSURL* url = [TSURLBuilder makeEventURL:me.config eventName:e.encodedName];

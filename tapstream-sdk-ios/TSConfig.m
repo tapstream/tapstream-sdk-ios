@@ -5,23 +5,11 @@
 
 @implementation TSConfig
 
-
 @synthesize accountName = accountName;
 @synthesize sdkSecret = sdkSecret;
 
-@synthesize hardware = hardware;
-@synthesize odin1 = odin1;
-#if TEST_IOS || TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
-@synthesize openUdid = openUdid;
-@synthesize udid = udid;
 @synthesize autoCollectIdfa = autoCollectIdfa;
 @synthesize idfa = idfa;
-@synthesize secureUdid = secureUdid;
-#else
-@synthesize serialNumber = serialNumber;
-#endif
-
-@synthesize collectWifiMac = collectWifiMac;
 
 @synthesize installEventName = installEventName;
 @synthesize openEventName = openEventName;
@@ -29,8 +17,6 @@
 @synthesize fireAutomaticInstallEvent = fireAutomaticInstallEvent;
 @synthesize fireAutomaticOpenEvent = fireAutomaticOpenEvent;
 @synthesize fireAutomaticIAPEvents = fireAutomaticIAPEvents;
-
-@synthesize collectTasteData = collectTasteData;
 
 @synthesize globalEventParams = globalEventParams;
 
@@ -49,16 +35,13 @@
 {
 	if((self = [super init]) != nil)
 	{
-#if TEST_IOS || TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
-		autoCollectIdfa = YES;
-#endif
-		collectWifiMac = YES;
+		autoCollectIdfa = NO;
 		fireAutomaticInstallEvent = YES;
 		fireAutomaticOpenEvent = YES;
 		fireAutomaticIAPEvents = YES;
-        collectTasteData = YES;
 		self.globalEventParams = [NSMutableDictionary dictionaryWithCapacity:16];
 	}
 	return self;
 }
+
 @end

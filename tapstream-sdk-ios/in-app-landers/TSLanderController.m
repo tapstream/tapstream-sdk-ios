@@ -3,7 +3,6 @@
 #import <Foundation/Foundation.h>
 #import "TSLanderController.h"
 
-#if TEST_IOS || TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
 @implementation TSLanderController
 
 + (id)controllerWithLander:(TSLander*)lander delegate:(TSLanderDelegateWrapper*)delegate
@@ -16,9 +15,9 @@
 {
 	if(self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         self.delegate = delegate;
-        
+
         ((WKWebView *)self.view).navigationDelegate = self;
-        
+
         if(lander.url != nil){
             [((WKWebView *)self.view) loadRequest:[NSURLRequest requestWithURL:lander.url]];
         }else{
@@ -32,7 +31,7 @@
 
 - (void)close
 {
-	[((WKWebView *) self.view) loadHTMLString:@"" baseURL:nil];
+    [((WKWebView *) self.view) stopLoading];
 	[UIView transitionWithView:self.view.superview
 					  duration:0.3
 					   options:UIViewAnimationOptionTransitionCrossDissolve
@@ -63,7 +62,3 @@
 
 
 @end
-#else
-@implementation TSLanderController
-@end
-#endif

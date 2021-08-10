@@ -2,9 +2,6 @@
 //  Wraps TSLanderDelegate to record the lander being shown when it completes.
 
 #import "TSLanderDelegateWrapper.h"
-
-#if TEST_IOS || TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
-
 #import <Foundation/Foundation.h>
 #import "TSLanderDelegate.h"
 #import "TSPlatform.h"
@@ -45,7 +42,3 @@
 	self.window = nil;
 }
 @end
-#else
-@implementation TSLanderDelegateWrapper
-@end
-#endif

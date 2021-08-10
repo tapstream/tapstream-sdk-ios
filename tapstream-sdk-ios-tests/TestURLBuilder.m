@@ -79,24 +79,6 @@ describe(@"URLBuilder", ^{
 		});
 	});
 
-	describe(@"makecookiematchurl", ^{
-		it(@"correctly renders a cookie match url", ^{
-
-			NSURL* url = [TSURLBuilder makeCookieMatchURL:config eventName:@"my/Event" data:nil];
-			NSURLComponents* components = [NSURLComponents componentsWithString:[url absoluteString]];
-			assertThat([components percentEncodedPath], is(@"/testapp/event/my%2FEvent/"));
-			assertThat([components host], is(@"api.taps.io"));
-			assertThat([components queryItems],
-					   containsInAnyOrder(
-										  [NSURLQueryItem queryItemWithName:@"custom-k 1" value:@"val&1"],
-										  [NSURLQueryItem queryItemWithName:@"custom-k2" value:@"val2"],
-										  [NSURLQueryItem queryItemWithName:@"cookiematch" value:@"true"],
-										  nil
-										  ));
-
-		});
-	});
-
 	describe(@"makeEventURL", ^{
 		it(@"correctly renders and event url", ^{
 			NSURL* url = [TSURLBuilder makeEventURL:config eventName:@"myEvent"];

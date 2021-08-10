@@ -13,10 +13,7 @@ def test():
     """
     schemes = {
         'TapstreamIOS': [
-            'platform=iOS Simulator,name=iPhone 7,OS=10.3.1',
-        ],
-        'TapstreamMac': [
-            'platform=OS X,arch=x86_64'
+            'platform=iOS Simulator,name=iPhone 12,OS=14.5.0',
         ]
     }
 
@@ -30,7 +27,7 @@ def test():
 @task
 @runs_once
 def current_version():
-    print sdk_version()
+    print(sdk_version())
 
 @task
 @runs_once
@@ -51,21 +48,17 @@ def package():
     """
     Depends on: test
 
-    Create ios and mac .zip files in the package directory
+    Create ios .zip files in the package directory
     """
     version = sdk_version()
     cmd = 'zip -D'
     ios_dest = os.path.abspath('./package/tapstream-sdk-ios-%s.zip' % version)
-    mac_dest = os.path.abspath('./package/tapstream-sdk-mac-%s.zip' % version)
 
     if not os.path.exists('./package'):
         local('mkdir package')
 
     if os.path.exists(ios_dest):
         local('rm %s' % ios_dest)
-
-    if os.path.exists(mac_dest):
-        local('rm %s' % mac_dest)
 
     common_files = ['*.h',
                     '*.m']
@@ -76,7 +69,6 @@ def package():
 
     with lcd('tapstream-sdk-ios'):
         for dir in common_files:
-            local('%s %s %s' % (cmd, mac_dest, dir))
             local('%s %s %s' % (cmd, ios_dest, dir))
 
         for dir in ios_only_files:
@@ -96,10 +88,6 @@ def generate_podspecs():
         with open('./TapstreamIOS.podspec', 'w') as outfile:
             outfile.write(pystache.render(infile.read(), {'version': v}))
 
-    with open('./TapstreamMac.podspec.tpl') as infile:
-        with open('./TapstreamMac.podspec', 'w') as outfile:
-            outfile.write(pystache.render(infile.read(), {'version': v}))
-
 
 @task
 @runs_once
@@ -112,7 +100,6 @@ def push_pods():
     execute(generate_podspecs)
 
     local('pod trunk push TapstreamIOS.podspec')
-    local('pod trunk push TapstreamMac.podspec')
 
 
 @task
@@ -123,10 +110,8 @@ def release(new_version):
     execute(package)
 
 
-    prompt("""Now, create two releases on Github: v{v}-ios, and v{v}-macos.
+    prompt("""Now, create a release on Github: v{v}-ios.
 Then, come back and press enter to continue deployment to cocoapods >
 """.format(v=new_version))
 
     execute(push_pods)
-
-

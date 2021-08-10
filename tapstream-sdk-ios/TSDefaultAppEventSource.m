@@ -1,12 +1,8 @@
 //  Copyright © 2016 Tapstream. All rights reserved.
 
+#import <UIKit/UIKit.h>
 #import "TSDefaultAppEventSource.h"
 
-#if TEST_IOS || TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
-#import <UIKit/UIKit.h>
-#else
-#import <AppKit/AppKit.h>
-#endif
 
 Class TSSKPaymentQueue = nil;
 Class TSSKProductsRequest = nil;
@@ -93,14 +89,12 @@ static void TSLoadStoreKitClasses()
 	{
 		TSLoadStoreKitClasses();
 
-#if TEST_IOS || TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
 		self.foregroundedEventObserver = [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationWillEnterForegroundNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
             if(self->onOpen != nil)
 			{
                 self->onOpen();
 			}
 		}];
-#endif
 		
 		if(TSSKPaymentQueue != nil)
 		{
@@ -127,33 +121,12 @@ static void TSLoadStoreKitClasses()
 				
 				NSData *receipt = nil;
 				
-#if TEST_IOS || TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
 				// For ios 7 and up, try to get the Grand Unified Receipt.
                 NSBundle *mainBundle = [NSBundle mainBundle];
                 if ([mainBundle respondsToSelector:@selector(appStoreReceiptURL)])
                 {
                     receipt = [NSData dataWithContentsOfURL:[mainBundle appStoreReceiptURL]];
-#ifdef __IPHONE_OS_VERSION_MIN_REQUIRED
-#if __IPHONE_OS_VERSION_MIN_REQUIRED < 70000
-				}else{ // For (real) old ios versions, use transactionReceipt.
-					receipt = transaction.transactionReceipt;
-#endif
-#endif
 				}
-#else
-				// For mac, try to load the receipt out of the bundle.  If appStoreReceiptURL method is
-				// available, use it.
-				NSURL *receiptUrl;
-				if([[NSBundle mainBundle] respondsToSelector:@selector(appStoreReceiptURL)])
-				{
-					receiptUrl = [[NSBundle mainBundle] appStoreReceiptURL];
-				}
-				else
-				{
-					receiptUrl = [[[NSBundle mainBundle] bundleURL] URLByAppendingPathComponent:@"Contents/_MASReceipt/receipt"];
-				}
-				receipt = [NSData dataWithContentsOfURL:receiptUrl];
-#endif
 				
 				if(receipt && transaction.transactionIdentifier)
 				{
@@ -167,11 +140,7 @@ static void TSLoadStoreKitClasses()
             case SKPaymentTransactionStateFailed:
             case SKPaymentTransactionStatePurchasing:
             case SKPaymentTransactionStateRestored:
-#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
             case SKPaymentTransactionStateDeferred:
-#endif
-#endif
             break;
             
 		}
