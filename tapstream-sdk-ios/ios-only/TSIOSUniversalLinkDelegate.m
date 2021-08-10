@@ -32,6 +32,7 @@
 	if((self = [self init]) != nil)
 	{
 		self.config = config;
+		self.platform = platform;
 		self.httpClient = httpClient;
 	}
 	return self;
@@ -79,6 +80,6 @@
 						  completion(ul);
 					  }
 				  }];
-	
+
 }
 @end
