@@ -2,5 +2,5 @@
 
 
 #define kTSPlatform @"iOS"
-#define kTSVersion @"4.0.0"
+#define kTSVersion @"4.0.1"
 #define kTSDefaultTimeout 10000

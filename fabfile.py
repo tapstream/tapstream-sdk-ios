@@ -1,15 +1,21 @@
+import plistlib
 import re
 import os.path
-import pystache
-from sdk_version import sdk_version
-from fabric.api import lcd, local, task, execute, runs_once
-from fabric.operations import prompt
+
+from fabric import task
+from fabric import Connection
+
+
+def sdk_version():
+    with open('./tapstream-sdk-ios/Info.plist', 'rb') as f:
+        pl = plistlib.load(f)
+        return pl['CFBundleShortVersionString']
+
 
 @task
-@runs_once
-def test():
+def test(c: Connection):
     """
-    Use xctool to test both SDKs
+    Use xctool to test multiple SDKs.
     """
     schemes = {
         'TapstreamIOS': [
@@ -17,37 +23,32 @@ def test():
         ]
     }
 
-    local('pod update')
-    local('pod install')
+    c.run('pod update')
+    c.run('pod install')
     for scheme, sdks in schemes.items():
         for sdk in sdks:
-            local("xcodebuild test -scheme %s -workspace tapstream-sdk-ios.xcworkspace -destination '%s'" % (scheme, sdk))
+            c.run("xcodebuild test -scheme %s -workspace tapstream-sdk-ios.xcworkspace -destination '%s'" % (scheme, sdk))
 
 
 @task
-@runs_once
-def current_version():
+def current_version(c: Connection):
     print(sdk_version())
 
 @task
-@runs_once
-def set_version(new_version):
+def set_version(c: Connection, new_version: str):
     """
     Update TSDefs.h (via sed) and the project plist files (via agvtool) to a new version number
     """
     assert re.match(r"^3\.[0-9]{1,2}\.[0-9]{1,2}$", new_version)
     old_version = sdk_version()
     old_version_re = old_version.replace('.', '\\.')
-    local("sed -i '' -e 's/%s/%s/g' tapstream-sdk-ios/TSDefs.h" % (old_version_re, new_version))
-    local("agvtool new-marketing-version %s" % new_version)
+    c.run("sed -i '' -e 's/%s/%s/g' tapstream-sdk-ios/TSDefs.h" % (old_version_re, new_version))
+    c.run("agvtool new-marketing-version %s" % new_version)
 
 
 @task
-@runs_once
-def package():
+def package(c: Connection):
     """
-    Depends on: test
-
     Create ios .zip files in the package directory
     """
     version = sdk_version()
@@ -55,10 +56,10 @@ def package():
     ios_dest = os.path.abspath('./package/tapstream-sdk-ios-%s.zip' % version)
 
     if not os.path.exists('./package'):
-        local('mkdir package')
+        c.run('mkdir package')
 
     if os.path.exists(ios_dest):
-        local('rm %s' % ios_dest)
+        c.run('rm %s' % ios_dest)
 
     common_files = ['*.h',
                     '*.m']
@@ -67,51 +68,45 @@ def package():
                       '**/*.m',
                       '**/*.xib']
 
-    with lcd('tapstream-sdk-ios'):
+    with c.cd('tapstream-sdk-ios'):
         for dir in common_files:
-            local('%s %s %s' % (cmd, ios_dest, dir))
+            c.run('%s %s %s' % (cmd, ios_dest, dir))
 
         for dir in ios_only_files:
-            local('%s %s %s' % (cmd, ios_dest, dir))
+            c.run('%s %s %s' % (cmd, ios_dest, dir))
 
-    local('open package')
+    c.run('open package')
 
 
 @task
-@runs_once
-def generate_podspecs():
+def generate_podspecs(c: Connection):
     """
     Use the template files to update the templates with current versions
     """
     v = sdk_version()
-    with open('./TapstreamIOS.podspec.tpl') as infile:
-        with open('./TapstreamIOS.podspec', 'w') as outfile:
-            outfile.write(pystache.render(infile.read(), {'version': v}))
+    with (
+        open('./TapstreamIOS.podspec.tpl', 'r') as infile, 
+        open('./TapstreamIOS.podspec', 'w') as outfile,
+    ):
+        template = infile.read()
+        podspec = re.sub(r"{{\s*version\s*}}", v, template)
+        outfile.write(podspec)
 
 
 @task
-@runs_once
-def push_pods():
+def push_pods(c: Connection):
     """
     Depends: generate_podspecs
 
     Push the current revision (and version) to cocoapods
     """
-    execute(generate_podspecs)
-
-    local('pod trunk push TapstreamIOS.podspec')
+    generate_podspecs(c)
+    c.run('pod trunk push TapstreamIOS.podspec')
 
 
 @task
-@runs_once
-def release(new_version):
-    execute(test)
-    execute(set_version, new_version)
-    execute(package)
-
-
-    prompt("""Now, create a release on Github: v{v}-ios.
-Then, come back and press enter to continue deployment to cocoapods >
-""".format(v=new_version))
-
-    execute(push_pods)
+def release(c: Connection, new_version: str):
+    test(c)
+    set_version(c, new_version)
+    package(c)
+    push_pods(c)
