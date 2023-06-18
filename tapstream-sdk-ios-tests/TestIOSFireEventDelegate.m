@@ -82,8 +82,9 @@ describe(@"IOSFireEventDelegate", ^{
 	it(@"Calls prepare on the event when it is fired", ^{
 		OCMStub([fireEventStrategy shouldFireEvent:[OCMArg any]]).andReturn(false);
 		TSEvent* event = [TSEvent eventWithName:@"myevent" oneTimeOnly:false];
+        assertThat(@(event.isPrepared), isFalse());
 		[fireEventDelegate fireEvent:event];
-		OCMVerify([event prepare:[OCMArg any]]);
+        assertThat(@(event.isPrepared), isTrue());
 	});
 	
 	it(@"Will only retry retryable fire event responses", ^{

@@ -13,7 +13,7 @@
 
 @implementation TSEvent
 
-@synthesize uid, name, encodedName, isOneTimeOnly, isTransaction, productId, customFields, postData;
+@synthesize uid, name, encodedName, isOneTimeOnly, isTransaction, productId, customFields, postData, isPrepared;
 + (instancetype)eventWithName:(NSString *)eventName oneTimeOnly:(BOOL)oneTimeOnlyArg
 {
 	return [[self alloc] initWithName:eventName oneTimeOnly:oneTimeOnlyArg];
@@ -150,7 +150,10 @@
 
 - (void)prepare:(NSDictionary *)globalEventParams
 {
-	// Only record the time of the first fire attempt
+    
+    isPrepared = TRUE;
+    
+    // Only record the time of the first fire attempt
 	if(firstFiredTime == 0)
 	{
 		firstFiredTime = [[NSDate date] timeIntervalSince1970];
