@@ -7,7 +7,7 @@ def test_deps
 end
 
 target 'TapstreamIOS' do
-    platform :ios, '14.0'
+    platform :ios, '15.0'
     target 'TapstreamIOSTests' do
         test_deps
     end

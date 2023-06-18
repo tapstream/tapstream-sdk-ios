@@ -23,7 +23,6 @@ def test(c: Connection):
         ]
     }
 
-    c.run('pod update')
     c.run('pod install')
     for scheme, sdks in schemes.items():
         for sdk in sdks:
