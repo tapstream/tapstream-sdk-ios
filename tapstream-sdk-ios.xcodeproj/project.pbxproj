@@ -128,7 +128,9 @@
 		66EA91151DB02E4600D4D8D5 /* TSMaybeError.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EA91141DB02E4600D4D8D5 /* TSMaybeError.m */; };
 		66EA911A1DB0333B00D4D8D5 /* TestDeeplinkApiResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EA91171DB032F800D4D8D5 /* TestDeeplinkApiResponse.m */; };
 		66F2F2251DA2DF0D00C744D6 /* TSHttpClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 66F2F2241DA2DF0D00C744D6 /* TSHttpClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6FEC31E5C83404011116D09F /* libPods-TapstreamIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 528B3F22F6A53B3143B8FC24 /* libPods-TapstreamIOS.a */; };
 		821E75F226C0986E001C8A5F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821E75F126C0986E001C8A5F /* WebKit.framework */; };
+		CC9640D5DE91DF34CB8B004E /* libPods-TapstreamIOS-TapstreamIOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07967DF2785AE7596DABB1C7 /* libPods-TapstreamIOS-TapstreamIOSTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,7 +144,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07967DF2785AE7596DABB1C7 /* libPods-TapstreamIOS-TapstreamIOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TapstreamIOS-TapstreamIOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		498A1375C8B2471F144D97F5 /* Pods-TapstreamIOS-TapstreamIOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TapstreamIOS-TapstreamIOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TapstreamIOS-TapstreamIOSTests/Pods-TapstreamIOS-TapstreamIOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		528B3F22F6A53B3143B8FC24 /* libPods-TapstreamIOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TapstreamIOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		660498D01D00CEAC003DA374 /* TestLanderStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestLanderStrategy.m; sourceTree = "<group>"; };
 		660498E81D020DB5003DA374 /* TestURLBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestURLBuilder.m; sourceTree = "<group>"; };
 		660FD8481D301E5D00A05527 /* TestWordOfMouthController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestWordOfMouthController.m; sourceTree = "<group>"; };
@@ -280,6 +284,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FEC31E5C83404011116D09F /* libPods-TapstreamIOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +294,7 @@
 			files = (
 				821E75F226C0986E001C8A5F /* WebKit.framework in Frameworks */,
 				666C19C21CE65CA9004806D9 /* TapstreamIOS.framework in Frameworks */,
+				CC9640D5DE91DF34CB8B004E /* libPods-TapstreamIOS-TapstreamIOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +507,8 @@
 			isa = PBXGroup;
 			children = (
 				821E75F126C0986E001C8A5F /* WebKit.framework */,
+				528B3F22F6A53B3143B8FC24 /* libPods-TapstreamIOS.a */,
+				07967DF2785AE7596DABB1C7 /* libPods-TapstreamIOS-TapstreamIOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
