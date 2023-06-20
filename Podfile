@@ -1,9 +1,9 @@
 project 'tapstream-sdk-ios'
 
 def test_deps
-  pod 'OCMock'
-  pod 'Specta', '~> 1.0'
-  pod 'OCHamcrest', '~> 5.0'
+  pod 'OCMock', '~> 3.0'
+  pod 'Specta', '~> 2.0'
+  pod 'OCHamcrest', '~> 9.0'
 end
 
 target 'TapstreamIOS' do
