@@ -7,38 +7,59 @@
 
 + (id)controllerWithLander:(TSLander*)lander delegate:(TSLanderDelegateWrapper*)delegate
 {
-	NSBundle* bund = [NSBundle bundleForClass:TSLanderController.self];
-	return [[TSLanderController alloc] initWithNibName:@"TSLanderView" bundle:bund lander:lander delegate:delegate];
+    return [[TSLanderController alloc] initWithLander:lander delegate:delegate];
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil lander:(TSLander*)lander  delegate:(TSLanderDelegateWrapper*)delegate
+- (id)initWithLander: (TSLander*)lander delegate:(TSLanderDelegateWrapper*)delegate
 {
-	if(self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+    if(self = [super init]) {
         self.delegate = delegate;
+        self.lander = lander;
+    }
+    return self;
+}
 
-        ((WKWebView *)self.view).navigationDelegate = self;
+- (void)dealloc {
+    [self.webView stopLoading];
+    self.webView.navigationDelegate = nil;
+}
 
-        if(lander.url != nil){
-            [((WKWebView *)self.view) loadRequest:[NSURLRequest requestWithURL:lander.url]];
-        }else{
-            [((WKWebView *)self.view) loadHTMLString:lander.html baseURL:nil];
-        }
 
-        [self.delegate showedLander:lander];
-	}
-	return self;
+- (void)loadView
+{
+    WKWebView* webView = [[WKWebView alloc] init];
+    webView.navigationDelegate = self;
+    webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.view = webView;
+    self.webView = webView;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self loadContent];
+    [self.delegate showedLander:self.lander];
+}
+
+- (void)loadContent
+{
+    if(self.lander.url != nil){
+        [self.webView loadRequest:[NSURLRequest requestWithURL:self.lander.url]];
+    }else{
+        [self.webView loadHTMLString:self.lander.html baseURL:nil];
+    }
 }
 
 - (void)close
 {
-    [((WKWebView *) self.view) stopLoading];
-	[UIView transitionWithView:self.view.superview
-					  duration:0.3
-					   options:UIViewAnimationOptionTransitionCrossDissolve
-					animations:^{ [self.view removeFromSuperview]; }
-					completion:NULL];
+    [UIView transitionWithView:self.view.superview
+                      duration:0.3
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^{ [self.view removeFromSuperview]; }
+                    completion:NULL];
 }
 
+#pragma mark - WKNavigationDelegate
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error
 {
     [self close];
@@ -56,7 +77,7 @@
             return;
         }
     }
-
+    
     decisionHandler(WKNavigationActionPolicyAllow);
 }
 
