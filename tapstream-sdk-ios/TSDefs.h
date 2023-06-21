@@ -1,6 +1,6 @@
-//  Copyright © 2016 Tapstream. All rights reserved.
+//  Copyright © 2023 Tapstream. All rights reserved.
 
 
 #define kTSPlatform @"iOS"
-#define kTSVersion @"4.0.1"
+#define kTSVersion @"3.3.0"
 #define kTSDefaultTimeout 10000

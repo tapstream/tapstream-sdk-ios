@@ -1,4 +1,4 @@
-//  Copyright © 2016 Tapstream. All rights reserved.
+//  Copyright © 2023 Tapstream. All rights reserved.
 
 #ifndef TSLanderDelegate_h
 #define TSLanderDelegate_h
