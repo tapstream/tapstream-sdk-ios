@@ -7,8 +7,9 @@
 
 @interface TSOfferViewController : UIViewController<WKNavigationDelegate>
 
-@property(strong, nonatomic) TSOffer *offer;
-@property(assign, nonatomic) id<TSWordOfMouthDelegate> delegate;
+@property (strong, nonatomic) WKWebView *webView;
+@property (strong, nonatomic) TSOffer *offer;
+@property (assign, nonatomic) id<TSWordOfMouthDelegate> delegate;
 
 + (id)controllerWithOffer:(TSOffer *)offer delegate:(id<TSWordOfMouthDelegate>)delegate;
 

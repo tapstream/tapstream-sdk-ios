@@ -22,7 +22,6 @@
 		return [[self alloc] initWithResponse:response rewards:rewards error:[response error]];
 	}
 
-
 	NSError* error;
 	NSArray *json = [NSJSONSerialization JSONObjectWithData:response.data options:0 error:&error];
 	if(error != nil)

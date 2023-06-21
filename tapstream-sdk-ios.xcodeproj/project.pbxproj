@@ -33,7 +33,6 @@
 		6624C0C81DA3268900FF5AAC /* TSOfferApiResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 66C53D5E1D18A279005A3130 /* TSOfferApiResponse.h */; };
 		6624C0C91DA3268900FF5AAC /* TSOfferApiResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C53D601D18A2E0005A3130 /* TSOfferApiResponse.m */; };
 		6624C0CA1DA3268900FF5AAC /* TSOfferStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 66C53D661D18CCB6005A3130 /* TSOfferStrategy.h */; };
-		6624C0CB1DA3268900FF5AAC /* TSOfferView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6679DCA51D2344FF00584002 /* TSOfferView.xib */; };
 		6624C0CC1DA3268900FF5AAC /* TSOfferViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 66C53D4E1D189F88005A3130 /* TSOfferViewController.h */; };
 		6624C0CD1DA3268900FF5AAC /* TSOfferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C53D4F1D189F88005A3130 /* TSOfferViewController.m */; };
 		6624C0CE1DA3268900FF5AAC /* TSReward.h in Headers */ = {isa = PBXBuildFile; fileRef = 66C53D501D189F88005A3130 /* TSReward.h */; };
@@ -234,7 +233,6 @@
 		666C19BC1CE65CA9004806D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		666C19C11CE65CA9004806D9 /* TapstreamIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TapstreamIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		666C19C81CE65CA9004806D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6679DCA51D2344FF00584002 /* TSOfferView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TSOfferView.xib; path = "word-of-mouth/TSOfferView.xib"; sourceTree = "<group>"; };
 		66837F431D5BDE6C00D01591 /* TSStartupDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSStartupDelegate.h; sourceTree = "<group>"; };
 		66837F4A1D5BE74000D01591 /* TSFireEventDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSFireEventDelegate.h; sourceTree = "<group>"; };
 		66837F4F1D5C01AB00D01591 /* TSTimelineLookupDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTimelineLookupDelegate.h; sourceTree = "<group>"; };
@@ -459,7 +457,6 @@
 				66C53D5E1D18A279005A3130 /* TSOfferApiResponse.h */,
 				66C53D601D18A2E0005A3130 /* TSOfferApiResponse.m */,
 				66C53D661D18CCB6005A3130 /* TSOfferStrategy.h */,
-				6679DCA51D2344FF00584002 /* TSOfferView.xib */,
 				66C53D4E1D189F88005A3130 /* TSOfferViewController.h */,
 				66C53D4F1D189F88005A3130 /* TSOfferViewController.m */,
 				66C53D501D189F88005A3130 /* TSReward.h */,
@@ -669,7 +666,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6624C0CB1DA3268900FF5AAC /* TSOfferView.xib in Resources */,
 				6624C0E71DA58E5000FF5AAC /* TSLanderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

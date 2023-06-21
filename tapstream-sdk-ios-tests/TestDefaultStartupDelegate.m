@@ -13,7 +13,6 @@
 #import "TSDefs.h"
 
 
-
 SpecBegin(DefaultStartupDelegate)
 
 describe(@"DefaultStartupDelegate", ^{
