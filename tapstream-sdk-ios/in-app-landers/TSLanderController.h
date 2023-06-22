@@ -1,9 +1,7 @@
-//  Copyright © 2016 Tapstream. All rights reserved.
+//  Copyright © 2023 Tapstream. All rights reserved.
 
 #ifndef TSLanderController_h
 #define TSLanderController_h
-
-#if TEST_IOS || TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
 
 #import "TSLanderDelegate.h"
 #import "TSLanderDelegateWrapper.h"
@@ -12,13 +10,13 @@
 #import <WebKit/WebKit.h>
 
 @interface TSLanderController : UIViewController<WKNavigationDelegate>
+
 @property(nonatomic, strong) TSLanderDelegateWrapper* delegate;
+@property(nonatomic, strong) TSLander* lander;
+@property(nonatomic, strong) WKWebView* webView;
 
 + (id)controllerWithLander:(TSLander*)lander delegate:(TSLanderDelegateWrapper*)delegate;
+
 @end
 
-#else
-@interface TSLanderController : NSObject
-@end
-#endif
 #endif /* TSLanderController_h */

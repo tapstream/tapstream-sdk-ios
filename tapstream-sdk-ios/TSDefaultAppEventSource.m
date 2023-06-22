@@ -1,4 +1,4 @@
-//  Copyright © 2016 Tapstream. All rights reserved.
+//  Copyright © 2023 Tapstream. All rights reserved.
 
 #import <UIKit/UIKit.h>
 #import "TSDefaultAppEventSource.h"
@@ -7,7 +7,7 @@
 Class TSSKPaymentQueue = nil;
 Class TSSKProductsRequest = nil;
 
-static void TSLoadStoreKitClasses()
+static void TSLoadStoreKitClasses(void)
 {
 	if(TSSKPaymentQueue == nil)
 	{

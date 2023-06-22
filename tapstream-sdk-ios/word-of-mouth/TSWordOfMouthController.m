@@ -1,4 +1,4 @@
-//  Copyright © 2016 Tapstream. All rights reserved.
+//  Copyright © 2023 Tapstream. All rights reserved.
 
 #import "TSWordOfMouthController.h"
 
@@ -14,16 +14,9 @@
 #define kTSLastOfferImpressionTimesKey @"__tapstream_last_offer_impression_times"
 
 
-@interface TSReward()
-- (void)consume;
-@end
-
-
-
 @interface TSWordOfMouthController()
 
 @property(strong, nonatomic) TSConfig* config;
-@property(strong, nonatomic) TSOfferViewController *offerViewController;
 @property(nonatomic, strong) id<TSOfferStrategy> offerStrategy;
 @property(nonatomic, strong) id<TSRewardStrategy> rewardStrategy;
 @property(strong, nonatomic) id<TSHttpClient> httpClient;
@@ -51,34 +44,6 @@
     }
     return self;
 }
-
-- (void)showOffer:(TSOffer *)offer parentViewController:(UIViewController *)parentViewController;
-{
-    Class wkWebView = NSClassFromString(@"WKWebView");
-    if(!wkWebView){
-        [TSLogging logAtLevel:kTSLoggingWarn format:@"WKWebView class not found. Not showing WoM popup. Is the WebKit Framework enabled?"];
-        return;
-    }
-    
-    
-    if(offer && parentViewController) {
-        self.offerViewController = [TSOfferViewController controllerWithOffer:offer delegate:self];
-        self.offerViewController.view.frame = parentViewController.view.bounds;
-        [parentViewController addChildViewController:self.offerViewController];
-        [UIView transitionWithView:parentViewController.view
-                          duration:0.3
-                           options:UIViewAnimationOptionTransitionCrossDissolve
-                        animations:^{
-                            [parentViewController.view addSubview:self.offerViewController.view];
-                            [self.offerViewController didMoveToParentViewController:parentViewController];
-                        }
-                        completion:NULL];
-
-        [self showedOffer:offer.ident];
-		[self.offerStrategy registerOfferShown:(TSOffer*)offer];
-	}
-}
-
 
 - (void)getOfferForInsertionPoint:(NSString *)insertionPoint completion:(void (^)(TSOfferApiResponse *))callback
 {
@@ -113,9 +78,8 @@
 
 	[self.httpClient request:url completion:^(TSResponse* response){
 
-		[TSLogging logAtLevel:kTSLoggingInfo
-					   format:@"Offers request complete (status %d)",
-		 [response status]];
+        [TSLogging logAtLevel:kTSLoggingInfo
+                       format:@"Offers request complete (status %d)", [response status]];
 
 		TSOfferApiResponse* offerResponse = [TSOfferApiResponse
 											 offerApiResponseWithResponse:response
@@ -172,7 +136,26 @@
 	[self.rewardStrategy registerClaimedReward:reward];
 }
 
-// TSWordOfMouthDelegate
+- (void)showOffer:(TSOffer *)offer parentViewController:(UIViewController *)parentViewController;
+{
+    if(!NSClassFromString(@"WKWebView")){
+        [TSLogging logAtLevel:kTSLoggingWarn
+                       format:@"WKWebView class not found. Not showing WoM popup. Is the WebKit Framework enabled?"];
+        return;
+    }
+    
+    if (!offer) {
+        return;
+    }
+    
+    TSOfferViewController* offerViewController = [TSOfferViewController controllerWithOffer: offer delegate:self];
+    [parentViewController presentViewController:offerViewController animated:YES completion:nil];
+    [self showedOffer:offer.ident];
+    [self.offerStrategy registerOfferShown:(TSOffer*)offer];
+}
+
+
+#pragma mark - TSWordOfMouthDelegate
 - (void)showedOffer:(NSUInteger)offerId
 {
     [self.delegate showedOffer:offerId];
@@ -180,60 +163,6 @@
 
 - (void)dismissedOffer:(BOOL)accepted
 {
-    if(accepted) {
-        TSOffer *offer = self.offerViewController.offer;
-        UIViewController *parent = self.offerViewController.parentViewController;
-        
-        
-        UIActivityViewController* c = [[UIActivityViewController alloc]
-                                       initWithActivityItems:@[offer.message] applicationActivities:nil];
-
-        
-        __weak typeof(c) weakC = c;
-
-		if([c respondsToSelector:@selector(setCompletionWithItemsHandler:)]){
-			[c setCompletionWithItemsHandler:^(NSString* activityType, BOOL completed, NSArray* items, NSError* error){
-
-				__strong typeof(weakC) strongC = weakC;
-
-				if (completed) {
-					NSString* cleanedType = activityType;
-
-					if([activityType isEqualToString:UIActivityTypeMail]){
-						cleanedType = @"email";
-					}else if([activityType isEqualToString:UIActivityTypeMessage]){
-						cleanedType = @"messaging";
-					}else if([activityType isEqualToString:UIActivityTypePostToFacebook]){
-						cleanedType = @"facebook";
-					}else if([activityType isEqualToString:UIActivityTypePostToTwitter]){
-						cleanedType = @"twitter";
-					}
-
-					[self completedShare:offer.ident socialMedium:cleanedType];
-				}
-				strongC.completionWithItemsHandler = nil;
-
-			}];
-		}
-        
-		if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone)
-		{
-			[parent presentViewController:c animated:YES completion:nil];
-		}
-		else if ([parent respondsToSelector:@selector(popoverPresentationController)])
-		{
-			c.popoverPresentationController.sourceRect = CGRectMake(parent.view.frame.size.width/2, parent.view.frame.size.height, 0, 0);
-			c.popoverPresentationController.sourceView = parent.view;
-			[parent presentViewController:c animated:YES completion:nil];
-		}
-    }
-
-    // Clean up offer view
-    [self.offerViewController willMoveToParentViewController:nil];
-    [self.offerViewController.view removeFromSuperview];
-    [self.offerViewController removeFromParentViewController];
-    
-    self.offerViewController = nil;
     [self.delegate dismissedOffer:accepted];
 }
 
@@ -243,7 +172,9 @@
 }
 
 - (void)dismissedSharing
-{}
+{
+    [self.delegate dismissedSharing];
+}
 
 - (void)completedShare:(NSUInteger)offerId socialMedium:(NSString *)medium
 {

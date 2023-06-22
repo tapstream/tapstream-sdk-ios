@@ -1,4 +1,4 @@
-//  Copyright © 2016 Tapstream. All rights reserved.
+//  Copyright © 2023 Tapstream. All rights reserved.
 
 #import <Foundation/Foundation.h>
 #import <Specta/Specta.h>
@@ -58,8 +58,9 @@ describe(@"FireEventDelegate", ^{
 	it(@"Calls prepare on the event when it is fired", ^{
 		OCMStub([fireEventStrategy shouldFireEvent:[OCMArg any]]).andReturn(false);
 		TSEvent* event = [TSEvent eventWithName:@"myevent" oneTimeOnly:false];
-		[fireEventDelegate fireEvent:event];
-		OCMVerify([event prepare:[OCMArg any]]);
+        assertThat(@(event.isPrepared), isFalse());
+        [fireEventDelegate fireEvent:event];
+        assertThat(@(event.isPrepared), isTrue());
 	});
 
 	it(@"Will only retry retryable fire event responses", ^{

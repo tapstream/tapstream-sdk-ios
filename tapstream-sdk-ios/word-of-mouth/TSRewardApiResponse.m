@@ -1,4 +1,4 @@
-//  Copyright © 2016 Tapstream. All rights reserved.
+//  Copyright © 2023 Tapstream. All rights reserved.
 
 #import <Foundation/Foundation.h>
 #import "TSRewardApiResponse.h"
@@ -21,7 +21,6 @@
 	{
 		return [[self alloc] initWithResponse:response rewards:rewards error:[response error]];
 	}
-
 
 	NSError* error;
 	NSArray *json = [NSJSONSerialization JSONObjectWithData:response.data options:0 error:&error];

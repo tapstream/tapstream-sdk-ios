@@ -1,12 +1,12 @@
 PODS:
-  - OCHamcrest (5.4.0)
-  - OCMock (3.3.1)
-  - Specta (1.0.6)
+  - OCHamcrest (9.0.1)
+  - OCMock (3.9.1)
+  - Specta (2.0.0)
 
 DEPENDENCIES:
-  - OCHamcrest (~> 5.0)
-  - OCMock
-  - Specta (~> 1.0)
+  - OCHamcrest (~> 9.0)
+  - OCMock (~> 3.0)
+  - Specta (~> 2.0)
 
 SPEC REPOS:
   trunk:
@@ -15,10 +15,10 @@ SPEC REPOS:
     - Specta
 
 SPEC CHECKSUMS:
-  OCHamcrest: 5c1d441c5a82fb18ac17c2aeb52ec1a99edb971b
-  OCMock: f3f61e6eaa16038c30caa5798c5e49d3307b6f22
-  Specta: f506f3a8361de16bc0dcf3b17b75e269072ba465
+  OCHamcrest: e84ce6833fb8ab16f34e3a5e004917b6f566755a
+  OCMock: 9491e4bec59e0b267d52a9184ff5605995e74be8
+  Specta: b79d84043684b35ffdc2680df578dc318ec2efc2
 
-PODFILE CHECKSUM: 00f92f134b74e3968823a8c9e1eb859f5ab9a0bf
+PODFILE CHECKSUM: 367191b16ca5e0c9811d87a65d95fdec097564ad
 
-COCOAPODS: 1.10.2
+COCOAPODS: 1.12.1

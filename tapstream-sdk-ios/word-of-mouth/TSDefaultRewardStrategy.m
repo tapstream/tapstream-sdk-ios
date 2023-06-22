@@ -1,4 +1,4 @@
-//  Copyright © 2016 Tapstream. All rights reserved.
+//  Copyright © 2023 Tapstream. All rights reserved.
 
 #import <Foundation/Foundation.h>
 
@@ -39,7 +39,7 @@
 	@synchronized(self.rewardConsumptionCounts) {
 		NSNumber *consumedVal = [self.rewardConsumptionCounts objectForKey:[[NSNumber numberWithInteger:reward.offerIdent] stringValue]];
 
-		NSInteger consumed = consumedVal ? [consumedVal integerValue] : 0;
+		NSInteger consumed = consumedVal != nil ? [consumedVal integerValue] : 0;
 
 		long rewardCount = [reward installs] / [reward minimumInstalls];
 		long quantity = MAX(0, rewardCount - consumed);
@@ -76,7 +76,7 @@
 		@synchronized(self.rewardConsumptionCounts) {
 			NSString *key = [[NSNumber numberWithInteger:reward.offerIdent] stringValue];
 			NSNumber *consumedVal = [self.rewardConsumptionCounts objectForKey:key];
-			NSInteger consumed = consumedVal ? [consumedVal integerValue] : 0;
+			NSInteger consumed = consumedVal != nil ? [consumedVal integerValue] : 0;
 			consumed += quantity;
 			[self.rewardConsumptionCounts setObject:[NSNumber numberWithInteger:consumed] forKey:key];
 			[self.storage setObject:self.rewardConsumptionCounts forKey:kTSRewardConsumptionCounts];

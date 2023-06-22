@@ -1,4 +1,4 @@
-//  Copyright © 2016 Tapstream. All rights reserved.
+//  Copyright © 2023 Tapstream. All rights reserved.
 
 #pragma once
 #import <Foundation/Foundation.h>
@@ -15,6 +15,7 @@
 	NSString *productId;
 	NSMutableDictionary *customFields;
 	TSRequestData *postData;
+    BOOL isPrepared;
 }
 
 @property(nonatomic, strong, readonly) NSString *uid;
@@ -23,8 +24,9 @@
 @property(nonatomic, strong, readonly) NSString *productId;
 @property(nonatomic, strong, readonly) NSMutableDictionary *customFields;
 @property(nonatomic, strong, readonly) TSRequestData *postData;
-@property (nonatomic, assign, readonly) BOOL isOneTimeOnly;
-@property (nonatomic, assign, readonly) BOOL isTransaction;
+@property(nonatomic, assign, readonly) BOOL isOneTimeOnly;
+@property(nonatomic, assign, readonly) BOOL isTransaction;
+@property(nonatomic, assign, readonly) BOOL isPrepared;
 
 
 + (instancetype)eventWithName:(NSString *)name oneTimeOnly:(BOOL)oneTimeOnly;

@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.author         = { 'Tapstream' => 'support@tapstream.com' }
   s.source         = { :git => 'https://github.com/tapstream/tapstream-sdk-ios.git', :tag => 'v{{version}}-ios' }
 
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '15.0'
   s.ios.frameworks = 'Foundation', 'UIKit', 'WebKit'
 
   s.subspec 'Core' do |core|
