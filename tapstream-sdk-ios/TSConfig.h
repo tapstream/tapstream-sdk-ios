@@ -10,6 +10,7 @@
 	NSString* sdkSecret;
 
 	// Optional hardware identifiers that can be provided by the caller
+	NSString *externalIdentity;
 	BOOL autoCollectIdfa;
 	NSString *idfa;
 
@@ -39,7 +40,8 @@
 }
 @property(nonatomic, strong) NSString *accountName;
 @property(nonatomic, strong) NSString *sdkSecret;
-	
+
+@property(nonatomic, strong) NSString *externalIdentity;
 @property(nonatomic, assign) BOOL autoCollectIdfa;
 @property(nonatomic, strong) NSString *idfa;
 
