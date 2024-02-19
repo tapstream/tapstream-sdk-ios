@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -58,7 +58,6 @@
 		6624C0E41DA58E5000FF5AAC /* TSLanderDelegateWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 6614D1B41D48228D001C88AB /* TSLanderDelegateWrapper.h */; };
 		6624C0E51DA58E5000FF5AAC /* TSLanderDelegateWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6614D1B51D48228D001C88AB /* TSLanderDelegateWrapper.m */; };
 		6624C0E61DA58E5000FF5AAC /* TSLanderStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 6614D1B61D48228D001C88AB /* TSLanderStrategy.h */; };
-		6624C0E71DA58E5000FF5AAC /* TSLanderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6614D1B71D48228D001C88AB /* TSLanderView.xib */; };
 		6624C0E91DA591C900FF5AAC /* TSWordOfMouth.h in Headers */ = {isa = PBXBuildFile; fileRef = 6624C0E81DA591C900FF5AAC /* TSWordOfMouth.h */; };
 		66519FEA1D2B42F30002E7E7 /* TestURLEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 66519FE81D2B42D30002E7E7 /* TestURLEncoder.m */; };
 		666C19C21CE65CA9004806D9 /* TapstreamIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 666C19B71CE65CA9004806D9 /* TapstreamIOS.framework */; };
@@ -159,7 +158,6 @@
 		6614D1B41D48228D001C88AB /* TSLanderDelegateWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLanderDelegateWrapper.h; sourceTree = "<group>"; };
 		6614D1B51D48228D001C88AB /* TSLanderDelegateWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLanderDelegateWrapper.m; sourceTree = "<group>"; };
 		6614D1B61D48228D001C88AB /* TSLanderStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLanderStrategy.h; sourceTree = "<group>"; };
-		6614D1B71D48228D001C88AB /* TSLanderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSLanderView.xib; sourceTree = "<group>"; };
 		661510171D079D6F00B298B7 /* TestEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestEvent.m; sourceTree = "<group>"; };
 		662077AB1D63E6D300355F81 /* TestShowLanderDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestShowLanderDelegate.m; sourceTree = "<group>"; };
 		662077AE1D63E89C00355F81 /* TSTestUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTestUtils.h; sourceTree = "<group>"; };
@@ -315,7 +313,6 @@
 				6614D1B41D48228D001C88AB /* TSLanderDelegateWrapper.h */,
 				6614D1B51D48228D001C88AB /* TSLanderDelegateWrapper.m */,
 				6614D1B61D48228D001C88AB /* TSLanderStrategy.h */,
-				6614D1B71D48228D001C88AB /* TSLanderView.xib */,
 			);
 			path = "in-app-landers";
 			sourceTree = "<group>";
@@ -624,8 +621,9 @@
 		666C19AE1CE65CA9004806D9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1520;
 				ORGANIZATIONNAME = "Adam Bard";
 				TargetAttributes = {
 					666C19B61CE65CA9004806D9 = {
@@ -666,7 +664,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6624C0E71DA58E5000FF5AAC /* TSLanderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -842,6 +839,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -903,6 +901,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -933,12 +932,20 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				INFOPLIST_FILE = "tapstream-sdk-ios/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 4.2.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tapstream.TapstreamIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -960,12 +967,20 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				INFOPLIST_FILE = "tapstream-sdk-ios/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 4.2.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tapstream.TapstreamIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -984,7 +999,12 @@
 				DEVELOPMENT_TEAM = 9SC764U3NB;
 				INFOPLIST_FILE = "tapstream-sdk-ios-tests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tapstream.tapstream-sdk-ios-tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1002,7 +1022,12 @@
 				DEVELOPMENT_TEAM = 9SC764U3NB;
 				INFOPLIST_FILE = "tapstream-sdk-ios-tests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tapstream.tapstream-sdk-ios-tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
