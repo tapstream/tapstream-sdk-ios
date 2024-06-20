@@ -8,6 +8,7 @@
 @synthesize accountName = accountName;
 @synthesize sdkSecret = sdkSecret;
 
+@synthesize externalIdentity = externalIdentity;
 @synthesize autoCollectIdfa = autoCollectIdfa;
 @synthesize idfa = idfa;
 

@@ -14,7 +14,6 @@
 - (NSString *)getManufacturer;
 - (NSString *)getModel;
 - (NSString *)getOs;
-- (NSString *)getOsBuild;
 - (NSString *)getAppName;
 - (NSString *)getPlatformName;
 - (NSString *)getAppVersion;

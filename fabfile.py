@@ -19,7 +19,7 @@ def test(c: Connection):
     """
     schemes = {
         'TapstreamIOS': [
-            'platform=iOS Simulator,name=iPhone 12,OS=14.5',
+            'platform=iOS Simulator,name=iPhone 12,OS=15.5',
         ]
     }
 

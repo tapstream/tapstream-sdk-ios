@@ -30,7 +30,7 @@ describe(@"UniversalLinkInit", ^{
 
 	it(@"Handles invalid JSON", ^{
 
-		TSResponse* r = [TSResponse responseWithStatus:200 message:nil data:[NSKeyedArchiver archivedDataWithRootObject:@""]];
+        TSResponse* r = [TSResponse responseWithStatus:200 message:nil data:[NSKeyedArchiver archivedDataWithRootObject:@"" requiringSecureCoding:NO error: nil]];
 		TSUniversalLinkApiResponse* ul = [TSUniversalLinkApiResponse universalLinkApiResponseWithResponse:r];
 
 		XCTAssertEqual(ul.status, kTSULUnknown);
@@ -42,7 +42,7 @@ describe(@"UniversalLinkInit", ^{
 
 	it(@"Handles a blank JSON response", ^{
 
-		TSResponse* r = [TSResponse responseWithStatus:200 message:nil data:[NSKeyedArchiver archivedDataWithRootObject:@""]];
+		TSResponse* r = [TSResponse responseWithStatus:200 message:nil data:[NSKeyedArchiver archivedDataWithRootObject:@"" requiringSecureCoding:NO error: nil]];
 		TSUniversalLinkApiResponse* ul = [TSUniversalLinkApiResponse universalLinkApiResponseWithResponse:r];
 
 		XCTAssertEqual(ul.status, kTSULUnknown);
@@ -52,9 +52,8 @@ describe(@"UniversalLinkInit", ^{
 		XCTAssert([ul.error.userInfo valueForKey:@"cause"] != nil);
 	});
 
-	it(@"Handles an invalid JSON response", ^{
-
-		TSResponse* r = [TSResponse responseWithStatus:200 message:nil data:[NSKeyedArchiver archivedDataWithRootObject:@"{]}"]];
+	it(@"Handles an invalid JSON response", ^{       
+		TSResponse* r = [TSResponse responseWithStatus:200 message:nil data: [NSKeyedArchiver archivedDataWithRootObject:@"{]}" requiringSecureCoding:NO error: nil]];
 		TSUniversalLinkApiResponse* ul = [TSUniversalLinkApiResponse universalLinkApiResponseWithResponse:r];
 
 		XCTAssertEqual(ul.status, kTSULUnknown);

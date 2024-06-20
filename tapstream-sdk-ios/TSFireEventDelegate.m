@@ -173,12 +173,12 @@ fireEventStrategy:(id<TSFireEventStrategy>)fireEventStrategy
 	 @"sdkversion", kTSVersion,
 
 	 @"hardware-ios-idfa", config.idfa,
+	 @"hardware", config.externalIdentity,
      
 	 @"uuid", [platform getSessionId],
 	 @"platform", [platform getPlatformName],
 	 @"model", [platform getModel],
 	 @"os", [platform getOs],
-	 @"os-build", [platform getOsBuild],
 	 @"app-name", [platform getAppName],
 	 @"app-version", [platform getAppVersion],
 	 @"package-name", [platform getPackageName],
