@@ -59,9 +59,9 @@ __strong static NSMutableCharacterSet* pathAllowedChars = nil;
 
 + (BOOL)checkValueLength:(NSString *)value
 {
-	if(value.length > 255)
+	if(value.length > 32768)
 	{
-		[TSLogging logAtLevel:kTSLoggingWarn format:@"Tapstream Warning: Event value exceeds 255 characters, this field will not be included in the post (value=%@)", value];
+		[TSLogging logAtLevel:kTSLoggingWarn format:@"Tapstream Warning: Event value exceeds 32768 characters, this field will not be included in the post (value=%@)", value];
 		return false;
 	}
 	return true;
