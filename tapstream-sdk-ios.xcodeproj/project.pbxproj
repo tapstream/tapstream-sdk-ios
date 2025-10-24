@@ -58,7 +58,6 @@
 		6624C0E41DA58E5000FF5AAC /* TSLanderDelegateWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 6614D1B41D48228D001C88AB /* TSLanderDelegateWrapper.h */; };
 		6624C0E51DA58E5000FF5AAC /* TSLanderDelegateWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6614D1B51D48228D001C88AB /* TSLanderDelegateWrapper.m */; };
 		6624C0E61DA58E5000FF5AAC /* TSLanderStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 6614D1B61D48228D001C88AB /* TSLanderStrategy.h */; };
-		6624C0E71DA58E5000FF5AAC /* TSLanderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6614D1B71D48228D001C88AB /* TSLanderView.xib */; };
 		6624C0E91DA591C900FF5AAC /* TSWordOfMouth.h in Headers */ = {isa = PBXBuildFile; fileRef = 6624C0E81DA591C900FF5AAC /* TSWordOfMouth.h */; };
 		66519FEA1D2B42F30002E7E7 /* TestURLEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 66519FE81D2B42D30002E7E7 /* TestURLEncoder.m */; };
 		666C19C21CE65CA9004806D9 /* TapstreamIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 666C19B71CE65CA9004806D9 /* TapstreamIOS.framework */; };
@@ -159,7 +158,6 @@
 		6614D1B41D48228D001C88AB /* TSLanderDelegateWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLanderDelegateWrapper.h; sourceTree = "<group>"; };
 		6614D1B51D48228D001C88AB /* TSLanderDelegateWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLanderDelegateWrapper.m; sourceTree = "<group>"; };
 		6614D1B61D48228D001C88AB /* TSLanderStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLanderStrategy.h; sourceTree = "<group>"; };
-		6614D1B71D48228D001C88AB /* TSLanderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSLanderView.xib; sourceTree = "<group>"; };
 		661510171D079D6F00B298B7 /* TestEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestEvent.m; sourceTree = "<group>"; };
 		662077AB1D63E6D300355F81 /* TestShowLanderDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestShowLanderDelegate.m; sourceTree = "<group>"; };
 		662077AE1D63E89C00355F81 /* TSTestUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTestUtils.h; sourceTree = "<group>"; };
@@ -315,7 +313,6 @@
 				6614D1B41D48228D001C88AB /* TSLanderDelegateWrapper.h */,
 				6614D1B51D48228D001C88AB /* TSLanderDelegateWrapper.m */,
 				6614D1B61D48228D001C88AB /* TSLanderStrategy.h */,
-				6614D1B71D48228D001C88AB /* TSLanderView.xib */,
 			);
 			path = "in-app-landers";
 			sourceTree = "<group>";
@@ -666,7 +663,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6624C0E71DA58E5000FF5AAC /* TSLanderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

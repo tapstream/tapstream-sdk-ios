@@ -33,6 +33,7 @@ Carthage/Build
 
 ## Project-specific
 env/
+.venv/
 package/
 *.pyc
 

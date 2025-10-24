@@ -16,11 +16,9 @@ Pod::Spec.new do |s|
 
   s.subspec 'InAppLanders' do |ial|
     ial.source_files = ['tapstream-sdk-ios', 'tapstream-sdk-ios/ios-only', 'tapstream-sdk-ios/in-app-landers']
-    ial.resources    = 'tapstream-sdk-ios/in-app-landers/*.xib'
   end
 
   s.subspec 'WordOfMouth' do |wom|
     wom.source_files = ['tapstream-sdk-ios', 'tapstream-sdk-ios/ios-only', 'tapstream-sdk-ios/word-of-mouth']
-    wom.resources    = 'tapstream-sdk-ios/word-of-mouth/*.xib'
   end
 end
