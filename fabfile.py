@@ -19,7 +19,7 @@ def test(c: Connection):
     """
     schemes = {
         'TapstreamIOS': [
-            'platform=iOS Simulator,name=iPhone 12,OS=14.5',
+            'platform=iOS Simulator,name=iPhone 17 Pro,OS=26.0.1',
         ]
     }
 
@@ -63,9 +63,10 @@ def package(c: Connection):
     common_files = ['*.h',
                     '*.m']
 
-    ios_only_files = ['**/*.h',
-                      '**/*.m',
-                      '**/*.xib']
+    ios_only_files = [
+        '**/*.h',
+        '**/*.m'
+    ]
 
     with c.cd('tapstream-sdk-ios'):
         for dir in common_files:

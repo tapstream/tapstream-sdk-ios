@@ -161,12 +161,17 @@ describe(@"Event", ^{
 			NSMutableString* longKey = [[NSMutableString alloc] init];
 			NSMutableString* longValue = [[NSMutableString alloc] init];
 
+			// Create key exceeding 255 char limit
 			for(int ii=0; ii<512; ii++)
 			{
 				[longKey appendString:@"k"];
+			}
+			// Create value exceeding 32768 char limit
+			for(int ii=0; ii<32769; ii++)
+			{
 				[longValue appendString:@"v"];
 			}
-			assertThatInteger([longValue length], equalToInteger(512));
+			assertThatInteger([longValue length], equalToInteger(32769));
 			assertThatInteger([longKey length], equalToInteger(512));
 
 			[event addValue:@"my-value" forKey:longKey];

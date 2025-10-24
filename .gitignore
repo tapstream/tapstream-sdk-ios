@@ -16,6 +16,7 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 xcuserdata/
+.claude/
 
 ## Other
 *.moved-aside
@@ -32,6 +33,7 @@ Carthage/Build
 
 ## Project-specific
 env/
+.venv/
 package/
 *.pyc
 

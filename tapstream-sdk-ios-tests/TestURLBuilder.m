@@ -175,5 +175,29 @@ describe(@"URLBuilder", ^{
 
 		});
 	});
+
+	describe(@"makeDeeplinkQueryURL", ^{
+		it(@"correctly renders a deeplink query url with 512 character URL", ^{
+			// 512 character URL: base (60 chars) + 452 x's to reach 512 total
+			NSString* longURL = @"https://www.myapp.com/somepage?param1=val1&longParam=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+
+			assertThat(@([longURL length]), is(@512));
+
+			NSURL* url = [TSURLBuilder makeDeeplinkQueryURL:config forURL:longURL];
+
+			// Verify the base URL is correct
+			assertThat([url scheme], is(@"https"));
+			assertThat([url host], is(@"api.tapstream.com"));
+			assertThat([url path], is(@"/testapp/deeplink_query"));
+
+			// Verify the query parameters
+			assertThat([[NSURLComponents componentsWithString:[url absoluteString]] queryItems],
+					   containsInAnyOrder(
+										  [NSURLQueryItem queryItemWithName:@"__tsdqu" value:longURL],
+										  [NSURLQueryItem queryItemWithName:@"__tsdqp" value:@"iOS"],
+										  nil
+										  ));
+		});
+	});
 });
 SpecEnd
