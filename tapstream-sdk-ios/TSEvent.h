@@ -16,6 +16,7 @@
 	NSMutableDictionary *customFields;
 	TSRequestData *postData;
     BOOL isPrepared;
+	NSInteger retryCount;
 }
 
 @property(nonatomic, strong, readonly) NSString *uid;
@@ -27,6 +28,7 @@
 @property(nonatomic, assign, readonly) BOOL isOneTimeOnly;
 @property(nonatomic, assign, readonly) BOOL isTransaction;
 @property(nonatomic, assign, readonly) BOOL isPrepared;
+@property(nonatomic, assign, readonly) NSInteger retryCount;
 
 
 + (instancetype)eventWithName:(NSString *)name oneTimeOnly:(BOOL)oneTimeOnly;

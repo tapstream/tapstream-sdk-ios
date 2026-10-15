@@ -15,7 +15,9 @@
 @property(nonatomic, strong) NSMutableSet *firedEvents;
 @property(readwrite, strong) id<TSPersistentStorage> storage;
 @property(readwrite, strong) id<TSCoreListener> listener;
+@property(readwrite) NSInteger maxRetries;
 + (instancetype) fireEventStrategyWithStorage:(id<TSPersistentStorage>)storage listener:(id<TSCoreListener>)listener;
++ (instancetype) fireEventStrategyWithStorage:(id<TSPersistentStorage>)storage listener:(id<TSCoreListener>)listener maxRetries:(NSInteger)maxRetries;
 @end
 
 

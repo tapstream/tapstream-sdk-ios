@@ -23,6 +23,8 @@
 @synthesize hardcodedBundleId = hardcodedBundleId;
 @synthesize hardcodedBundleShortVersionString = hardcodedBundleShortVersionString;
 
+@synthesize maxEventRetries = maxEventRetries;
+
 + (id)configWithAccountName:(NSString*)accountName sdkSecret:(NSString*)sdkSecret
 {
 	TSConfig* config = [[self alloc] init];
@@ -39,6 +41,7 @@
 		fireAutomaticInstallEvent = YES;
 		fireAutomaticOpenEvent = YES;
 		fireAutomaticIAPEvents = YES;
+		maxEventRetries = kTSUnlimitedRetries;
 		self.globalEventParams = [NSMutableDictionary dictionaryWithCapacity:16];
 	}
 	return self;

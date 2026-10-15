@@ -6,7 +6,11 @@
 #import "TSResponse.h"
 #import "TSLogging.h"
 #import "TSEvent.h"
+#import "TSConfig.h"
 
+@interface TSEvent()
+@property(nonatomic, assign, readwrite) NSInteger retryCount;
+@end
 
 #define kTSFiredEventsKey @"__tapstream_fired_events"
 
@@ -15,15 +19,21 @@
 
 + (instancetype) fireEventStrategyWithStorage:(id<TSPersistentStorage>)storage listener:(id<TSCoreListener>)listener
 {
-	return [[self alloc] initWithStorage:storage listener:listener];
+	return [self fireEventStrategyWithStorage:storage listener:listener maxRetries:kTSUnlimitedRetries];
 }
 
-- (instancetype)initWithStorage:(id<TSPersistentStorage>)storage listener:(id<TSCoreListener>)listener
++ (instancetype) fireEventStrategyWithStorage:(id<TSPersistentStorage>)storage listener:(id<TSCoreListener>)listener maxRetries:(NSInteger)maxRetries
+{
+	return [[self alloc] initWithStorage:storage listener:listener maxRetries:maxRetries];
+}
+
+- (instancetype)initWithStorage:(id<TSPersistentStorage>)storage listener:(id<TSCoreListener>)listener maxRetries:(NSInteger)maxRetries
 {
 	if((self = [self init]) != nil)
 	{
 		self.storage = storage;
 		self.listener = listener;
+		self.maxRetries = maxRetries;
 		self.firedEvents = [self loadFiredEvents];
 		self.firingEvents = [[NSMutableSet alloc] initWithCapacity:32];
 	}
@@ -79,9 +89,9 @@
 			{
 				// Not every job that fails will increase the retry delay.  It will be the responsibility of
 				// the first failed job to increase the delay after every failure.
-				if(self.delay == 0)
+				if(self.delay == 0 || self.failingEventId == nil)
 				{
-					// This is the first job to fail, it must be the one to manage delay timing
+					// This is the first job to fail (or the previous one gave up), it must be the one to manage delay timing
 					self.failingEventId = e.uid;
 					[self increaseDelay];
 				}
@@ -106,6 +116,25 @@
 		}
 	}
 
+}
+
+- (BOOL)shouldRetryEvent:(TSEvent*)e
+{
+	@synchronized(self)
+	{
+		// Any negative limit means unlimited
+		if(self.maxRetries >= 0 && e.retryCount >= self.maxRetries)
+		{
+			// Hand off delay management so the next failing event can keep backing off
+			if([self.failingEventId isEqualToString:e.uid])
+			{
+				self.failingEventId = nil;
+			}
+			return NO;
+		}
+		e.retryCount += 1;
+		return YES;
+	}
 }
 
 // Delay logic

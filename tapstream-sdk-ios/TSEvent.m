@@ -8,12 +8,13 @@
 #import "TSURLEncoder.h"
 
 @interface TSEvent()
+@property(nonatomic, assign, readwrite) NSInteger retryCount;
 @end
 
 
 @implementation TSEvent
 
-@synthesize uid, name, encodedName, isOneTimeOnly, isTransaction, productId, customFields, postData, isPrepared;
+@synthesize uid, name, encodedName, isOneTimeOnly, isTransaction, productId, customFields, postData, isPrepared, retryCount;
 + (instancetype)eventWithName:(NSString *)eventName oneTimeOnly:(BOOL)oneTimeOnlyArg
 {
 	return [[self alloc] initWithName:eventName oneTimeOnly:oneTimeOnlyArg];

@@ -117,6 +117,10 @@ fireEventStrategy:(id<TSFireEventStrategy>)fireEventStrategy
 {
 	if([response failed])
 	{
+		BOOL retry = [response retryable] &&
+			(![self.fireEventStrategy respondsToSelector:@selector(shouldRetryEvent:)] ||
+			 [self.fireEventStrategy shouldRetryEvent:e]);
+
 		if(response.status < 0)
 		{
 			[TSLogging logAtLevel:kTSLoggingError format:@"Tapstream Error: Failed to fire event, error=%@", response.message];
@@ -132,7 +136,7 @@ fireEventStrategy:(id<TSFireEventStrategy>)fireEventStrategy
 		else
 		{
 			NSString *retryMsg = @"";
-			if(![response retryable])
+			if(!retry)
 			{
 				retryMsg = @"  This event will not be retried.";
 			}
@@ -140,12 +144,17 @@ fireEventStrategy:(id<TSFireEventStrategy>)fireEventStrategy
 		}
 
 		[self.listener reportOperation:@"event-failed" arg:e.encodedName];
-		if([response retryable])
+		if(retry)
 		{
 			[self.listener reportOperation:@"retry" arg:e.encodedName];
 			[self.listener reportOperation:@"job-ended" arg:e.encodedName];
 			[self fireEvent:e];
 			return;
+		}
+		if([response retryable])
+		{
+			[TSLogging logAtLevel:kTSLoggingError format:@"Tapstream Error: Giving up on event named \"%@\" after %ld retries", e.name, (long)e.retryCount];
+			[self.listener reportOperation:@"event-retries-exhausted" arg:e.encodedName];
 		}
 	}
 	else

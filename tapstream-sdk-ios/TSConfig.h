@@ -3,6 +3,9 @@
 #pragma once
 #import <Foundation/Foundation.h>
 
+// Value for maxEventRetries that retries failed events until they succeed
+#define kTSUnlimitedRetries -1
+
 @interface TSConfig : NSObject {
 @private
 
@@ -36,6 +39,10 @@
 
 	// hardcodedBundleShortVersionString should match the CFBundleShortVersionString value in your Info.plist
 	NSString *hardcodedBundleShortVersionString;
+
+	// Maximum number of times a failed event is retried. Set to 0 to never retry.
+	// Defaults to kTSUnlimitedRetries.
+	NSInteger maxEventRetries;
 }
 @property(nonatomic, strong) NSString *accountName;
 @property(nonatomic, strong) NSString *sdkSecret;
@@ -54,6 +61,8 @@
 
 @property(nonatomic, strong) NSString *hardcodedBundleId;
 @property(nonatomic, strong) NSString *hardcodedBundleShortVersionString;
+
+@property(nonatomic, assign) NSInteger maxEventRetries;
 
 + (instancetype)configWithAccountName:(NSString*)accountName sdkSecret:(NSString*)sdkSecret;
 

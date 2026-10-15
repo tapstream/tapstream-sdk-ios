@@ -58,6 +58,18 @@ static int requestCount = 0;
 - (void)stopLoading {}
 @end
 
+// Implements only the required TSFireEventStrategy methods, like a strategy
+// written before shouldRetryEvent: existed.
+@interface TSRequiredOnlyFireEventStrategy : NSObject<TSFireEventStrategy>
+@end
+
+@implementation TSRequiredOnlyFireEventStrategy
+- (BOOL)shouldFireEvent:(TSEvent*)event { return YES; }
+- (int)getDelay { return 0; }
+- (void)registerFiringEvent:(TSEvent*)e {}
+- (void)registerResponse:(TSResponse*)response forEvent:(TSEvent*)e {}
+@end
+
 static TSDefaultHttpClient* timeoutStubbedHttpClient(TSConfig* config)
 {
 	TSDefaultHttpClient* client = [TSDefaultHttpClient httpClientWithConfig:config];
@@ -125,6 +137,7 @@ describe(@"FireEventDelegate", ^{
 		__block int firedCount = 0;
 
 		OCMStub([fireEventStrategy shouldFireEvent:[OCMArg any]]).andReturn(true);
+		OCMStub([fireEventStrategy shouldRetryEvent:[OCMArg any]]).andReturn(true);
 		OCMStub([httpClient request:[OCMArg any] data:[OCMArg any] method:@"POST" timeout_ms:10000 completion:[OCMArg any]]).andDo(^(NSInvocation *invocation){
 			[invocation retainArguments];
 			void (^completion)(TSResponse*) = nil;
@@ -154,6 +167,57 @@ describe(@"FireEventDelegate", ^{
 		OCMVerify([fireEventStrategy registerFiringEvent:event]);
 		OCMVerify([fireEventStrategy registerResponse:errorResponse forEvent:event]);
 		OCMVerify([fireEventStrategy registerResponse:badRequestResponse forEvent:event]);
+	});
+
+	it(@"Retries retryable responses when the strategy does not implement shouldRetryEvent", ^{
+		TSEvent* event = [TSEvent eventWithName:@"myevent" oneTimeOnly:false];
+		TSResponse* errorResponse = [TSResponse responseWithStatus:500 message:@"Error" data:nil];
+		TSResponse* okResponse = [TSResponse responseWithStatus:200 message:@"OK" data:nil];
+
+		__block int firedCount = 0;
+
+		OCMStub([httpClient request:[OCMArg any] data:[OCMArg any] method:@"POST" timeout_ms:10000 completion:[OCMArg any]]).andDo(^(NSInvocation *invocation){
+			[invocation retainArguments];
+			void (^completion)(TSResponse*) = nil;
+			[invocation getArgument:&completion atIndex:6];
+			firedCount += 1;
+			completion(firedCount == 1 ? errorResponse : okResponse);
+		});
+
+		TSDefaultFireEventDelegate* delegate = [TSDefaultFireEventDelegate defaultFireEventDelegateWithConfig:config
+																									   queue:queue
+																									platform:platform
+																						   fireEventStrategy:[[TSRequiredOnlyFireEventStrategy alloc] init]
+																								  httpClient:httpClient
+																									listener:listener];
+		[delegate fireEvent:event];
+		block_until_queue_completed(queue);
+
+		assertThatInteger(firedCount, equalToInteger(2));
+	});
+
+	it(@"Will not retry a retryable response once the strategy stops allowing retries", ^{
+		TSEvent* event = [TSEvent eventWithName:@"myevent" oneTimeOnly:false];
+		TSResponse* errorResponse = [TSResponse responseWithStatus:500 message:@"Error" data:nil];
+
+		__block int firedCount = 0;
+
+		OCMStub([fireEventStrategy shouldFireEvent:[OCMArg any]]).andReturn(true);
+		OCMStub([fireEventStrategy shouldRetryEvent:[OCMArg any]]).andReturn(false);
+		OCMStub([httpClient request:[OCMArg any] data:[OCMArg any] method:@"POST" timeout_ms:10000 completion:[OCMArg any]]).andDo(^(NSInvocation *invocation){
+			[invocation retainArguments];
+			void (^completion)(TSResponse*) = nil;
+			[invocation getArgument:&completion atIndex:6];
+			firedCount += 1;
+			completion(errorResponse);
+		});
+
+		[fireEventDelegate fireEvent:event];
+		block_until_queue_completed(queue);
+
+		assertThatInteger(firedCount, equalToInteger(1));
+		OCMVerify([fireEventStrategy shouldRetryEvent:event]);
+		OCMVerify([listener reportOperation:@"event-retries-exhausted" arg:event.encodedName]);
 	});
 
 	describe(@"on request timeouts", ^{
@@ -197,6 +261,7 @@ describe(@"FireEventDelegate", ^{
 				timeoutsRemaining = 3;
 			}
 			OCMStub([fireEventStrategy shouldFireEvent:[OCMArg any]]).andReturn(true);
+			OCMStub([fireEventStrategy shouldRetryEvent:[OCMArg any]]).andReturn(true);
 			OCMStub([fireEventStrategy getDelay]).andReturn(0);
 
 			TSDefaultFireEventDelegate* delegate = [TSDefaultFireEventDelegate defaultFireEventDelegateWithConfig:config
