@@ -74,8 +74,10 @@
 			{
 				NSString *msg = [NSString stringWithFormat:@"%@", error];
 				completion([TSResponse responseWithStatus:-1 message:msg data:nil]);
+				return;
 			}
 			completion([TSResponse responseWithStatus:-1 message:@"Unknown" data:nil]);
+			return;
 		}
 		completion([TSResponse responseWithStatus:(int)response.statusCode message:[NSHTTPURLResponse localizedStringForStatusCode:response.statusCode] data:responseData]);
 

@@ -9,10 +9,63 @@
 #import "TSFireEventDelegate.h"
 #import "TSTestUtils.h"
 #import "TSDefs.h"
+#import "TSDefaultHttpClient.h"
 
 @interface TSEvent()
 - (void)prepare:(NSDictionary*)globalEventParams;
 @end
+
+@interface TSDefaultHttpClient()
+@property(readwrite, strong)NSURLSession* session;
+@end
+
+// Fails the first `timeoutsRemaining` requests with NSURLErrorTimedOut (the same
+// error NSURLSession reports for a real timeout), then answers 200.
+static int timeoutsRemaining = 0;
+static int requestCount = 0;
+
+@interface TSTimeoutURLProtocol : NSURLProtocol
+@end
+
+@implementation TSTimeoutURLProtocol
++ (BOOL)canInitWithRequest:(NSURLRequest *)request { return YES; }
++ (NSURLRequest *)canonicalRequestForRequest:(NSURLRequest *)request { return request; }
+- (void)startLoading
+{
+	BOOL timeout;
+	@synchronized([TSTimeoutURLProtocol class])
+	{
+		requestCount += 1;
+		timeout = timeoutsRemaining > 0;
+		if(timeout)
+		{
+			timeoutsRemaining -= 1;
+		}
+	}
+
+	if(timeout)
+	{
+		NSError* error = [NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorTimedOut userInfo:nil];
+		[self.client URLProtocol:self didFailWithError:error];
+		return;
+	}
+
+	NSHTTPURLResponse* response = [[NSHTTPURLResponse alloc] initWithURL:self.request.URL statusCode:200 HTTPVersion:@"HTTP/1.1" headerFields:nil];
+	[self.client URLProtocol:self didReceiveResponse:response cacheStoragePolicy:NSURLCacheStorageNotAllowed];
+	[self.client URLProtocol:self didLoadData:[@"{}" dataUsingEncoding:NSUTF8StringEncoding]];
+	[self.client URLProtocolDidFinishLoading:self];
+}
+- (void)stopLoading {}
+@end
+
+static TSDefaultHttpClient* timeoutStubbedHttpClient(TSConfig* config)
+{
+	TSDefaultHttpClient* client = [TSDefaultHttpClient httpClientWithConfig:config];
+	NSURLSessionConfiguration* conf = [NSURLSessionConfiguration ephemeralSessionConfiguration];
+	conf.protocolClasses = @[[TSTimeoutURLProtocol class]];
+	client.session = [NSURLSession sessionWithConfiguration:conf];
+	return client;
+}
 
 SpecBegin(FireEventDelegate)
 
@@ -102,8 +155,68 @@ describe(@"FireEventDelegate", ^{
 		OCMVerify([fireEventStrategy registerResponse:errorResponse forEvent:event]);
 		OCMVerify([fireEventStrategy registerResponse:badRequestResponse forEvent:event]);
 	});
-	
-	
+
+	describe(@"on request timeouts", ^{
+		beforeEach(^{
+			@synchronized([TSTimeoutURLProtocol class])
+			{
+				timeoutsRemaining = 0;
+				requestCount = 0;
+			}
+		});
+
+		it(@"HTTP client invokes the completion exactly once for a timed out request", ^{
+			@synchronized([TSTimeoutURLProtocol class])
+			{
+				timeoutsRemaining = 1;
+			}
+			TSDefaultHttpClient* client = timeoutStubbedHttpClient(config);
+
+			__block int completionCount = 0;
+			NSMutableArray<TSResponse*>* responses = [NSMutableArray array];
+			[client request:[NSURL URLWithString:@"https://api.tapstream.com/test"] data:nil method:@"POST" timeout_ms:kTSDefaultTimeout completion:^(TSResponse* response){
+				@synchronized(responses)
+				{
+					completionCount += 1;
+					[responses addObject:response];
+				}
+			}];
+
+			[NSThread sleepForTimeInterval:1.0];
+
+			assertThatInteger(completionCount, equalToInteger(1));
+			assertThatInteger(responses.firstObject.status, equalToInteger(-1));
+			assertThat(@([responses.firstObject retryable]), isTrue());
+		});
+
+		it(@"Retries a timed out event once per timeout instead of fanning out", ^{
+			// Three consecutive timeouts followed by success should be exactly 4 requests.
+			// With duplicated completions each timeout spawns 2 retries: 1 + 2 + 4 = 7 requests.
+			@synchronized([TSTimeoutURLProtocol class])
+			{
+				timeoutsRemaining = 3;
+			}
+			OCMStub([fireEventStrategy shouldFireEvent:[OCMArg any]]).andReturn(true);
+			OCMStub([fireEventStrategy getDelay]).andReturn(0);
+
+			TSDefaultFireEventDelegate* delegate = [TSDefaultFireEventDelegate defaultFireEventDelegateWithConfig:config
+																									   queue:queue
+																									platform:platform
+																						   fireEventStrategy:fireEventStrategy
+																								  httpClient:timeoutStubbedHttpClient(config)
+																									listener:listener];
+
+			[delegate fireEvent:[TSEvent eventWithName:@"myevent" oneTimeOnly:false]];
+
+			[NSThread sleepForTimeInterval:1.5];
+			block_until_queue_completed(queue);
+
+			@synchronized([TSTimeoutURLProtocol class])
+			{
+				assertThatInteger(requestCount, equalToInteger(4));
+			}
+		});
+	});
 });
 
 SpecEnd
