@@ -137,6 +137,21 @@ describe(@"FireEventStrategy", ^{
 			assertThat(limited.failingEventId, is(oneTimeEvent.uid));
 			assertThatInt([limited getDelay], equalToInt(8));
 		});
+
+		it(@"Hands off delay management when the failing event gets a non-retryable response", ^{
+			[strat registerResponse:failure() forEvent:normalEvent];
+			assertThatInt([strat getDelay], equalToInt(2));
+			assertThat(strat.failingEventId, is(normalEvent.uid));
+
+			[strat registerResponse:[TSResponse responseWithStatus:400 message:@"" data:nil] forEvent:normalEvent];
+			assertThat(strat.failingEventId, nilValue());
+			assertThatInt([strat getDelay], equalToInt(2));
+
+			// Another failing event takes over and keeps backing off
+			[strat registerResponse:failure() forEvent:oneTimeEvent];
+			assertThat(strat.failingEventId, is(oneTimeEvent.uid));
+			assertThatInt([strat getDelay], equalToInt(4));
+		});
 	});
 
 });

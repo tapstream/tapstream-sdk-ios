@@ -100,6 +100,11 @@
 					[self increaseDelay];
 				}
 			}
+			else if([self.failingEventId isEqualToString:e.uid])
+			{
+				// The event managing the delay won't be retried, hand off to the next failing event
+				self.failingEventId = nil;
+			}
 		}
 		else
 		{
