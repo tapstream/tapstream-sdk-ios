@@ -23,6 +23,7 @@
 // error NSURLSession reports for a real timeout), then answers 200.
 static int timeoutsRemaining = 0;
 static int requestCount = 0;
+static BOOL respondWithEmptyBody = NO;
 
 @interface TSTimeoutURLProtocol : NSURLProtocol
 @end
@@ -52,7 +53,10 @@ static int requestCount = 0;
 
 	NSHTTPURLResponse* response = [[NSHTTPURLResponse alloc] initWithURL:self.request.URL statusCode:200 HTTPVersion:@"HTTP/1.1" headerFields:nil];
 	[self.client URLProtocol:self didReceiveResponse:response cacheStoragePolicy:NSURLCacheStorageNotAllowed];
-	[self.client URLProtocol:self didLoadData:[@"{}" dataUsingEncoding:NSUTF8StringEncoding]];
+	if(!respondWithEmptyBody)
+	{
+		[self.client URLProtocol:self didLoadData:[@"{}" dataUsingEncoding:NSUTF8StringEncoding]];
+	}
 	[self.client URLProtocolDidFinishLoading:self];
 }
 - (void)stopLoading {}
@@ -226,6 +230,7 @@ describe(@"FireEventDelegate", ^{
 			{
 				timeoutsRemaining = 0;
 				requestCount = 0;
+				respondWithEmptyBody = NO;
 			}
 		});
 
@@ -251,6 +256,28 @@ describe(@"FireEventDelegate", ^{
 			assertThatInteger(completionCount, equalToInteger(1));
 			assertThatInteger(responses.firstObject.status, equalToInteger(-1));
 			assertThat(@([responses.firstObject retryable]), isTrue());
+		});
+
+		it(@"HTTP client reports a success with an empty body as a success, once", ^{
+			@synchronized([TSTimeoutURLProtocol class])
+			{
+				respondWithEmptyBody = YES;
+			}
+			TSDefaultHttpClient* client = timeoutStubbedHttpClient(config);
+
+			NSMutableArray<TSResponse*>* responses = [NSMutableArray array];
+			[client request:[NSURL URLWithString:@"https://api.tapstream.com/test"] data:nil method:@"POST" timeout_ms:kTSDefaultTimeout completion:^(TSResponse* response){
+				@synchronized(responses)
+				{
+					[responses addObject:response];
+				}
+			}];
+
+			[NSThread sleepForTimeInterval:1.0];
+
+			assertThatInteger(responses.count, equalToInteger(1));
+			assertThatInteger(responses.firstObject.status, equalToInteger(200));
+			assertThat(@([responses.firstObject succeeded]), isTrue());
 		});
 
 		it(@"Retries a timed out event once per timeout instead of fanning out", ^{

@@ -68,7 +68,7 @@
 				return;
 			}
 		}
-		if(responseData == nil || !response)
+		if(error != nil || !response)
 		{
 			if(error != nil)
 			{

@@ -4,7 +4,7 @@
 #import <Foundation/Foundation.h>
 
 // Value for maxEventRetries that retries failed events until they succeed
-#define kTSUnlimitedRetries -1
+static const NSInteger kTSUnlimitedRetries = -1;
 
 @interface TSConfig : NSObject {
 @private
