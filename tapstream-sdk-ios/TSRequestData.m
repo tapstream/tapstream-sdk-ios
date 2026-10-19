@@ -97,24 +97,26 @@
 	NSMutableString* outStr = [NSMutableString string];
 	bool first = true;
 
-	// Hold the lock for the whole walk: reading values while another thread
-	// appends to the dictionary is not safe.
+	// Snapshot under the lock and encode outside it: reading values while another
+	// thread appends is not safe, and encoding under the lock starves writers.
+	NSDictionary* snapshot;
 	@synchronized(items){
-		for(NSString* key in items)
+		snapshot = [items copy];
+	}
+	for(NSString* key in snapshot)
+	{
+		if(!first)
 		{
-			if(!first)
-			{
-				[outStr appendString:@"&"];
-			}
-			else
-			{
-				first = false;
-			}
-
-			[outStr appendFormat:@"%@=%@",
-			 [TSURLEncoder encodeStringForQuery:key],
-			 [TSURLEncoder encodeStringForQuery:[items objectForKey:key]]];
+			[outStr appendString:@"&"];
 		}
+		else
+		{
+			first = false;
+		}
+
+		[outStr appendFormat:@"%@=%@",
+		 [TSURLEncoder encodeStringForQuery:key],
+		 [TSURLEncoder encodeStringForQuery:[snapshot objectForKey:key]]];
 	}
 	return outStr;
 }
