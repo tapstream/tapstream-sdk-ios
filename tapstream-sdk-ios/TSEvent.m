@@ -8,7 +8,6 @@
 #import "TSURLEncoder.h"
 
 @interface TSEvent()
-@property(nonatomic, assign, readwrite) NSInteger retryCount;
 @end
 
 
@@ -147,6 +146,11 @@
 	if(key != nil && obj != nil) {
 		[self.customFields setObject:obj forKey:key];
 	}
+}
+
+- (void)incrementRetryCount
+{
+	retryCount += 1;
 }
 
 - (void)prepare:(NSDictionary *)globalEventParams

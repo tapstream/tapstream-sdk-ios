@@ -8,8 +8,8 @@
 #import "TSEvent.h"
 #import "TSConfig.h"
 
-@interface TSEvent()
-@property(nonatomic, assign, readwrite) NSInteger retryCount;
+@interface TSEvent(hidden)
+- (void)incrementRetryCount;
 @end
 
 #define kTSFiredEventsKey @"__tapstream_fired_events"
@@ -85,7 +85,7 @@
 		if([response failed])
 		{
 			// Only increase delays if we actually intend to retry the event
-			if([response retryable])
+			if([response retryable] && ![self retriesExhausted:e])
 			{
 				// Not every job that fails will increase the retry delay.  It will be the responsibility of
 				// the first failed job to increase the delay after every failure.
@@ -123,12 +123,17 @@
 
 }
 
+- (BOOL)retriesExhausted:(TSEvent*)e
+{
+	// Any negative limit means unlimited
+	return self.maxRetries >= 0 && e.retryCount >= self.maxRetries;
+}
+
 - (BOOL)shouldRetryEvent:(TSEvent*)e
 {
 	@synchronized(self)
 	{
-		// Any negative limit means unlimited
-		if(self.maxRetries >= 0 && e.retryCount >= self.maxRetries)
+		if([self retriesExhausted:e])
 		{
 			// Hand off delay management so the next failing event can keep backing off
 			if([self.failingEventId isEqualToString:e.uid])
@@ -137,7 +142,7 @@
 			}
 			return NO;
 		}
-		e.retryCount += 1;
+		[e incrementRetryCount];
 		return YES;
 	}
 }

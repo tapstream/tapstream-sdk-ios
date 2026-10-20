@@ -127,15 +127,31 @@ describe(@"FireEventStrategy", ^{
 			assertThat(limited.failingEventId, is(normalEvent.uid));
 
 			assertThatBool([limited shouldRetryEvent:normalEvent], isTrue());
+
+			// The final failure won't be retried: it releases ownership without growing the delay
 			[limited registerResponse:failure() forEvent:normalEvent];
-			assertThatInt([limited getDelay], equalToInt(4));
-			assertThatBool([limited shouldRetryEvent:normalEvent], isFalse());
+			assertThatInt([limited getDelay], equalToInt(2));
 			assertThat(limited.failingEventId, nilValue());
+			assertThatBool([limited shouldRetryEvent:normalEvent], isFalse());
 
 			// Another failing event takes over and keeps backing off
 			[limited registerResponse:failure() forEvent:oneTimeEvent];
 			assertThat(limited.failingEventId, is(oneTimeEvent.uid));
-			assertThatInt([limited getDelay], equalToInt(8));
+			assertThatInt([limited getDelay], equalToInt(4));
+		});
+
+		it(@"Does not grow the delay for failures that will not be retried", ^{
+			TSDefaultFireEventStrategy* noRetries = [TSDefaultFireEventStrategy fireEventStrategyWithStorage:storage listener:listener maxRetries:0];
+
+			for(int ii = 0; ii < 6; ii++)
+			{
+				TSEvent* event = [TSEvent eventWithName:@"MyName" oneTimeOnly:false];
+				[noRetries registerResponse:failure() forEvent:event];
+				assertThatBool([noRetries shouldRetryEvent:event], isFalse());
+			}
+
+			assertThatInt([noRetries getDelay], equalToInt(0));
+			assertThat(noRetries.failingEventId, nilValue());
 		});
 
 		it(@"Hands off delay management when the failing event gets a non-retryable response", ^{
