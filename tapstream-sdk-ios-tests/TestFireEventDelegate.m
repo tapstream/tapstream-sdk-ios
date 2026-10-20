@@ -74,13 +74,34 @@ static BOOL respondWithEmptyBody = NO;
 - (void)registerResponse:(TSResponse*)response forEvent:(TSEvent*)e {}
 @end
 
+// Sessions created by timeoutStubbedHttpClient, invalidated after each test
+static NSMutableArray<NSURLSession*>* stubSessions = nil;
+
 static TSDefaultHttpClient* timeoutStubbedHttpClient(TSConfig* config)
 {
 	TSDefaultHttpClient* client = [TSDefaultHttpClient httpClientWithConfig:config];
+	[client.session invalidateAndCancel];
+
 	NSURLSessionConfiguration* conf = [NSURLSessionConfiguration ephemeralSessionConfiguration];
 	conf.protocolClasses = @[[TSTimeoutURLProtocol class]];
 	client.session = [NSURLSession sessionWithConfiguration:conf];
+	@synchronized([TSTimeoutURLProtocol class])
+	{
+		[stubSessions addObject:client.session];
+	}
 	return client;
+}
+
+// Polls until condition holds or timeout passes, then waits `settle` seconds so that
+// any extra (buggy) completions or requests have a chance to land before asserting.
+static void waitForCondition(BOOL(^condition)(void), NSTimeInterval timeout, NSTimeInterval settle)
+{
+	NSDate* deadline = [NSDate dateWithTimeIntervalSinceNow:timeout];
+	while(!condition() && [deadline timeIntervalSinceNow] > 0)
+	{
+		[NSThread sleepForTimeInterval:0.01];
+	}
+	[NSThread sleepForTimeInterval:settle];
 }
 
 SpecBegin(FireEventDelegate)
@@ -231,6 +252,18 @@ describe(@"FireEventDelegate", ^{
 				timeoutsRemaining = 0;
 				requestCount = 0;
 				respondWithEmptyBody = NO;
+				stubSessions = [NSMutableArray array];
+			}
+		});
+
+		afterEach(^{
+			@synchronized([TSTimeoutURLProtocol class])
+			{
+				for(NSURLSession* session in stubSessions)
+				{
+					[session invalidateAndCancel];
+				}
+				stubSessions = nil;
 			}
 		});
 
@@ -251,13 +284,15 @@ describe(@"FireEventDelegate", ^{
 				}
 			}];
 
-			[NSThread sleepForTimeInterval:1.0];
+			waitForCondition(^BOOL{ @synchronized(responses){ return completionCount > 0; } }, 5.0, 0.2);
 
 			assertThatInteger(completionCount, equalToInteger(1));
 			assertThatInteger(responses.firstObject.status, equalToInteger(-1));
 			assertThat(@([responses.firstObject retryable]), isTrue());
 		});
 
+		// NSURLSession currently passes empty NSData (not nil) for an empty body, so this also
+		// passes on the old client. It guards the fix against that Foundation behaviour changing.
 		it(@"HTTP client reports a success with an empty body as a success, once", ^{
 			@synchronized([TSTimeoutURLProtocol class])
 			{
@@ -273,7 +308,7 @@ describe(@"FireEventDelegate", ^{
 				}
 			}];
 
-			[NSThread sleepForTimeInterval:1.0];
+			waitForCondition(^BOOL{ @synchronized(responses){ return responses.count > 0; } }, 5.0, 0.2);
 
 			assertThatInteger(responses.count, equalToInteger(1));
 			assertThatInteger(responses.firstObject.status, equalToInteger(200));
@@ -300,7 +335,7 @@ describe(@"FireEventDelegate", ^{
 
 			[delegate fireEvent:[TSEvent eventWithName:@"myevent" oneTimeOnly:false]];
 
-			[NSThread sleepForTimeInterval:1.5];
+			waitForCondition(^BOOL{ @synchronized([TSTimeoutURLProtocol class]){ return requestCount >= 4; } }, 5.0, 0.3);
 			block_until_queue_completed(queue);
 
 			@synchronized([TSTimeoutURLProtocol class])

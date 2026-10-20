@@ -3,7 +3,7 @@
 #pragma once
 #import <Foundation/Foundation.h>
 
-// Value for maxEventRetries that retries failed events until they succeed
+// Value for maxEventRetries that retries failed events until they succeed. Any negative value also means unlimited.
 static const NSInteger kTSUnlimitedRetries = -1;
 
 @interface TSConfig : NSObject {
@@ -40,8 +40,9 @@ static const NSInteger kTSUnlimitedRetries = -1;
 	// hardcodedBundleShortVersionString should match the CFBundleShortVersionString value in your Info.plist
 	NSString *hardcodedBundleShortVersionString;
 
-	// Maximum number of times a failed event is retried. Set to 0 to never retry.
-	// Defaults to kTSUnlimitedRetries.
+	// Maximum number of times a failed event is retried. Set to 0 to never retry, or to
+	// kTSUnlimitedRetries (or any negative value) to retry until success. Defaults to kTSUnlimitedRetries.
+	// Must be set before calling createWithConfig:.
 	NSInteger maxEventRetries;
 }
 @property(nonatomic, strong) NSString *accountName;
