@@ -96,6 +96,7 @@ describe(@"IOSFireEventDelegate", ^{
 		__block int firedCount = 0;
 
 		OCMStub([fireEventStrategy shouldFireEvent:[OCMArg any]]).andReturn(true);
+		OCMStub([fireEventStrategy shouldRetryEvent:[OCMArg any]]).andReturn(true);
 		OCMStub([httpClient request:[OCMArg any] data:[OCMArg any] method:@"POST" timeout_ms:10000 completion:[OCMArg any]]).andDo(^(NSInvocation *invocation){
 			[invocation retainArguments];
 			void (^completion)(TSResponse*) = nil;

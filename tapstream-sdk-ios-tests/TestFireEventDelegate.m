@@ -9,10 +9,100 @@
 #import "TSFireEventDelegate.h"
 #import "TSTestUtils.h"
 #import "TSDefs.h"
+#import "TSDefaultHttpClient.h"
 
 @interface TSEvent()
 - (void)prepare:(NSDictionary*)globalEventParams;
 @end
+
+@interface TSDefaultHttpClient()
+@property(readwrite, strong)NSURLSession* session;
+@end
+
+// Fails the first `timeoutsRemaining` requests with NSURLErrorTimedOut (the same
+// error NSURLSession reports for a real timeout), then answers 200.
+static int timeoutsRemaining = 0;
+static int requestCount = 0;
+static BOOL respondWithEmptyBody = NO;
+
+@interface TSTimeoutURLProtocol : NSURLProtocol
+@end
+
+@implementation TSTimeoutURLProtocol
++ (BOOL)canInitWithRequest:(NSURLRequest *)request { return YES; }
++ (NSURLRequest *)canonicalRequestForRequest:(NSURLRequest *)request { return request; }
+- (void)startLoading
+{
+	BOOL timeout;
+	@synchronized([TSTimeoutURLProtocol class])
+	{
+		requestCount += 1;
+		timeout = timeoutsRemaining > 0;
+		if(timeout)
+		{
+			timeoutsRemaining -= 1;
+		}
+	}
+
+	if(timeout)
+	{
+		NSError* error = [NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorTimedOut userInfo:nil];
+		[self.client URLProtocol:self didFailWithError:error];
+		return;
+	}
+
+	NSHTTPURLResponse* response = [[NSHTTPURLResponse alloc] initWithURL:self.request.URL statusCode:200 HTTPVersion:@"HTTP/1.1" headerFields:nil];
+	[self.client URLProtocol:self didReceiveResponse:response cacheStoragePolicy:NSURLCacheStorageNotAllowed];
+	if(!respondWithEmptyBody)
+	{
+		[self.client URLProtocol:self didLoadData:[@"{}" dataUsingEncoding:NSUTF8StringEncoding]];
+	}
+	[self.client URLProtocolDidFinishLoading:self];
+}
+- (void)stopLoading {}
+@end
+
+// Implements only the required TSFireEventStrategy methods, like a strategy
+// written before shouldRetryEvent: existed.
+@interface TSRequiredOnlyFireEventStrategy : NSObject<TSFireEventStrategy>
+@end
+
+@implementation TSRequiredOnlyFireEventStrategy
+- (BOOL)shouldFireEvent:(TSEvent*)event { return YES; }
+- (int)getDelay { return 0; }
+- (void)registerFiringEvent:(TSEvent*)e {}
+- (void)registerResponse:(TSResponse*)response forEvent:(TSEvent*)e {}
+@end
+
+// Sessions created by timeoutStubbedHttpClient, invalidated after each test
+static NSMutableArray<NSURLSession*>* stubSessions = nil;
+
+static TSDefaultHttpClient* timeoutStubbedHttpClient(TSConfig* config)
+{
+	TSDefaultHttpClient* client = [TSDefaultHttpClient httpClientWithConfig:config];
+	[client.session invalidateAndCancel];
+
+	NSURLSessionConfiguration* conf = [NSURLSessionConfiguration ephemeralSessionConfiguration];
+	conf.protocolClasses = @[[TSTimeoutURLProtocol class]];
+	client.session = [NSURLSession sessionWithConfiguration:conf];
+	@synchronized([TSTimeoutURLProtocol class])
+	{
+		[stubSessions addObject:client.session];
+	}
+	return client;
+}
+
+// Polls until condition holds or timeout passes, then waits `settle` seconds so that
+// any extra (buggy) completions or requests have a chance to land before asserting.
+static void waitForCondition(BOOL(^condition)(void), NSTimeInterval timeout, NSTimeInterval settle)
+{
+	NSDate* deadline = [NSDate dateWithTimeIntervalSinceNow:timeout];
+	while(!condition() && [deadline timeIntervalSinceNow] > 0)
+	{
+		[NSThread sleepForTimeInterval:0.01];
+	}
+	[NSThread sleepForTimeInterval:settle];
+}
 
 SpecBegin(FireEventDelegate)
 
@@ -72,6 +162,7 @@ describe(@"FireEventDelegate", ^{
 		__block int firedCount = 0;
 
 		OCMStub([fireEventStrategy shouldFireEvent:[OCMArg any]]).andReturn(true);
+		OCMStub([fireEventStrategy shouldRetryEvent:[OCMArg any]]).andReturn(true);
 		OCMStub([httpClient request:[OCMArg any] data:[OCMArg any] method:@"POST" timeout_ms:10000 completion:[OCMArg any]]).andDo(^(NSInvocation *invocation){
 			[invocation retainArguments];
 			void (^completion)(TSResponse*) = nil;
@@ -102,8 +193,157 @@ describe(@"FireEventDelegate", ^{
 		OCMVerify([fireEventStrategy registerResponse:errorResponse forEvent:event]);
 		OCMVerify([fireEventStrategy registerResponse:badRequestResponse forEvent:event]);
 	});
-	
-	
+
+	it(@"Retries retryable responses when the strategy does not implement shouldRetryEvent", ^{
+		TSEvent* event = [TSEvent eventWithName:@"myevent" oneTimeOnly:false];
+		TSResponse* errorResponse = [TSResponse responseWithStatus:500 message:@"Error" data:nil];
+		TSResponse* okResponse = [TSResponse responseWithStatus:200 message:@"OK" data:nil];
+
+		__block int firedCount = 0;
+
+		OCMStub([httpClient request:[OCMArg any] data:[OCMArg any] method:@"POST" timeout_ms:10000 completion:[OCMArg any]]).andDo(^(NSInvocation *invocation){
+			[invocation retainArguments];
+			void (^completion)(TSResponse*) = nil;
+			[invocation getArgument:&completion atIndex:6];
+			firedCount += 1;
+			completion(firedCount == 1 ? errorResponse : okResponse);
+		});
+
+		TSDefaultFireEventDelegate* delegate = [TSDefaultFireEventDelegate defaultFireEventDelegateWithConfig:config
+																									   queue:queue
+																									platform:platform
+																						   fireEventStrategy:[[TSRequiredOnlyFireEventStrategy alloc] init]
+																								  httpClient:httpClient
+																									listener:listener];
+		[delegate fireEvent:event];
+		block_until_queue_completed(queue);
+
+		assertThatInteger(firedCount, equalToInteger(2));
+	});
+
+	it(@"Will not retry a retryable response once the strategy stops allowing retries", ^{
+		TSEvent* event = [TSEvent eventWithName:@"myevent" oneTimeOnly:false];
+		TSResponse* errorResponse = [TSResponse responseWithStatus:500 message:@"Error" data:nil];
+
+		__block int firedCount = 0;
+
+		OCMStub([fireEventStrategy shouldFireEvent:[OCMArg any]]).andReturn(true);
+		OCMStub([fireEventStrategy shouldRetryEvent:[OCMArg any]]).andReturn(false);
+		OCMStub([httpClient request:[OCMArg any] data:[OCMArg any] method:@"POST" timeout_ms:10000 completion:[OCMArg any]]).andDo(^(NSInvocation *invocation){
+			[invocation retainArguments];
+			void (^completion)(TSResponse*) = nil;
+			[invocation getArgument:&completion atIndex:6];
+			firedCount += 1;
+			completion(errorResponse);
+		});
+
+		[fireEventDelegate fireEvent:event];
+		block_until_queue_completed(queue);
+
+		assertThatInteger(firedCount, equalToInteger(1));
+		OCMVerify([fireEventStrategy shouldRetryEvent:event]);
+		OCMVerify([listener reportOperation:@"event-retries-exhausted" arg:event.encodedName]);
+	});
+
+	describe(@"on request timeouts", ^{
+		beforeEach(^{
+			@synchronized([TSTimeoutURLProtocol class])
+			{
+				timeoutsRemaining = 0;
+				requestCount = 0;
+				respondWithEmptyBody = NO;
+				stubSessions = [NSMutableArray array];
+			}
+		});
+
+		afterEach(^{
+			@synchronized([TSTimeoutURLProtocol class])
+			{
+				for(NSURLSession* session in stubSessions)
+				{
+					[session invalidateAndCancel];
+				}
+				stubSessions = nil;
+			}
+		});
+
+		it(@"HTTP client invokes the completion exactly once for a timed out request", ^{
+			@synchronized([TSTimeoutURLProtocol class])
+			{
+				timeoutsRemaining = 1;
+			}
+			TSDefaultHttpClient* client = timeoutStubbedHttpClient(config);
+
+			__block int completionCount = 0;
+			NSMutableArray<TSResponse*>* responses = [NSMutableArray array];
+			[client request:[NSURL URLWithString:@"https://api.tapstream.com/test"] data:nil method:@"POST" timeout_ms:kTSDefaultTimeout completion:^(TSResponse* response){
+				@synchronized(responses)
+				{
+					completionCount += 1;
+					[responses addObject:response];
+				}
+			}];
+
+			waitForCondition(^BOOL{ @synchronized(responses){ return completionCount > 0; } }, 5.0, 0.2);
+
+			assertThatInteger(completionCount, equalToInteger(1));
+			assertThatInteger(responses.firstObject.status, equalToInteger(-1));
+			assertThat(@([responses.firstObject retryable]), isTrue());
+		});
+
+		// NSURLSession currently passes empty NSData (not nil) for an empty body, so this also
+		// passes on the old client. It guards the fix against that Foundation behaviour changing.
+		it(@"HTTP client reports a success with an empty body as a success, once", ^{
+			@synchronized([TSTimeoutURLProtocol class])
+			{
+				respondWithEmptyBody = YES;
+			}
+			TSDefaultHttpClient* client = timeoutStubbedHttpClient(config);
+
+			NSMutableArray<TSResponse*>* responses = [NSMutableArray array];
+			[client request:[NSURL URLWithString:@"https://api.tapstream.com/test"] data:nil method:@"POST" timeout_ms:kTSDefaultTimeout completion:^(TSResponse* response){
+				@synchronized(responses)
+				{
+					[responses addObject:response];
+				}
+			}];
+
+			waitForCondition(^BOOL{ @synchronized(responses){ return responses.count > 0; } }, 5.0, 0.2);
+
+			assertThatInteger(responses.count, equalToInteger(1));
+			assertThatInteger(responses.firstObject.status, equalToInteger(200));
+			assertThat(@([responses.firstObject succeeded]), isTrue());
+		});
+
+		it(@"Retries a timed out event once per timeout instead of fanning out", ^{
+			// Three consecutive timeouts followed by success should be exactly 4 requests.
+			// With duplicated completions each timeout spawns 2 retries: 1 + 2 + 4 = 7 requests.
+			@synchronized([TSTimeoutURLProtocol class])
+			{
+				timeoutsRemaining = 3;
+			}
+			OCMStub([fireEventStrategy shouldFireEvent:[OCMArg any]]).andReturn(true);
+			OCMStub([fireEventStrategy shouldRetryEvent:[OCMArg any]]).andReturn(true);
+			OCMStub([fireEventStrategy getDelay]).andReturn(0);
+
+			TSDefaultFireEventDelegate* delegate = [TSDefaultFireEventDelegate defaultFireEventDelegateWithConfig:config
+																									   queue:queue
+																									platform:platform
+																						   fireEventStrategy:fireEventStrategy
+																								  httpClient:timeoutStubbedHttpClient(config)
+																									listener:listener];
+
+			[delegate fireEvent:[TSEvent eventWithName:@"myevent" oneTimeOnly:false]];
+
+			waitForCondition(^BOOL{ @synchronized([TSTimeoutURLProtocol class]){ return requestCount >= 4; } }, 5.0, 0.3);
+			block_until_queue_completed(queue);
+
+			@synchronized([TSTimeoutURLProtocol class])
+			{
+				assertThatInteger(requestCount, equalToInteger(4));
+			}
+		});
+	});
 });
 
 SpecEnd

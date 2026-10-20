@@ -71,7 +71,7 @@ static TSTapstream *instance = nil;
 		id<TSAppEventSource> appEventSource = [[TSDefaultAppEventSource alloc] init];
 
 
-		id<TSFireEventStrategy> fireEventStrategy = [TSDefaultFireEventStrategy fireEventStrategyWithStorage:storage listener:listener];
+		id<TSFireEventStrategy> fireEventStrategy = [TSDefaultFireEventStrategy fireEventStrategyWithStorage:storage listener:listener maxRetries:config.maxEventRetries];
 		id<TSHttpClient> httpClient = [TSDefaultHttpClient httpClientWithConfig:config];
 
 

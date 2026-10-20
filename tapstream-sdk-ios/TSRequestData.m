@@ -28,7 +28,9 @@
 
 - (NSUInteger)count
 {
-	return [items count];
+	@synchronized(items){
+		return [items count];
+	}
 }
 
 - (void) appendItem:(NSString*)value forKey:(NSString*)key
@@ -77,12 +79,15 @@
 }
 - (void) appendItemsFromRequestData:(TSRequestData*)other
 {
+	// Snapshot under the other object's lock, then append under our own. Never
+	// hold both locks at once, or two objects copying into each other deadlock.
+	NSDictionary* otherItems;
 	@synchronized([other items]){
-		for(NSString* key in [[other items] keyEnumerator])
-		{
-			NSString* val = [[other items] objectForKey:key];
-			[self appendItemWithPrefix:@"" key:key value:val];
-		}
+		otherItems = [[other items] copy];
+	}
+	for(NSString* key in otherItems)
+	{
+		[self appendItemWithPrefix:@"" key:key value:[otherItems objectForKey:key]];
 	}
 }
 
@@ -92,11 +97,13 @@
 	NSMutableString* outStr = [NSMutableString string];
 	bool first = true;
 
-	NSArray* keys;
+	// Snapshot under the lock and encode outside it: reading values while another
+	// thread appends is not safe, and encoding under the lock starves writers.
+	NSDictionary* snapshot;
 	@synchronized(items){
-		 keys = [items allKeys];
+		snapshot = [items copy];
 	}
-	for(NSString* key in keys)
+	for(NSString* key in snapshot)
 	{
 		if(!first)
 		{
@@ -109,7 +116,7 @@
 
 		[outStr appendFormat:@"%@=%@",
 		 [TSURLEncoder encodeStringForQuery:key],
-		 [TSURLEncoder encodeStringForQuery:[items objectForKey:key]]];
+		 [TSURLEncoder encodeStringForQuery:[snapshot objectForKey:key]]];
 	}
 	return outStr;
 }

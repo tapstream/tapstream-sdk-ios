@@ -13,7 +13,7 @@
 
 @implementation TSEvent
 
-@synthesize uid, name, encodedName, isOneTimeOnly, isTransaction, productId, customFields, postData, isPrepared;
+@synthesize uid, name, encodedName, isOneTimeOnly, isTransaction, productId, customFields, postData, isPrepared, retryCount;
 + (instancetype)eventWithName:(NSString *)eventName oneTimeOnly:(BOOL)oneTimeOnlyArg
 {
 	return [[self alloc] initWithName:eventName oneTimeOnly:oneTimeOnlyArg];
@@ -146,6 +146,11 @@
 	if(key != nil && obj != nil) {
 		[self.customFields setObject:obj forKey:key];
 	}
+}
+
+- (void)incrementRetryCount
+{
+	retryCount += 1;
 }
 
 - (void)prepare:(NSDictionary *)globalEventParams

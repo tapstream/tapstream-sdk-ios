@@ -6,7 +6,11 @@
 #import "TSResponse.h"
 #import "TSLogging.h"
 #import "TSEvent.h"
+#import "TSConfig.h"
 
+@interface TSEvent(hidden)
+- (void)incrementRetryCount;
+@end
 
 #define kTSFiredEventsKey @"__tapstream_fired_events"
 
@@ -15,15 +19,21 @@
 
 + (instancetype) fireEventStrategyWithStorage:(id<TSPersistentStorage>)storage listener:(id<TSCoreListener>)listener
 {
-	return [[self alloc] initWithStorage:storage listener:listener];
+	return [self fireEventStrategyWithStorage:storage listener:listener maxRetries:kTSUnlimitedRetries];
 }
 
-- (instancetype)initWithStorage:(id<TSPersistentStorage>)storage listener:(id<TSCoreListener>)listener
++ (instancetype) fireEventStrategyWithStorage:(id<TSPersistentStorage>)storage listener:(id<TSCoreListener>)listener maxRetries:(NSInteger)maxRetries
+{
+	return [[self alloc] initWithStorage:storage listener:listener maxRetries:maxRetries];
+}
+
+- (instancetype)initWithStorage:(id<TSPersistentStorage>)storage listener:(id<TSCoreListener>)listener maxRetries:(NSInteger)maxRetries
 {
 	if((self = [self init]) != nil)
 	{
 		self.storage = storage;
 		self.listener = listener;
+		self.maxRetries = maxRetries;
 		self.firedEvents = [self loadFiredEvents];
 		self.firingEvents = [[NSMutableSet alloc] initWithCapacity:32];
 	}
@@ -75,13 +85,13 @@
 		if([response failed])
 		{
 			// Only increase delays if we actually intend to retry the event
-			if([response retryable])
+			if([response retryable] && ![self retriesExhausted:e])
 			{
 				// Not every job that fails will increase the retry delay.  It will be the responsibility of
 				// the first failed job to increase the delay after every failure.
-				if(self.delay == 0)
+				if(self.delay == 0 || self.failingEventId == nil)
 				{
-					// This is the first job to fail, it must be the one to manage delay timing
+					// This is the first job to fail (or the previous one gave up), it must be the one to manage delay timing
 					self.failingEventId = e.uid;
 					[self increaseDelay];
 				}
@@ -89,6 +99,11 @@
 				{
 					[self increaseDelay];
 				}
+			}
+			else if([self.failingEventId isEqualToString:e.uid])
+			{
+				// The event managing the delay won't be retried, hand off to the next failing event
+				self.failingEventId = nil;
 			}
 		}
 		else
@@ -106,6 +121,30 @@
 		}
 	}
 
+}
+
+- (BOOL)retriesExhausted:(TSEvent*)e
+{
+	// Any negative limit means unlimited
+	return self.maxRetries >= 0 && e.retryCount >= self.maxRetries;
+}
+
+- (BOOL)shouldRetryEvent:(TSEvent*)e
+{
+	@synchronized(self)
+	{
+		if([self retriesExhausted:e])
+		{
+			// Hand off delay management so the next failing event can keep backing off
+			if([self.failingEventId isEqualToString:e.uid])
+			{
+				self.failingEventId = nil;
+			}
+			return NO;
+		}
+		[e incrementRetryCount];
+		return YES;
+	}
 }
 
 // Delay logic
